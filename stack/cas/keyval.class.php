@@ -20,6 +20,7 @@
  * @copyright  2012 University of Birmingham
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class stack_cas_keyval {
 
     /** @var Holds the raw text as entered by a question author. */
@@ -47,12 +48,17 @@ class stack_cas_keyval {
     private $syntax;
 
     public function __construct($raw, $options = null, $seed=null, $security='s', $syntax=true, $stars=false) {
+
         $this->raw          = $raw;
         $this->security     = $security;   // by default, student
         $this->insertstars  = $stars;      // by default don't add stars
         $this->syntax       = $syntax;     // by default strict
 
         $this->session      = new stack_cas_session(null, $options, $seed);
+
+//$firephp = FirePHP::getInstance(true);
+//$firephp->log($this, 'CAS: this');
+//$firephp->log(gettype($raw), 'CAS: raw variable type');
 
         if (!is_string($raw)) {
             throw new stack_exception('stack_cas_keyval: raw must be a string.');

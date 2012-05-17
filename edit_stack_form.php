@@ -33,6 +33,7 @@ require_once($CFG->dirroot . '/question/type/stack/stack/answertest/controller.c
 require_once($CFG->dirroot . '/question/type/stack/stack/cas/keyval.class.php');
 require_once($CFG->dirroot . '/question/type/stack/stack/cas/castext.class.php');
 
+
 /**
  * Stack question editing form definition.
  *
@@ -126,10 +127,18 @@ class qtype_stack_edit_form extends question_edit_form {
      * @param string $prtname the name of a PRT.
      * @return array list of inputs used by this PRT.
      */
+
     protected function get_inputs_used_by_prt($prtname) {
+
+// MiK: This function gets called with a null prt. Why does it not return an empty array?
+
+$firephp = FirePHP::getInstance(true);
+$firephp->log($prtname, 'get_inputs: $prtname');
+
         if (is_null($this->question->inputs)) {
             return array();
         }
+
         $inputs = $this->question->inputs;
         $input_keys = array();
         if (is_array($inputs)) {
@@ -146,6 +155,17 @@ class qtype_stack_edit_form extends question_edit_form {
         $prts = $this->question->prts;
         $prt = $prts[$prtname];
 
+$firephp->log($prt, 'get_inputs: $prt');
+$firephp->log(gettype($prt), 'get_inputs: $prt variable type');
+
+
+// MiK: HA!
+
+
+        if (is_null($prt)) {
+            return array();
+        }
+
         $prt_nodes = array();
         foreach ($prt->nodes as $node) {
             $sans = new stack_cas_casstring($node->sans);
@@ -156,8 +176,10 @@ class qtype_stack_edit_form extends question_edit_form {
             $prt_node->add_branch(0, '+', 0, 0, -1, $node->falsefeedback, '');
             $prt_nodes[] = $prt_node;
         }
+
         $feedbackvariables = new stack_cas_keyval($prt->feedbackvariables, null, 0, 't');
         $potential_response_tree = new stack_potentialresponse_tree('', '', false, 0, $feedbackvariables->get_session(), $prt_nodes);
+
         return $potential_response_tree->get_required_variables($input_keys);
     }
 
@@ -226,6 +248,13 @@ class qtype_stack_edit_form extends question_edit_form {
         foreach ($inputnames as $inputname => $notused) {
             $this->definition_input($inputname, $mform);
         }
+
+// MiK: Check!
+
+
+$firephp = FirePHP::getInstance(true);
+$firephp->log($mform, 'def_inner: $mform');
+$firephp->log($prtnames, 'def_inner: $prtnames');
 
         // PRTs
         foreach ($prtnames as $prtname) {
@@ -352,6 +381,8 @@ class qtype_stack_edit_form extends question_edit_form {
 
     protected function definition_prt($prtname, MoodleQuickForm $mform) {
 
+// This function gets called once per named prt. A prt feedback added to the question stem gets a name.
+
         $numnodes = 1;
         if (!empty($this->question->prts[$prtname])) {
             $numnodes = count($this->question->prts[$prtname]->nodes);
@@ -378,9 +409,19 @@ class qtype_stack_edit_form extends question_edit_form {
                 get_string('feedbackvariables', 'qtype_stack'), array('rows' => 3, 'cols' => 80));
         $mform->addHelpButton($prtname . 'feedbackvariables', 'feedbackvariables', 'qtype_stack');
 
+$firephp = FirePHP::getInstance(true);
+$firephp->log($mform, 'def_prt: $mform');
+$firephp->log($prtname, 'def_prt: $prtname');
+$firephp->log(gettype($prtname), 'def_prt: $prtname variable type');
+
+// MiK: This is the probable culprit it adds the information that "this prt will become active when the student has
+// answered $inputnames. This whole thing builds the edit form.
+
         $inputnames = implode(', ', $this->get_inputs_used_by_prt($prtname));
         $mform->addElement('static', $prtname . 'inputsnote', '',
                 get_string('prtwillbecomeactivewhen', 'qtype_stack', html_writer::tag('b', $inputnames)));
+
+$firephp->log($inputnames, 'def_prt: $inputnames');
 
         // Create the section of the form for each node - general bits.
         $repeatoptions = array();
