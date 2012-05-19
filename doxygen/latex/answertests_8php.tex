@@ -1,0 +1,70 @@
+\hypertarget{answertests_8php}{
+\section{answertests.php File Reference}
+\label{answertests_8php}\index{answertests.php@{answertests.php}}
+}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{answertests_8php_a82b5f102f126b432ed3c107854278cf9}{\$anstest} = optional\_\-param('anstest', '', PARAM\_\-ALPHA)
+\item 
+\hyperlink{answertests_8php_ae05dedb802ada0155efdece2044fed64}{\$context} = context\_\-system::instance()
+\item 
+\hyperlink{answertests_8php_ada57e7bb7c152edad18fe2f166188691}{\$title} = stack\_\-string('stackInstall\_\-testsuite\_\-title')
+\item 
+\hyperlink{answertests_8php_aa40691406a81b9e8192fc2db224c48d2}{\$availabletests} = stack\_\-answertest\_\-test\_\-data::get\_\-available\_\-tests()
+\item 
+\hyperlink{answertests_8php_a3361b3cc65395e010e9d35b1bbfde7d2}{\$availabletests} \mbox{[}'ALL'\mbox{]} = stack\_\-string('all')
+\item 
+\hyperlink{caschat_8php_a2018ad56dfaea89ba7f32f4f912be98f}{if}(\$anstest!== 'ALL') \hyperlink{answertests_8php_a7c64d22213f45a8e0013b6ff46009c84}{\$table} = new flexible\_\-table('stack\_\-answertests')
+\item 
+\hyperlink{answertests_8php_ab5a10be91c162cb48ac439a779b80046}{\$allpassed} = true
+\item 
+\hyperlink{answertests_8php_a8685f62ef2250e3df3ffb6a8c32e5ffa}{if} (\$anstest)
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{answertests_8php_ab5a10be91c162cb48ac439a779b80046}{
+\index{answertests.php@{answertests.php}!\$allpassed@{\$allpassed}}
+\index{\$allpassed@{\$allpassed}!answertests.php@{answertests.php}}
+\subsubsection[{\$allpassed}]{\setlength{\rightskip}{0pt plus 5cm}\$allpassed = true}}
+\label{answertests_8php_ab5a10be91c162cb48ac439a779b80046}
+\hypertarget{answertests_8php_a82b5f102f126b432ed3c107854278cf9}{
+\index{answertests.php@{answertests.php}!\$anstest@{\$anstest}}
+\index{\$anstest@{\$anstest}!answertests.php@{answertests.php}}
+\subsubsection[{\$anstest}]{\setlength{\rightskip}{0pt plus 5cm}\$anstest = optional\_\-param('anstest', '', PARAM\_\-ALPHA)}}
+\label{answertests_8php_a82b5f102f126b432ed3c107854278cf9}
+This script runs the answers tests and verifies the results.
+
+This serves two purposes. First, it verifies that the answer tests are working correctly, and second it serves to document the expected behaviour of answer tests, which is useful for learning how they work.
+
+2012 University of Birmingham  \href{http://www.gnu.org/copyleft/gpl.html}{\tt http://www.gnu.org/copyleft/gpl.html} GNU GPL v3 or later \hypertarget{answertests_8php_a3361b3cc65395e010e9d35b1bbfde7d2}{
+\index{answertests.php@{answertests.php}!\$availabletests@{\$availabletests}}
+\index{\$availabletests@{\$availabletests}!answertests.php@{answertests.php}}
+\subsubsection[{\$availabletests}]{\setlength{\rightskip}{0pt plus 5cm}\$availabletests\mbox{[}'ALL'\mbox{]} = stack\_\-string('all')}}
+\label{answertests_8php_a3361b3cc65395e010e9d35b1bbfde7d2}
+\hypertarget{answertests_8php_aa40691406a81b9e8192fc2db224c48d2}{
+\index{answertests.php@{answertests.php}!\$availabletests@{\$availabletests}}
+\index{\$availabletests@{\$availabletests}!answertests.php@{answertests.php}}
+\subsubsection[{\$availabletests}]{\setlength{\rightskip}{0pt plus 5cm}\$availabletests = stack\_\-answertest\_\-test\_\-data::get\_\-available\_\-tests()}}
+\label{answertests_8php_aa40691406a81b9e8192fc2db224c48d2}
+\hypertarget{answertests_8php_ae05dedb802ada0155efdece2044fed64}{
+\index{answertests.php@{answertests.php}!\$context@{\$context}}
+\index{\$context@{\$context}!answertests.php@{answertests.php}}
+\subsubsection[{\$context}]{\setlength{\rightskip}{0pt plus 5cm}\$context = context\_\-system::instance()}}
+\label{answertests_8php_ae05dedb802ada0155efdece2044fed64}
+\hypertarget{answertests_8php_a7c64d22213f45a8e0013b6ff46009c84}{
+\index{answertests.php@{answertests.php}!\$table@{\$table}}
+\index{\$table@{\$table}!answertests.php@{answertests.php}}
+\subsubsection[{\$table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (\$anstest!== 'ALL') \$table = new flexible\_\-table('stack\_\-answertests')}}
+\label{answertests_8php_a7c64d22213f45a8e0013b6ff46009c84}
+\hypertarget{answertests_8php_ada57e7bb7c152edad18fe2f166188691}{
+\index{answertests.php@{answertests.php}!\$title@{\$title}}
+\index{\$title@{\$title}!answertests.php@{answertests.php}}
+\subsubsection[{\$title}]{\setlength{\rightskip}{0pt plus 5cm}\$title = stack\_\-string('stackInstall\_\-testsuite\_\-title')}}
+\label{answertests_8php_ada57e7bb7c152edad18fe2f166188691}
+\hypertarget{answertests_8php_a8685f62ef2250e3df3ffb6a8c32e5ffa}{
+\index{answertests.php@{answertests.php}!if@{if}}
+\index{if@{if}!answertests.php@{answertests.php}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if}(\$anstest)}}
+\label{answertests_8php_a8685f62ef2250e3df3ffb6a8c32e5ffa}

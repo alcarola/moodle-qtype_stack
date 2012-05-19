@@ -1,0 +1,457 @@
+\hypertarget{classqtype__stack__question}{
+\section{qtype\_\-stack\_\-question Class Reference}
+\label{classqtype__stack__question}\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classqtype__stack__question_a6710a5a63ad311ca3c87618ffad2cb95}{make\_\-behaviour} (question\_\-attempt \$qa, \$preferredbehaviour)
+\item 
+\hyperlink{classqtype__stack__question_a99a663e62b22a8047beb740d24008cb9}{start\_\-attempt} (question\_\-attempt\_\-step \$step, \$variant)
+\item 
+\hyperlink{classqtype__stack__question_a41ebd81c094de17a8cc9deaef4d06fcc}{apply\_\-attempt\_\-state} (question\_\-attempt\_\-step \$step)
+\item 
+\hyperlink{classqtype__stack__question_a026f32da73f92f604833d001e33d3473}{format\_\-generalfeedback} (\$qa)
+\item 
+\hyperlink{classqtype__stack__question_ace8c6f36e84d6cc4b7107a4b76e305ea}{get\_\-expected\_\-data} ()
+\item 
+\hyperlink{classqtype__stack__question_a754e93fccfebf8e5019174322b4d9fcc}{get\_\-question\_\-summary} ()
+\item 
+\hyperlink{classqtype__stack__question_a56a30cee9eee5292377c3ab805e5a2b9}{summarise\_\-response} (array \$response)
+\item 
+\hyperlink{classqtype__stack__question_a92a9d2c3673c139ef09e9ecb08cd9f2e}{get\_\-correct\_\-response} ()
+\item 
+\hyperlink{classqtype__stack__question_abcb27429946edeb99bcd4706c49f4c4b}{is\_\-same\_\-response} (array \$prevresponse, array \$newresponse)
+\item 
+\hyperlink{classqtype__stack__question_ae4f0da0056f1478a8f2fd2c80d672ad4}{get\_\-input\_\-state} (\$name, \$response)
+\item 
+\hyperlink{classqtype__stack__question_ab80c2c47f43a1058c3e161c3f2cf424a}{is\_\-complete\_\-response} (array \$response)
+\item 
+\hyperlink{classqtype__stack__question_a8c49225da011449411661e2bdc698c43}{is\_\-gradable\_\-response} (array \$response)
+\item 
+\hyperlink{classqtype__stack__question_aa96049e70ad133602506d6a1d2654a10}{get\_\-validation\_\-error} (array \$response)
+\item 
+\hyperlink{classqtype__stack__question_ab5cfd8bc4a6eb7b94f257c1ddc50ad6a}{grade\_\-response} (array \$response)
+\item 
+\hyperlink{classqtype__stack__question_ad579afb9519f953ba588d12472e351bd}{compute\_\-final\_\-grade} (\$responses, \$totaltries)
+\item 
+\hyperlink{classqtype__stack__question_a2b51301e407f2ca52ae85778496cf43e}{get\_\-prt\_\-result} (\$index, \$response, \$acceptvalid)
+\item 
+\hyperlink{classqtype__stack__question_adf9e97e19bbc5ccd7785352469898538}{has\_\-random\_\-variants} ()
+\item 
+\hyperlink{classqtype__stack__question_a4fa4675e759d7d72e9781e462ac6663d}{get\_\-num\_\-variants} ()
+\item 
+\hyperlink{classqtype__stack__question_a126164aa2828ef593b96a4cc650e64b8}{get\_\-variants\_\-selection\_\-seed} ()
+\item 
+\hyperlink{classqtype__stack__question_a5e40ef30933689b56c1d4a0f00f9190f}{check\_\-file\_\-access} (\$qa, \$options, \$\hyperlink{version_8php_a27dc7e2c13f48a05e56e0d3138fe3c82}{component}, \$filearea, \$args, \$forcedownload)
+\item 
+\hyperlink{classqtype__stack__question_a6d3e2e228c2b6af0f5db437f0ea1fbda}{get\_\-context} ()
+\item 
+\hyperlink{classqtype__stack__question_a5440ac82608c7f9cb7e1a9490964b636}{user\_\-can\_\-view} ()
+\item 
+\hyperlink{classqtype__stack__question_ab652d314f92aac506494bc3bd7373f0c}{user\_\-can\_\-edit} ()
+\item 
+\hyperlink{classqtype__stack__question_abd4b304221b1aa33c536430efc995301}{get\_\-all\_\-question\_\-vars} ()
+\item 
+\hyperlink{classqtype__stack__question_a8b2f9ac27e9fe1d84abbef0487b4f755}{add\_\-question\_\-vars\_\-to\_\-session} (stack\_\-cas\_\-session \$session)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classqtype__stack__question_a588ba6d7b21ea84f8a71e69e9f02c625}{MARK\_\-MODE\_\-PENALTY} = 'penalty'
+\item 
+const \hyperlink{classqtype__stack__question_a790b80668709d381e495a84800db165a}{MARK\_\-MODE\_\-FIRST} = 'firstanswer'
+\item 
+const \hyperlink{classqtype__stack__question_aa701dff20296ed3c2c63b82b28636f44}{MARK\_\-MODE\_\-LAST} = 'lastanswer'
+\item 
+\hyperlink{classqtype__stack__question_a4008515fcecf51157d1e3f1852d96906}{\$questionvariables}
+\item 
+\hyperlink{classqtype__stack__question_a8522e9220cc7c3cf500c21c4139c79cf}{\$questionnote}
+\item 
+\hyperlink{classqtype__stack__question_a2d613a3f7143cd7d7e65719443461219}{\$specificfeedback}
+\item 
+\hyperlink{classqtype__stack__question_acaa6d5b0c8bc222cfc448c3246e85dae}{\$specificfeedbackformat}
+\item 
+\hyperlink{classqtype__stack__question_a2489206abd13bb3322c09d4bf3229dc3}{\$prtcorrect}
+\item 
+\hyperlink{classqtype__stack__question_a7963e6df86de0cd29476b6dd51d77582}{\$prtcorrectformat}
+\item 
+\hyperlink{classqtype__stack__question_a403b775d50cf893d851d762b794866ba}{\$prtpartiallycorrect}
+\item 
+\hyperlink{classqtype__stack__question_af6c5c06c77b32e642c9f17baf7d8e9ea}{\$prtpartiallycorrectformat}
+\item 
+\hyperlink{classqtype__stack__question_a0a422dfcc412d953ef6377abf3c6c55e}{\$prtincorrect}
+\item 
+\hyperlink{classqtype__stack__question_aa22eb8f1dacaf4fa01cc3eb87787b5e6}{\$prtincorrectformat}
+\item 
+\hyperlink{classqtype__stack__question_a89b95812f12400531ce9db967019aa56}{\$markmode}
+\item 
+\hyperlink{classqtype__stack__question_a132af9dd30e31dbe58cc5b8b95dc91ef}{\$variantsselectionseed}
+\item 
+\hyperlink{classqtype__stack__question_aea3ef5cc024d400fc7749a480c4c4bd8}{\$inputs}
+\item 
+\hyperlink{classqtype__stack__question_a61c011482c257505caf2bfe5e92382e7}{\$prts}
+\item 
+\hyperlink{classqtype__stack__question_a06c6261b3cd293c85f09e0f3d7de44b0}{\$options}
+\item 
+\hyperlink{classqtype__stack__question_a3d10e7135cb980711af39923d660c6ef}{\$deployedseeds}
+\item 
+\hyperlink{classqtype__stack__question_a8ceb37a1b17061f427117571a9555e0e}{\$seed} = null
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classqtype__stack__question_a59876ac9e020e04e16221a1e4a06110f}{validate\_\-cache} (\$response)
+\item 
+\hyperlink{classqtype__stack__question_a9c8334e2954d87067010cd353b8b91b7}{any\_\-inputs\_\-require\_\-validation} ()
+\item 
+\hyperlink{classqtype__stack__question_a815171df1880921d538f15888eff0ba4}{is\_\-same\_\-prt\_\-input} (\$index, \$prtinput1, \$prtinput2)
+\item 
+\hyperlink{classqtype__stack__question_aa0e6d5dfc0b67b125ea00e52d138f7c0}{can\_\-execute\_\-prt} (stack\_\-potentialresponse\_\-tree \$prt, \$response, \$acceptvalid)
+\item 
+\hyperlink{classqtype__stack__question_ae1369f6232dae4ac45154d4c259e7ef9}{get\_\-prt\_\-input} (\$index, \$response, \$acceptvalid)
+\item 
+\hyperlink{classqtype__stack__question_ae1834d8cc6dfb828866475759855aa27}{has\_\-question\_\-capability} (\$type)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classqtype__stack__question_a23864b386c334ec9125362f83d391848}{\$session}
+\item 
+\hyperlink{classqtype__stack__question_aae8410727153edc60e14f18b5a49475d}{\$questionnoteinstantiated}
+\item 
+\hyperlink{classqtype__stack__question_a3d4f3902b2164b1c39201a2665b06bb9}{\$lastresponse} = null
+\item 
+\hyperlink{classqtype__stack__question_a7f9ce0d0171e5af1ab6b289ff9a157a3}{\$inputstates} = array()
+\item 
+\hyperlink{classqtype__stack__question_a6764b09997d82324cc78bbe8ccfc31d7}{\$prtresults} = array()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a Stack question.
+
+2012 The Open University  \href{http://www.gnu.org/copyleft/gpl.html}{\tt http://www.gnu.org/copyleft/gpl.html} GNU GPL v3 or later 
+
+\subsection{Member Function Documentation}
+\hypertarget{classqtype__stack__question_a8b2f9ac27e9fe1d84abbef0487b4f755}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!add\_\-question\_\-vars\_\-to\_\-session@{add\_\-question\_\-vars\_\-to\_\-session}}
+\index{add\_\-question\_\-vars\_\-to\_\-session@{add\_\-question\_\-vars\_\-to\_\-session}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{add\_\-question\_\-vars\_\-to\_\-session}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::add\_\-question\_\-vars\_\-to\_\-session (stack\_\-cas\_\-session \$ {\em session})}}
+\label{classqtype__stack__question_a8b2f9ac27e9fe1d84abbef0487b4f755}
+Add all the question variables to a give CAS session. This can be used to initialise that session, so expressions can be evaluated in the context of the question variables. 
+\begin{DoxyParams}{Parameters}
+\item[{\em stack\_\-cas\_\-session}]\$session the CAS session to add the question variables to. \end{DoxyParams}
+\hypertarget{classqtype__stack__question_a9c8334e2954d87067010cd353b8b91b7}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!any\_\-inputs\_\-require\_\-validation@{any\_\-inputs\_\-require\_\-validation}}
+\index{any\_\-inputs\_\-require\_\-validation@{any\_\-inputs\_\-require\_\-validation}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{any\_\-inputs\_\-require\_\-validation}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::any\_\-inputs\_\-require\_\-validation ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_a9c8334e2954d87067010cd353b8b91b7}
+\begin{DoxyReturn}{Returns}
+bool do any of the inputs in this question require the student validat the input. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__question_a41ebd81c094de17a8cc9deaef4d06fcc}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!apply\_\-attempt\_\-state@{apply\_\-attempt\_\-state}}
+\index{apply\_\-attempt\_\-state@{apply\_\-attempt\_\-state}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{apply\_\-attempt\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::apply\_\-attempt\_\-state (question\_\-attempt\_\-step \$ {\em step})}}
+\label{classqtype__stack__question_a41ebd81c094de17a8cc9deaef4d06fcc}
+\hypertarget{classqtype__stack__question_aa0e6d5dfc0b67b125ea00e52d138f7c0}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!can\_\-execute\_\-prt@{can\_\-execute\_\-prt}}
+\index{can\_\-execute\_\-prt@{can\_\-execute\_\-prt}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{can\_\-execute\_\-prt}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::can\_\-execute\_\-prt (stack\_\-potentialresponse\_\-tree \$ {\em prt}, \/  \$ {\em response}, \/  \$ {\em acceptvalid})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_aa0e6d5dfc0b67b125ea00e52d138f7c0}
+Do we have all the necessary inputs to execute one of the potential response trees? 
+\begin{DoxyParams}{Parameters}
+\item[{\em stack\_\-potentialresponse\_\-tree}]\$prt the tree in question. \item[{\em array}]\$response the response. \item[{\em bool}]\$acceptvalid if this is true, then we will grade things even if the corresponding inputs are only VALID, and not SCORE. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool can this PRT be executed for that response. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__question_a5e40ef30933689b56c1d4a0f00f9190f}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!check\_\-file\_\-access@{check\_\-file\_\-access}}
+\index{check\_\-file\_\-access@{check\_\-file\_\-access}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{check\_\-file\_\-access}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::check\_\-file\_\-access (\$ {\em qa}, \/  \$ {\em options}, \/  \$ {\em component}, \/  \$ {\em filearea}, \/  \$ {\em args}, \/  \$ {\em forcedownload})}}
+\label{classqtype__stack__question_a5e40ef30933689b56c1d4a0f00f9190f}
+\hypertarget{classqtype__stack__question_ad579afb9519f953ba588d12472e351bd}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!compute\_\-final\_\-grade@{compute\_\-final\_\-grade}}
+\index{compute\_\-final\_\-grade@{compute\_\-final\_\-grade}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{compute\_\-final\_\-grade}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::compute\_\-final\_\-grade (\$ {\em responses}, \/  \$ {\em totaltries})}}
+\label{classqtype__stack__question_ad579afb9519f953ba588d12472e351bd}
+\hypertarget{classqtype__stack__question_a026f32da73f92f604833d001e33d3473}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!format\_\-generalfeedback@{format\_\-generalfeedback}}
+\index{format\_\-generalfeedback@{format\_\-generalfeedback}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{format\_\-generalfeedback}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::format\_\-generalfeedback (\$ {\em qa})}}
+\label{classqtype__stack__question_a026f32da73f92f604833d001e33d3473}
+\hypertarget{classqtype__stack__question_abd4b304221b1aa33c536430efc995301}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-all\_\-question\_\-vars@{get\_\-all\_\-question\_\-vars}}
+\index{get\_\-all\_\-question\_\-vars@{get\_\-all\_\-question\_\-vars}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-all\_\-question\_\-vars}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-all\_\-question\_\-vars ()}}
+\label{classqtype__stack__question_abd4b304221b1aa33c536430efc995301}
+\hypertarget{classqtype__stack__question_a6d3e2e228c2b6af0f5db437f0ea1fbda}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-context@{get\_\-context}}
+\index{get\_\-context@{get\_\-context}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-context ()}}
+\label{classqtype__stack__question_a6d3e2e228c2b6af0f5db437f0ea1fbda}
+\hypertarget{classqtype__stack__question_a92a9d2c3673c139ef09e9ecb08cd9f2e}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-correct\_\-response@{get\_\-correct\_\-response}}
+\index{get\_\-correct\_\-response@{get\_\-correct\_\-response}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-correct\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-correct\_\-response ()}}
+\label{classqtype__stack__question_a92a9d2c3673c139ef09e9ecb08cd9f2e}
+\hypertarget{classqtype__stack__question_ace8c6f36e84d6cc4b7107a4b76e305ea}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-expected\_\-data@{get\_\-expected\_\-data}}
+\index{get\_\-expected\_\-data@{get\_\-expected\_\-data}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-expected\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-expected\_\-data ()}}
+\label{classqtype__stack__question_ace8c6f36e84d6cc4b7107a4b76e305ea}
+\hypertarget{classqtype__stack__question_ae4f0da0056f1478a8f2fd2c80d672ad4}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-input\_\-state@{get\_\-input\_\-state}}
+\index{get\_\-input\_\-state@{get\_\-input\_\-state}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-input\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-input\_\-state (\$ {\em name}, \/  \$ {\em response})}}
+\label{classqtype__stack__question_ae4f0da0056f1478a8f2fd2c80d672ad4}
+Get the results of validating one of the input elements. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name the name of one of the input elements. \item[{\em array}]\$response the response. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+stack\_\-input\_\-state the result of calling validate\_\-student\_\-response() on the input. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__question_a4fa4675e759d7d72e9781e462ac6663d}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-num\_\-variants@{get\_\-num\_\-variants}}
+\index{get\_\-num\_\-variants@{get\_\-num\_\-variants}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-num\_\-variants}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-num\_\-variants ()}}
+\label{classqtype__stack__question_a4fa4675e759d7d72e9781e462ac6663d}
+\hypertarget{classqtype__stack__question_ae1369f6232dae4ac45154d4c259e7ef9}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-prt\_\-input@{get\_\-prt\_\-input}}
+\index{get\_\-prt\_\-input@{get\_\-prt\_\-input}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-prt\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-prt\_\-input (\$ {\em index}, \/  \$ {\em response}, \/  \$ {\em acceptvalid})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_ae1369f6232dae4ac45154d4c259e7ef9}
+Extract the input for a given PRT from a full response. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$index the name of the PRT. \item[{\em array}]\$response the full response data. \item[{\em bool}]\$acceptvalid if this is true, then we will grade things even if the corresponding inputs are only VALID, and not SCORE. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array the input required by that PRT. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__question_a2b51301e407f2ca52ae85778496cf43e}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-prt\_\-result@{get\_\-prt\_\-result}}
+\index{get\_\-prt\_\-result@{get\_\-prt\_\-result}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-prt\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-prt\_\-result (\$ {\em index}, \/  \$ {\em response}, \/  \$ {\em acceptvalid})}}
+\label{classqtype__stack__question_a2b51301e407f2ca52ae85778496cf43e}
+Evaluate a PRT for a particular response. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$index the index of the PRT to evaluate. \item[{\em array}]\$response the response to process. \item[{\em bool}]\$acceptvalid if this is true, then we will grade things even if the corresponding inputs are only VALID, and not SCORE. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array the result from \$prt-\/$>$evaluate\_\-response(), or a fake array if the tree cannot be executed. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__question_a754e93fccfebf8e5019174322b4d9fcc}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-question\_\-summary@{get\_\-question\_\-summary}}
+\index{get\_\-question\_\-summary@{get\_\-question\_\-summary}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-question\_\-summary}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-question\_\-summary ()}}
+\label{classqtype__stack__question_a754e93fccfebf8e5019174322b4d9fcc}
+\hypertarget{classqtype__stack__question_aa96049e70ad133602506d6a1d2654a10}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-validation\_\-error@{get\_\-validation\_\-error}}
+\index{get\_\-validation\_\-error@{get\_\-validation\_\-error}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-validation\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-validation\_\-error (array \$ {\em response})}}
+\label{classqtype__stack__question_aa96049e70ad133602506d6a1d2654a10}
+\hypertarget{classqtype__stack__question_a126164aa2828ef593b96a4cc650e64b8}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!get\_\-variants\_\-selection\_\-seed@{get\_\-variants\_\-selection\_\-seed}}
+\index{get\_\-variants\_\-selection\_\-seed@{get\_\-variants\_\-selection\_\-seed}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{get\_\-variants\_\-selection\_\-seed}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::get\_\-variants\_\-selection\_\-seed ()}}
+\label{classqtype__stack__question_a126164aa2828ef593b96a4cc650e64b8}
+\hypertarget{classqtype__stack__question_ab5cfd8bc4a6eb7b94f257c1ddc50ad6a}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!grade\_\-response@{grade\_\-response}}
+\index{grade\_\-response@{grade\_\-response}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{grade\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::grade\_\-response (array \$ {\em response})}}
+\label{classqtype__stack__question_ab5cfd8bc4a6eb7b94f257c1ddc50ad6a}
+\hypertarget{classqtype__stack__question_ae1834d8cc6dfb828866475759855aa27}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!has\_\-question\_\-capability@{has\_\-question\_\-capability}}
+\index{has\_\-question\_\-capability@{has\_\-question\_\-capability}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{has\_\-question\_\-capability}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::has\_\-question\_\-capability (\$ {\em type})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_ae1834d8cc6dfb828866475759855aa27}
+\hypertarget{classqtype__stack__question_adf9e97e19bbc5ccd7785352469898538}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!has\_\-random\_\-variants@{has\_\-random\_\-variants}}
+\index{has\_\-random\_\-variants@{has\_\-random\_\-variants}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{has\_\-random\_\-variants}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::has\_\-random\_\-variants ()}}
+\label{classqtype__stack__question_adf9e97e19bbc5ccd7785352469898538}
+\begin{DoxyReturn}{Returns}
+bool whether this question uses randomisation. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__question_ab80c2c47f43a1058c3e161c3f2cf424a}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!is\_\-complete\_\-response@{is\_\-complete\_\-response}}
+\index{is\_\-complete\_\-response@{is\_\-complete\_\-response}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{is\_\-complete\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::is\_\-complete\_\-response (array \$ {\em response})}}
+\label{classqtype__stack__question_ab80c2c47f43a1058c3e161c3f2cf424a}
+\hypertarget{classqtype__stack__question_a8c49225da011449411661e2bdc698c43}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!is\_\-gradable\_\-response@{is\_\-gradable\_\-response}}
+\index{is\_\-gradable\_\-response@{is\_\-gradable\_\-response}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{is\_\-gradable\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::is\_\-gradable\_\-response (array \$ {\em response})}}
+\label{classqtype__stack__question_a8c49225da011449411661e2bdc698c43}
+\hypertarget{classqtype__stack__question_a815171df1880921d538f15888eff0ba4}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!is\_\-same\_\-prt\_\-input@{is\_\-same\_\-prt\_\-input}}
+\index{is\_\-same\_\-prt\_\-input@{is\_\-same\_\-prt\_\-input}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{is\_\-same\_\-prt\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::is\_\-same\_\-prt\_\-input (\$ {\em index}, \/  \$ {\em prtinput1}, \/  \$ {\em prtinput2})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_a815171df1880921d538f15888eff0ba4}
+\hypertarget{classqtype__stack__question_abcb27429946edeb99bcd4706c49f4c4b}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!is\_\-same\_\-response@{is\_\-same\_\-response}}
+\index{is\_\-same\_\-response@{is\_\-same\_\-response}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{is\_\-same\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::is\_\-same\_\-response (array \$ {\em prevresponse}, \/  array \$ {\em newresponse})}}
+\label{classqtype__stack__question_abcb27429946edeb99bcd4706c49f4c4b}
+\hypertarget{classqtype__stack__question_a6710a5a63ad311ca3c87618ffad2cb95}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!make\_\-behaviour@{make\_\-behaviour}}
+\index{make\_\-behaviour@{make\_\-behaviour}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{make\_\-behaviour}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::make\_\-behaviour (question\_\-attempt \$ {\em qa}, \/  \$ {\em preferredbehaviour})}}
+\label{classqtype__stack__question_a6710a5a63ad311ca3c87618ffad2cb95}
+\hypertarget{classqtype__stack__question_a99a663e62b22a8047beb740d24008cb9}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!start\_\-attempt@{start\_\-attempt}}
+\index{start\_\-attempt@{start\_\-attempt}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{start\_\-attempt}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::start\_\-attempt (question\_\-attempt\_\-step \$ {\em step}, \/  \$ {\em variant})}}
+\label{classqtype__stack__question_a99a663e62b22a8047beb740d24008cb9}
+\hypertarget{classqtype__stack__question_a56a30cee9eee5292377c3ab805e5a2b9}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!summarise\_\-response@{summarise\_\-response}}
+\index{summarise\_\-response@{summarise\_\-response}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{summarise\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::summarise\_\-response (array \$ {\em response})}}
+\label{classqtype__stack__question_a56a30cee9eee5292377c3ab805e5a2b9}
+\hypertarget{classqtype__stack__question_ab652d314f92aac506494bc3bd7373f0c}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!user\_\-can\_\-edit@{user\_\-can\_\-edit}}
+\index{user\_\-can\_\-edit@{user\_\-can\_\-edit}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{user\_\-can\_\-edit}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::user\_\-can\_\-edit ()}}
+\label{classqtype__stack__question_ab652d314f92aac506494bc3bd7373f0c}
+\hypertarget{classqtype__stack__question_a5440ac82608c7f9cb7e1a9490964b636}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!user\_\-can\_\-view@{user\_\-can\_\-view}}
+\index{user\_\-can\_\-view@{user\_\-can\_\-view}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{user\_\-can\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::user\_\-can\_\-view ()}}
+\label{classqtype__stack__question_a5440ac82608c7f9cb7e1a9490964b636}
+\hypertarget{classqtype__stack__question_a59876ac9e020e04e16221a1e4a06110f}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!validate\_\-cache@{validate\_\-cache}}
+\index{validate\_\-cache@{validate\_\-cache}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{validate\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::validate\_\-cache (\$ {\em response})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_a59876ac9e020e04e16221a1e4a06110f}
+Make sure the cache is valid for the current response. If not, clear it. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classqtype__stack__question_a3d10e7135cb980711af39923d660c6ef}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$deployedseeds@{\$deployedseeds}}
+\index{\$deployedseeds@{\$deployedseeds}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$deployedseeds}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$deployedseeds}}
+\label{classqtype__stack__question_a3d10e7135cb980711af39923d660c6ef}
+\hypertarget{classqtype__stack__question_aea3ef5cc024d400fc7749a480c4c4bd8}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$inputs@{\$inputs}}
+\index{\$inputs@{\$inputs}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$inputs}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$inputs}}
+\label{classqtype__stack__question_aea3ef5cc024d400fc7749a480c4c4bd8}
+\hypertarget{classqtype__stack__question_a7f9ce0d0171e5af1ab6b289ff9a157a3}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$inputstates@{\$inputstates}}
+\index{\$inputstates@{\$inputstates}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$inputstates}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$inputstates = array()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_a7f9ce0d0171e5af1ab6b289ff9a157a3}
+\hypertarget{classqtype__stack__question_a3d4f3902b2164b1c39201a2665b06bb9}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$lastresponse@{\$lastresponse}}
+\index{\$lastresponse@{\$lastresponse}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$lastresponse}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$lastresponse = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_a3d4f3902b2164b1c39201a2665b06bb9}
+\hypertarget{classqtype__stack__question_a89b95812f12400531ce9db967019aa56}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$markmode@{\$markmode}}
+\index{\$markmode@{\$markmode}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$markmode}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$markmode}}
+\label{classqtype__stack__question_a89b95812f12400531ce9db967019aa56}
+\hypertarget{classqtype__stack__question_a06c6261b3cd293c85f09e0f3d7de44b0}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$options@{\$options}}
+\index{\$options@{\$options}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$options}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$options}}
+\label{classqtype__stack__question_a06c6261b3cd293c85f09e0f3d7de44b0}
+\hypertarget{classqtype__stack__question_a2489206abd13bb3322c09d4bf3229dc3}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$prtcorrect@{\$prtcorrect}}
+\index{\$prtcorrect@{\$prtcorrect}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$prtcorrect}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$prtcorrect}}
+\label{classqtype__stack__question_a2489206abd13bb3322c09d4bf3229dc3}
+\hypertarget{classqtype__stack__question_a7963e6df86de0cd29476b6dd51d77582}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$prtcorrectformat@{\$prtcorrectformat}}
+\index{\$prtcorrectformat@{\$prtcorrectformat}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$prtcorrectformat}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$prtcorrectformat}}
+\label{classqtype__stack__question_a7963e6df86de0cd29476b6dd51d77582}
+\hypertarget{classqtype__stack__question_a0a422dfcc412d953ef6377abf3c6c55e}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$prtincorrect@{\$prtincorrect}}
+\index{\$prtincorrect@{\$prtincorrect}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$prtincorrect}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$prtincorrect}}
+\label{classqtype__stack__question_a0a422dfcc412d953ef6377abf3c6c55e}
+\hypertarget{classqtype__stack__question_aa22eb8f1dacaf4fa01cc3eb87787b5e6}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$prtincorrectformat@{\$prtincorrectformat}}
+\index{\$prtincorrectformat@{\$prtincorrectformat}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$prtincorrectformat}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$prtincorrectformat}}
+\label{classqtype__stack__question_aa22eb8f1dacaf4fa01cc3eb87787b5e6}
+\hypertarget{classqtype__stack__question_a403b775d50cf893d851d762b794866ba}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$prtpartiallycorrect@{\$prtpartiallycorrect}}
+\index{\$prtpartiallycorrect@{\$prtpartiallycorrect}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$prtpartiallycorrect}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$prtpartiallycorrect}}
+\label{classqtype__stack__question_a403b775d50cf893d851d762b794866ba}
+\hypertarget{classqtype__stack__question_af6c5c06c77b32e642c9f17baf7d8e9ea}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$prtpartiallycorrectformat@{\$prtpartiallycorrectformat}}
+\index{\$prtpartiallycorrectformat@{\$prtpartiallycorrectformat}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$prtpartiallycorrectformat}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$prtpartiallycorrectformat}}
+\label{classqtype__stack__question_af6c5c06c77b32e642c9f17baf7d8e9ea}
+\hypertarget{classqtype__stack__question_a6764b09997d82324cc78bbe8ccfc31d7}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$prtresults@{\$prtresults}}
+\index{\$prtresults@{\$prtresults}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$prtresults}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$prtresults = array()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_a6764b09997d82324cc78bbe8ccfc31d7}
+\hypertarget{classqtype__stack__question_a61c011482c257505caf2bfe5e92382e7}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$prts@{\$prts}}
+\index{\$prts@{\$prts}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$prts}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$prts}}
+\label{classqtype__stack__question_a61c011482c257505caf2bfe5e92382e7}
+\hypertarget{classqtype__stack__question_a8522e9220cc7c3cf500c21c4139c79cf}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$questionnote@{\$questionnote}}
+\index{\$questionnote@{\$questionnote}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$questionnote}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$questionnote}}
+\label{classqtype__stack__question_a8522e9220cc7c3cf500c21c4139c79cf}
+\hypertarget{classqtype__stack__question_aae8410727153edc60e14f18b5a49475d}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$questionnoteinstantiated@{\$questionnoteinstantiated}}
+\index{\$questionnoteinstantiated@{\$questionnoteinstantiated}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$questionnoteinstantiated}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$questionnoteinstantiated\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_aae8410727153edc60e14f18b5a49475d}
+\hypertarget{classqtype__stack__question_a4008515fcecf51157d1e3f1852d96906}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$questionvariables@{\$questionvariables}}
+\index{\$questionvariables@{\$questionvariables}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$questionvariables}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$questionvariables}}
+\label{classqtype__stack__question_a4008515fcecf51157d1e3f1852d96906}
+\hypertarget{classqtype__stack__question_a8ceb37a1b17061f427117571a9555e0e}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$seed@{\$seed}}
+\index{\$seed@{\$seed}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$seed}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$seed = null}}
+\label{classqtype__stack__question_a8ceb37a1b17061f427117571a9555e0e}
+\hypertarget{classqtype__stack__question_a23864b386c334ec9125362f83d391848}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$session@{\$session}}
+\index{\$session@{\$session}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$session}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$session\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__question_a23864b386c334ec9125362f83d391848}
+\hypertarget{classqtype__stack__question_a2d613a3f7143cd7d7e65719443461219}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$specificfeedback@{\$specificfeedback}}
+\index{\$specificfeedback@{\$specificfeedback}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$specificfeedback}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$specificfeedback}}
+\label{classqtype__stack__question_a2d613a3f7143cd7d7e65719443461219}
+\hypertarget{classqtype__stack__question_acaa6d5b0c8bc222cfc448c3246e85dae}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$specificfeedbackformat@{\$specificfeedbackformat}}
+\index{\$specificfeedbackformat@{\$specificfeedbackformat}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$specificfeedbackformat}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$specificfeedbackformat}}
+\label{classqtype__stack__question_acaa6d5b0c8bc222cfc448c3246e85dae}
+\hypertarget{classqtype__stack__question_a132af9dd30e31dbe58cc5b8b95dc91ef}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!\$variantsselectionseed@{\$variantsselectionseed}}
+\index{\$variantsselectionseed@{\$variantsselectionseed}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{\$variantsselectionseed}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-question::\$variantsselectionseed}}
+\label{classqtype__stack__question_a132af9dd30e31dbe58cc5b8b95dc91ef}
+\hypertarget{classqtype__stack__question_a790b80668709d381e495a84800db165a}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!MARK\_\-MODE\_\-FIRST@{MARK\_\-MODE\_\-FIRST}}
+\index{MARK\_\-MODE\_\-FIRST@{MARK\_\-MODE\_\-FIRST}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{MARK\_\-MODE\_\-FIRST}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf qtype\_\-stack\_\-question::MARK\_\-MODE\_\-FIRST} = 'firstanswer'}}
+\label{classqtype__stack__question_a790b80668709d381e495a84800db165a}
+\hypertarget{classqtype__stack__question_aa701dff20296ed3c2c63b82b28636f44}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!MARK\_\-MODE\_\-LAST@{MARK\_\-MODE\_\-LAST}}
+\index{MARK\_\-MODE\_\-LAST@{MARK\_\-MODE\_\-LAST}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{MARK\_\-MODE\_\-LAST}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf qtype\_\-stack\_\-question::MARK\_\-MODE\_\-LAST} = 'lastanswer'}}
+\label{classqtype__stack__question_aa701dff20296ed3c2c63b82b28636f44}
+\hypertarget{classqtype__stack__question_a588ba6d7b21ea84f8a71e69e9f02c625}{
+\index{qtype\_\-stack\_\-question@{qtype\_\-stack\_\-question}!MARK\_\-MODE\_\-PENALTY@{MARK\_\-MODE\_\-PENALTY}}
+\index{MARK\_\-MODE\_\-PENALTY@{MARK\_\-MODE\_\-PENALTY}!qtype_stack_question@{qtype\_\-stack\_\-question}}
+\subsubsection[{MARK\_\-MODE\_\-PENALTY}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf qtype\_\-stack\_\-question::MARK\_\-MODE\_\-PENALTY} = 'penalty'}}
+\label{classqtype__stack__question_a588ba6d7b21ea84f8a71e69e9f02c625}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{question_8php}{question.php}\end{DoxyCompactItemize}

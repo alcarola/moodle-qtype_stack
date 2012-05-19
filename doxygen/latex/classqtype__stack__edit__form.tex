@@ -1,0 +1,235 @@
+\hypertarget{classqtype__stack__edit__form}{
+\section{qtype\_\-stack\_\-edit\_\-form Class Reference}
+\label{classqtype__stack__edit__form}\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classqtype__stack__edit__form_a3a6f3817b03966c85e356ac8ca5cf282}{data\_\-preprocessing} (\$question)
+\item 
+\hyperlink{classqtype__stack__edit__form_aefcc5794da54566c77717d20fd8f8dce}{validation} (\$fromform, \$files)
+\item 
+\hyperlink{classqtype__stack__edit__form_a1c7f53813d4245cc61b5d41a526dd2ba}{qtype} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classqtype__stack__edit__form_a4727a6b48985a79263c0a88619682593}{DEFAULT\_\-QUESTION\_\-TEXT} = '$<$p$>$\mbox{[}\mbox{[}input:ans1\mbox{]}\mbox{]}$<$/p$>$$<$div$>$\mbox{[}\mbox{[}validation:ans1\mbox{]}\mbox{]}$<$/div$>$'
+\item 
+const \hyperlink{classqtype__stack__edit__form_a5858ef26f537b7e427e241402ee1f272}{DEFAULT\_\-SPECIFIC\_\-FEEDBACK} = '\mbox{[}\mbox{[}feedback:prt1\mbox{]}\mbox{]}'
+\item 
+const \hyperlink{classqtype__stack__edit__form_ad1239476262959653827524c32eb91ae}{INPUT\_\-ONLY} = false
+\item 
+const \hyperlink{classqtype__stack__edit__form_a248e954e20f1b632d6add869e196ec3d}{INPUT\_\-AND\_\-VALIDATION} = true
+\item 
+const \hyperlink{classqtype__stack__edit__form_a9eb08a24f442c2c37019fbc69f6120ee}{INPUT\_\-MISSING\_\-FOR\_\-VALIDATION} = -\/1
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classqtype__stack__edit__form_a24a46bd5f95473cd7a5d4b2d2d3108f9}{get\_\-current\_\-question\_\-text} ()
+\item 
+\hyperlink{classqtype__stack__edit__form_a0a59b92397f1c334a7708a3dc9a9ba8b}{get\_\-current\_\-specific\_\-feedback} ()
+\item 
+\hyperlink{classqtype__stack__edit__form_a6731bfc0bbe8186535b4ac97720d7973}{get\_\-input\_\-names\_\-from\_\-question\_\-text} ()
+\item 
+\hyperlink{classqtype__stack__edit__form_ac826cc7492feb8b22e7b952c4d72b022}{get\_\-prt\_\-names\_\-from\_\-question} ()
+\item 
+\hyperlink{classqtype__stack__edit__form_a60fd5f24aa7d7540570f39439326a0c9}{get\_\-inputs\_\-used\_\-by\_\-prt} (\$prtname)
+\item 
+\hyperlink{classqtype__stack__edit__form_a7b5500d4881577b2207e954c3fe5f249}{definition\_\-inner} (\$mform)
+\item 
+\hyperlink{classqtype__stack__edit__form_a7f88936bea5c6ddfb0407ca5d9964166}{definition\_\-input} (\$inputname, MoodleQuickForm \$mform)
+\item 
+\hyperlink{classqtype__stack__edit__form_a24da883b98d3ee453a7a1aac5713f464}{definition\_\-prt} (\$prtname, MoodleQuickForm \$mform)
+\item 
+\hyperlink{classqtype__stack__edit__form_af17c9829d24c27226c62a059c209227a}{data\_\-preprocessing\_\-options} (\$question)
+\item 
+\hyperlink{classqtype__stack__edit__form_ae4163ca2550cf1be3aaa8455cfa53290}{data\_\-preprocessing\_\-inputs} (\$question)
+\item 
+\hyperlink{classqtype__stack__edit__form_af86fe81af07fff490d9c1f1d96dfc56c}{data\_\-preprocessing\_\-prts} (\$question)
+\item 
+\hyperlink{classqtype__stack__edit__form_a63b02f4a1cb4b1e3addbc437fb705161}{data\_\-preprocessing\_\-node} (\$question, \$prtname, \$node)
+\item 
+\hyperlink{classqtype__stack__edit__form_a6d3ed4f4c221ea06eb1375f07e81c583}{prepare\_\-text\_\-field} (\$field, \$text, \$format, \$itemid, \$filearea= '')
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classqtype__stack__edit__form_ac6ac60e3635c359ec4825035fe2f6e43}{\$questiontext} = null
+\item 
+\hyperlink{classqtype__stack__edit__form_af38852011faeae9174aa27df145bbca8}{\$specificfeedback} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stack question editing form definition.
+
+2012 The Open University.  \href{http://www.gnu.org/copyleft/gpl.html}{\tt http://www.gnu.org/copyleft/gpl.html} GNU GPL v3 or later 
+
+\subsection{Member Function Documentation}
+\hypertarget{classqtype__stack__edit__form_a3a6f3817b03966c85e356ac8ca5cf282}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!data\_\-preprocessing@{data\_\-preprocessing}}
+\index{data\_\-preprocessing@{data\_\-preprocessing}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{data\_\-preprocessing}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::data\_\-preprocessing (\$ {\em question})}}
+\label{classqtype__stack__edit__form_a3a6f3817b03966c85e356ac8ca5cf282}
+\hypertarget{classqtype__stack__edit__form_ae4163ca2550cf1be3aaa8455cfa53290}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!data\_\-preprocessing\_\-inputs@{data\_\-preprocessing\_\-inputs}}
+\index{data\_\-preprocessing\_\-inputs@{data\_\-preprocessing\_\-inputs}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{data\_\-preprocessing\_\-inputs}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::data\_\-preprocessing\_\-inputs (\$ {\em question})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_ae4163ca2550cf1be3aaa8455cfa53290}
+Do the bit of \hyperlink{classqtype__stack__edit__form_a3a6f3817b03966c85e356ac8ca5cf282}{data\_\-preprocessing()} for the data in the qtype\_\-stack\_\-inputs table. 
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\$question the raw data. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object the updated \$question updated object closer to being ready to send to the form. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__edit__form_a63b02f4a1cb4b1e3addbc437fb705161}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!data\_\-preprocessing\_\-node@{data\_\-preprocessing\_\-node}}
+\index{data\_\-preprocessing\_\-node@{data\_\-preprocessing\_\-node}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{data\_\-preprocessing\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::data\_\-preprocessing\_\-node (\$ {\em question}, \/  \$ {\em prtname}, \/  \$ {\em node})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_a63b02f4a1cb4b1e3addbc437fb705161}
+Do the bit of \hyperlink{classqtype__stack__edit__form_a3a6f3817b03966c85e356ac8ca5cf282}{data\_\-preprocessing()} for one PRT node. 
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\$question the raw question data. \item[{\em string}]\$prtname the name of this PRT. \item[{\em object}]\$node the raw data about this node. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object the updated \$question updated object closer to being ready to send to the form. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__edit__form_af17c9829d24c27226c62a059c209227a}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!data\_\-preprocessing\_\-options@{data\_\-preprocessing\_\-options}}
+\index{data\_\-preprocessing\_\-options@{data\_\-preprocessing\_\-options}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{data\_\-preprocessing\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::data\_\-preprocessing\_\-options (\$ {\em question})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_af17c9829d24c27226c62a059c209227a}
+Do the bit of \hyperlink{classqtype__stack__edit__form_a3a6f3817b03966c85e356ac8ca5cf282}{data\_\-preprocessing()} for the data in the \hyperlink{classqtype__stack}{qtype\_\-stack} table. 
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\$question the raw data. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object the updated \$question updated object closer to being ready to send to the form. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__edit__form_af86fe81af07fff490d9c1f1d96dfc56c}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!data\_\-preprocessing\_\-prts@{data\_\-preprocessing\_\-prts}}
+\index{data\_\-preprocessing\_\-prts@{data\_\-preprocessing\_\-prts}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{data\_\-preprocessing\_\-prts}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::data\_\-preprocessing\_\-prts (\$ {\em question})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_af86fe81af07fff490d9c1f1d96dfc56c}
+Do the bit of \hyperlink{classqtype__stack__edit__form_a3a6f3817b03966c85e356ac8ca5cf282}{data\_\-preprocessing()} for the data in the qtype\_\-stack\_\-prts table. 
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\$question the raw data. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object the updated \$question updated object closer to being ready to send to the form. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__edit__form_a7b5500d4881577b2207e954c3fe5f249}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!definition\_\-inner@{definition\_\-inner}}
+\index{definition\_\-inner@{definition\_\-inner}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{definition\_\-inner}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::definition\_\-inner (\$ {\em mform})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_a7b5500d4881577b2207e954c3fe5f249}
+\hypertarget{classqtype__stack__edit__form_a7f88936bea5c6ddfb0407ca5d9964166}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!definition\_\-input@{definition\_\-input}}
+\index{definition\_\-input@{definition\_\-input}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{definition\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::definition\_\-input (\$ {\em inputname}, \/  MoodleQuickForm \$ {\em mform})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_a7f88936bea5c6ddfb0407ca5d9964166}
+\hypertarget{classqtype__stack__edit__form_a24da883b98d3ee453a7a1aac5713f464}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!definition\_\-prt@{definition\_\-prt}}
+\index{definition\_\-prt@{definition\_\-prt}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{definition\_\-prt}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::definition\_\-prt (\$ {\em prtname}, \/  MoodleQuickForm \$ {\em mform})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_a24da883b98d3ee453a7a1aac5713f464}
+\hypertarget{classqtype__stack__edit__form_a24a46bd5f95473cd7a5d4b2d2d3108f9}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!get\_\-current\_\-question\_\-text@{get\_\-current\_\-question\_\-text}}
+\index{get\_\-current\_\-question\_\-text@{get\_\-current\_\-question\_\-text}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{get\_\-current\_\-question\_\-text}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::get\_\-current\_\-question\_\-text ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_a24a46bd5f95473cd7a5d4b2d2d3108f9}
+\begin{DoxyReturn}{Returns}
+string the current value of the question text, given the state the form is in. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__edit__form_a0a59b92397f1c334a7708a3dc9a9ba8b}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!get\_\-current\_\-specific\_\-feedback@{get\_\-current\_\-specific\_\-feedback}}
+\index{get\_\-current\_\-specific\_\-feedback@{get\_\-current\_\-specific\_\-feedback}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{get\_\-current\_\-specific\_\-feedback}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::get\_\-current\_\-specific\_\-feedback ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_a0a59b92397f1c334a7708a3dc9a9ba8b}
+\begin{DoxyReturn}{Returns}
+string the current value of the specific feedback, given the state the form is in. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__edit__form_a6731bfc0bbe8186535b4ac97720d7973}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!get\_\-input\_\-names\_\-from\_\-question\_\-text@{get\_\-input\_\-names\_\-from\_\-question\_\-text}}
+\index{get\_\-input\_\-names\_\-from\_\-question\_\-text@{get\_\-input\_\-names\_\-from\_\-question\_\-text}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{get\_\-input\_\-names\_\-from\_\-question\_\-text}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::get\_\-input\_\-names\_\-from\_\-question\_\-text ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_a6731bfc0bbe8186535b4ac97720d7973}
+\hypertarget{classqtype__stack__edit__form_a60fd5f24aa7d7540570f39439326a0c9}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!get\_\-inputs\_\-used\_\-by\_\-prt@{get\_\-inputs\_\-used\_\-by\_\-prt}}
+\index{get\_\-inputs\_\-used\_\-by\_\-prt@{get\_\-inputs\_\-used\_\-by\_\-prt}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{get\_\-inputs\_\-used\_\-by\_\-prt}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::get\_\-inputs\_\-used\_\-by\_\-prt (\$ {\em prtname})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_a60fd5f24aa7d7540570f39439326a0c9}
+Helper method to get the list of inputs required by a PRT, given the current state of the form. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$prtname the name of a PRT. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array list of inputs used by this PRT. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__edit__form_ac826cc7492feb8b22e7b952c4d72b022}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!get\_\-prt\_\-names\_\-from\_\-question@{get\_\-prt\_\-names\_\-from\_\-question}}
+\index{get\_\-prt\_\-names\_\-from\_\-question@{get\_\-prt\_\-names\_\-from\_\-question}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{get\_\-prt\_\-names\_\-from\_\-question}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::get\_\-prt\_\-names\_\-from\_\-question ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_ac826cc7492feb8b22e7b952c4d72b022}
+\hypertarget{classqtype__stack__edit__form_a6d3ed4f4c221ea06eb1375f07e81c583}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!prepare\_\-text\_\-field@{prepare\_\-text\_\-field}}
+\index{prepare\_\-text\_\-field@{prepare\_\-text\_\-field}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{prepare\_\-text\_\-field}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::prepare\_\-text\_\-field (\$ {\em field}, \/  \$ {\em text}, \/  \$ {\em format}, \/  \$ {\em itemid}, \/  \$ {\em filearea} = {\ttfamily ''})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_a6d3ed4f4c221ea06eb1375f07e81c583}
+Do the necessary data\_\-preprocessing work for one text field. 
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$field the field / file-\/area name. (These are assumed to be the same.) \item[{\em string}]\$text the raw text contents of this field. \item[{\em int}]\$format the text format (one of the FORMAT\_\-... constants.) \item[{\em int}]\$itemid file area itemid. \item[{\em string}]\$filearea the file area name. Defaults to \$field. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array in the format needed by the form. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__edit__form_a1c7f53813d4245cc61b5d41a526dd2ba}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!qtype@{qtype}}
+\index{qtype@{qtype}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{qtype}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::qtype ()}}
+\label{classqtype__stack__edit__form_a1c7f53813d4245cc61b5d41a526dd2ba}
+\hypertarget{classqtype__stack__edit__form_aefcc5794da54566c77717d20fd8f8dce}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!validation@{validation}}
+\index{validation@{validation}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{validation}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::validation (\$ {\em fromform}, \/  \$ {\em files})}}
+\label{classqtype__stack__edit__form_aefcc5794da54566c77717d20fd8f8dce}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classqtype__stack__edit__form_ac6ac60e3635c359ec4825035fe2f6e43}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!\$questiontext@{\$questiontext}}
+\index{\$questiontext@{\$questiontext}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{\$questiontext}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::\$questiontext = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_ac6ac60e3635c359ec4825035fe2f6e43}
+\hypertarget{classqtype__stack__edit__form_af38852011faeae9174aa27df145bbca8}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!\$specificfeedback@{\$specificfeedback}}
+\index{\$specificfeedback@{\$specificfeedback}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{\$specificfeedback}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-edit\_\-form::\$specificfeedback = null\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__edit__form_af38852011faeae9174aa27df145bbca8}
+\hypertarget{classqtype__stack__edit__form_a4727a6b48985a79263c0a88619682593}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!DEFAULT\_\-QUESTION\_\-TEXT@{DEFAULT\_\-QUESTION\_\-TEXT}}
+\index{DEFAULT\_\-QUESTION\_\-TEXT@{DEFAULT\_\-QUESTION\_\-TEXT}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{DEFAULT\_\-QUESTION\_\-TEXT}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf qtype\_\-stack\_\-edit\_\-form::DEFAULT\_\-QUESTION\_\-TEXT} = '$<$p$>$\mbox{[}\mbox{[}input:ans1\mbox{]}\mbox{]}$<$/p$>$$<$div$>$\mbox{[}\mbox{[}validation:ans1\mbox{]}\mbox{]}$<$/div$>$'}}
+\label{classqtype__stack__edit__form_a4727a6b48985a79263c0a88619682593}
+\hypertarget{classqtype__stack__edit__form_a5858ef26f537b7e427e241402ee1f272}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!DEFAULT\_\-SPECIFIC\_\-FEEDBACK@{DEFAULT\_\-SPECIFIC\_\-FEEDBACK}}
+\index{DEFAULT\_\-SPECIFIC\_\-FEEDBACK@{DEFAULT\_\-SPECIFIC\_\-FEEDBACK}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{DEFAULT\_\-SPECIFIC\_\-FEEDBACK}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf qtype\_\-stack\_\-edit\_\-form::DEFAULT\_\-SPECIFIC\_\-FEEDBACK} = '\mbox{[}\mbox{[}feedback:prt1\mbox{]}\mbox{]}'}}
+\label{classqtype__stack__edit__form_a5858ef26f537b7e427e241402ee1f272}
+\hypertarget{classqtype__stack__edit__form_a248e954e20f1b632d6add869e196ec3d}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!INPUT\_\-AND\_\-VALIDATION@{INPUT\_\-AND\_\-VALIDATION}}
+\index{INPUT\_\-AND\_\-VALIDATION@{INPUT\_\-AND\_\-VALIDATION}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{INPUT\_\-AND\_\-VALIDATION}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf qtype\_\-stack\_\-edit\_\-form::INPUT\_\-AND\_\-VALIDATION} = true}}
+\label{classqtype__stack__edit__form_a248e954e20f1b632d6add869e196ec3d}
+\hypertarget{classqtype__stack__edit__form_a9eb08a24f442c2c37019fbc69f6120ee}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!INPUT\_\-MISSING\_\-FOR\_\-VALIDATION@{INPUT\_\-MISSING\_\-FOR\_\-VALIDATION}}
+\index{INPUT\_\-MISSING\_\-FOR\_\-VALIDATION@{INPUT\_\-MISSING\_\-FOR\_\-VALIDATION}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{INPUT\_\-MISSING\_\-FOR\_\-VALIDATION}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf qtype\_\-stack\_\-edit\_\-form::INPUT\_\-MISSING\_\-FOR\_\-VALIDATION} = -\/1}}
+\label{classqtype__stack__edit__form_a9eb08a24f442c2c37019fbc69f6120ee}
+\hypertarget{classqtype__stack__edit__form_ad1239476262959653827524c32eb91ae}{
+\index{qtype\_\-stack\_\-edit\_\-form@{qtype\_\-stack\_\-edit\_\-form}!INPUT\_\-ONLY@{INPUT\_\-ONLY}}
+\index{INPUT\_\-ONLY@{INPUT\_\-ONLY}!qtype_stack_edit_form@{qtype\_\-stack\_\-edit\_\-form}}
+\subsubsection[{INPUT\_\-ONLY}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf qtype\_\-stack\_\-edit\_\-form::INPUT\_\-ONLY} = false}}
+\label{classqtype__stack__edit__form_ad1239476262959653827524c32eb91ae}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{edit__stack__form_8php}{edit\_\-stack\_\-form.php}\end{DoxyCompactItemize}

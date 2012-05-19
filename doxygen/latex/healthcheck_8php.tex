@@ -1,0 +1,77 @@
+\hypertarget{healthcheck_8php}{
+\section{healthcheck.php File Reference}
+\label{healthcheck_8php}\index{healthcheck.php@{healthcheck.php}}
+}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{healthcheck_8php_ae05dedb802ada0155efdece2044fed64}{\$context} = context\_\-system::instance()
+\item 
+\hyperlink{healthcheck_8php_ada57e7bb7c152edad18fe2f166188691}{\$title} = stack\_\-string('healthcheck')
+\item 
+\hyperlink{caschat_8php_a2018ad56dfaea89ba7f32f4f912be98f}{if}(data\_\-submitted()\&\&optional\_\-param('clearcache', false, PARAM\_\-BOOL)) \hyperlink{healthcheck_8php_a0bf3c4d1490f0f3f572155c665b3a132}{\$sampletex} = '$\backslash$sum\_\-\{n=1\}$^\wedge$$\backslash$infty $\backslash$frac\{1\}\{n$^\wedge$2\} = $\backslash$frac\{$\backslash$pi$^\wedge$2\}\{6\}.'
+\item 
+\hyperlink{healthcheck_8php_ad8590b7afabc52a690a1e8e5859f3155}{\$samplecastext} = 'The derivative of @ x$^\wedge$4/(1+x$^\wedge$4) @ is \$\$ $\backslash$frac\{d\}\{dx\} $\backslash$frac\{x$^\wedge$4\}\{1+x$^\wedge$4\} = @ diff(x$^\wedge$4/(1+x$^\wedge$4),x) @. \$\$'
+\item 
+\hyperlink{healthcheck_8php_a7f52428d8b09f3246672a650e29dbe13}{\$sampleplots}
+\item 
+\hyperlink{healthcheck_8php_a49c7011be9c979d9174c52a8b83e5d8e}{\$config} = get\_\-config('\hyperlink{classqtype__stack}{qtype\_\-stack}')
+\item 
+\hyperlink{healthcheck_8php_a8c8e2564bf536b8e2c30911f70fb7a3e}{\$mathjaxcode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{healthcheck_8php_a49c7011be9c979d9174c52a8b83e5d8e}{
+\index{healthcheck.php@{healthcheck.php}!\$config@{\$config}}
+\index{\$config@{\$config}!healthcheck.php@{healthcheck.php}}
+\subsubsection[{\$config}]{\setlength{\rightskip}{0pt plus 5cm}\$config = get\_\-config('{\bf qtype\_\-stack}')}}
+\label{healthcheck_8php_a49c7011be9c979d9174c52a8b83e5d8e}
+\hypertarget{healthcheck_8php_ae05dedb802ada0155efdece2044fed64}{
+\index{healthcheck.php@{healthcheck.php}!\$context@{\$context}}
+\index{\$context@{\$context}!healthcheck.php@{healthcheck.php}}
+\subsubsection[{\$context}]{\setlength{\rightskip}{0pt plus 5cm}\$context = context\_\-system::instance()}}
+\label{healthcheck_8php_ae05dedb802ada0155efdece2044fed64}
+\hypertarget{healthcheck_8php_a8c8e2564bf536b8e2c30911f70fb7a3e}{
+\index{healthcheck.php@{healthcheck.php}!\$mathjaxcode@{\$mathjaxcode}}
+\index{\$mathjaxcode@{\$mathjaxcode}!healthcheck.php@{healthcheck.php}}
+\subsubsection[{\$mathjaxcode}]{\setlength{\rightskip}{0pt plus 5cm}\$mathjaxcode}}
+\label{healthcheck_8php_a8c8e2564bf536b8e2c30911f70fb7a3e}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ <<<END
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    MMLorHTML: { prefer: "HTML" },
+    tex2jax: {
+        displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
+        inlineMath:  [['$',  '$' ], ['\\\\(', '\\\\)']]
+    }
+})
+\end{DoxyCode}
+\hypertarget{healthcheck_8php_ad8590b7afabc52a690a1e8e5859f3155}{
+\index{healthcheck.php@{healthcheck.php}!\$samplecastext@{\$samplecastext}}
+\index{\$samplecastext@{\$samplecastext}!healthcheck.php@{healthcheck.php}}
+\subsubsection[{\$samplecastext}]{\setlength{\rightskip}{0pt plus 5cm}\$samplecastext = 'The derivative of @ x$^\wedge$4/(1+x$^\wedge$4) @ is \$\$ $\backslash$frac\{d\}\{dx\} $\backslash$frac\{x$^\wedge$4\}\{1+x$^\wedge$4\} = @ diff(x$^\wedge$4/(1+x$^\wedge$4),x) @. \$\$'}}
+\label{healthcheck_8php_ad8590b7afabc52a690a1e8e5859f3155}
+\hypertarget{healthcheck_8php_a7f52428d8b09f3246672a650e29dbe13}{
+\index{healthcheck.php@{healthcheck.php}!\$sampleplots@{\$sampleplots}}
+\index{\$sampleplots@{\$sampleplots}!healthcheck.php@{healthcheck.php}}
+\subsubsection[{\$sampleplots}]{\setlength{\rightskip}{0pt plus 5cm}\$sampleplots}}
+\label{healthcheck_8php_a7f52428d8b09f3246672a650e29dbe13}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ 'Two example plots below.  @plot([x^4/(1+x^4),diff(x^4/(1+x^4),x)],[x,-3,3])@  '
+       .
+        '@plot([sin(x),x,x^2,x^3],[x,-3,3],[y,-3,3])@'
+\end{DoxyCode}
+\hypertarget{healthcheck_8php_a0bf3c4d1490f0f3f572155c665b3a132}{
+\index{healthcheck.php@{healthcheck.php}!\$sampletex@{\$sampletex}}
+\index{\$sampletex@{\$sampletex}!healthcheck.php@{healthcheck.php}}
+\subsubsection[{\$sampletex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (data\_\-submitted()\&\&optional\_\-param('clearcache', false, PARAM\_\-BOOL)) \$sampletex = '$\backslash$sum\_\-\{n=1\}$^\wedge$$\backslash$infty $\backslash$frac\{1\}\{n$^\wedge$2\} = $\backslash$frac\{$\backslash$pi$^\wedge$2\}\{6\}.'}}
+\label{healthcheck_8php_a0bf3c4d1490f0f3f572155c665b3a132}
+\hypertarget{healthcheck_8php_ada57e7bb7c152edad18fe2f166188691}{
+\index{healthcheck.php@{healthcheck.php}!\$title@{\$title}}
+\index{\$title@{\$title}!healthcheck.php@{healthcheck.php}}
+\subsubsection[{\$title}]{\setlength{\rightskip}{0pt plus 5cm}\$title = stack\_\-string('healthcheck')}}
+\label{healthcheck_8php_ada57e7bb7c152edad18fe2f166188691}

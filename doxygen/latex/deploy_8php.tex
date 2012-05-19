@@ -1,0 +1,61 @@
+\hypertarget{deploy_8php}{
+\section{deploy.php File Reference}
+\label{deploy_8php}\index{deploy.php@{deploy.php}}
+}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{deploy_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}{\$questionid} = required\_\-param('questionid', PARAM\_\-INT)
+\item 
+\hyperlink{deploy_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}{\$courseid} = required\_\-param('courseid', PARAM\_\-INT)
+\item 
+\hyperlink{deploy_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}{\$questiondata} = \$DB-\/$>$get\_\-record('question', array('id' =$>$ \$questionid), '$\ast$', MUST\_\-EXIST)
+\item 
+\hyperlink{deploy_8php_acf0d1ba8b3999333306bf1a4fd363e93}{\$question} = question\_\-bank::load\_\-question(\$questionid)
+\item 
+\hyperlink{deploy_8php_ae05dedb802ada0155efdece2044fed64}{\$context} = \$question-\/$>$get\_\-context()
+\item 
+\hyperlink{deploy_8php_a779ebfa548d45444c88971ad5a5657e8}{\$deploy} = optional\_\-param('deploy', null, PARAM\_\-INT)
+\item 
+\hyperlink{caschat_8php_a2018ad56dfaea89ba7f32f4f912be98f}{if}(!is\_\-null(\$deploy)) \hyperlink{deploy_8php_aef06c52c3d0d3d9f585fcffd074b1d14}{\$undeploy} = optional\_\-param('undeploy', null, PARAM\_\-INT)
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{deploy_8php_ae05dedb802ada0155efdece2044fed64}{
+\index{deploy.php@{deploy.php}!\$context@{\$context}}
+\index{\$context@{\$context}!deploy.php@{deploy.php}}
+\subsubsection[{\$context}]{\setlength{\rightskip}{0pt plus 5cm}\$context = \$question-\/$>$get\_\-context()}}
+\label{deploy_8php_ae05dedb802ada0155efdece2044fed64}
+\hypertarget{deploy_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}{
+\index{deploy.php@{deploy.php}!\$courseid@{\$courseid}}
+\index{\$courseid@{\$courseid}!deploy.php@{deploy.php}}
+\subsubsection[{\$courseid}]{\setlength{\rightskip}{0pt plus 5cm}\$courseid = required\_\-param('courseid', PARAM\_\-INT)}}
+\label{deploy_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}
+\hypertarget{deploy_8php_a779ebfa548d45444c88971ad5a5657e8}{
+\index{deploy.php@{deploy.php}!\$deploy@{\$deploy}}
+\index{\$deploy@{\$deploy}!deploy.php@{deploy.php}}
+\subsubsection[{\$deploy}]{\setlength{\rightskip}{0pt plus 5cm}\$deploy = optional\_\-param('deploy', null, PARAM\_\-INT)}}
+\label{deploy_8php_a779ebfa548d45444c88971ad5a5657e8}
+\hypertarget{deploy_8php_acf0d1ba8b3999333306bf1a4fd363e93}{
+\index{deploy.php@{deploy.php}!\$question@{\$question}}
+\index{\$question@{\$question}!deploy.php@{deploy.php}}
+\subsubsection[{\$question}]{\setlength{\rightskip}{0pt plus 5cm}\$question = question\_\-bank::load\_\-question(\$questionid)}}
+\label{deploy_8php_acf0d1ba8b3999333306bf1a4fd363e93}
+\hypertarget{deploy_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}{
+\index{deploy.php@{deploy.php}!\$questiondata@{\$questiondata}}
+\index{\$questiondata@{\$questiondata}!deploy.php@{deploy.php}}
+\subsubsection[{\$questiondata}]{\setlength{\rightskip}{0pt plus 5cm}\$questiondata = \$DB-\/$>$get\_\-record('question', array('id' =$>$ \$questionid), '$\ast$', MUST\_\-EXIST)}}
+\label{deploy_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}
+\hypertarget{deploy_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}{
+\index{deploy.php@{deploy.php}!\$questionid@{\$questionid}}
+\index{\$questionid@{\$questionid}!deploy.php@{deploy.php}}
+\subsubsection[{\$questionid}]{\setlength{\rightskip}{0pt plus 5cm}\$questionid = required\_\-param('questionid', PARAM\_\-INT)}}
+\label{deploy_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}
+This script handles the various deploy/undeploy actions from \hyperlink{questiontestrun_8php}{questiontestrun.php}.
+
+2012 the Open University  \href{http://www.gnu.org/copyleft/gpl.html}{\tt http://www.gnu.org/copyleft/gpl.html} GNU GPL v3 or later \hypertarget{deploy_8php_aef06c52c3d0d3d9f585fcffd074b1d14}{
+\index{deploy.php@{deploy.php}!\$undeploy@{\$undeploy}}
+\index{\$undeploy@{\$undeploy}!deploy.php@{deploy.php}}
+\subsubsection[{\$undeploy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (!is\_\-null(\$deploy)) \$undeploy = optional\_\-param('undeploy', null, PARAM\_\-INT)}}
+\label{deploy_8php_aef06c52c3d0d3d9f585fcffd074b1d14}

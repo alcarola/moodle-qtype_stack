@@ -1,0 +1,94 @@
+\hypertarget{questiontestdelete_8php}{
+\section{questiontestdelete.php File Reference}
+\label{questiontestdelete_8php}\index{questiontestdelete.php@{questiontestdelete.php}}
+}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{questiontestdelete_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}{\$questionid} = required\_\-param('questionid', PARAM\_\-INT)
+\item 
+\hyperlink{questiontestdelete_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}{\$courseid} = required\_\-param('courseid', PARAM\_\-INT)
+\item 
+\hyperlink{questiontestdelete_8php_a4aea6700edf05cf13c65dc0e758c9ad3}{\$seed} = optional\_\-param('seed', null, PARAM\_\-INT)
+\item 
+\hyperlink{questiontestdelete_8php_ae640ef9490b2598569406e3654f480b6}{\$testcase} = required\_\-param('testcase', PARAM\_\-INT)
+\item 
+\hyperlink{questiontestdelete_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}{\$questiondata} = \$DB-\/$>$get\_\-record('question', array('id' =$>$ \$questionid), '$\ast$', MUST\_\-EXIST)
+\item 
+\hyperlink{questiontestdelete_8php_acf0d1ba8b3999333306bf1a4fd363e93}{\$question} = question\_\-bank::load\_\-question(\$questionid)
+\item 
+\hyperlink{questiontestdelete_8php_ae05dedb802ada0155efdece2044fed64}{\$context} = \$question-\/$>$get\_\-context()
+\item 
+\hyperlink{questiontestdelete_8php_a1aa950c4029aca228dd33a4b27109e00}{\$urlparams} = array('courseid' =$>$ \$courseid, 'questionid' =$>$ \$question-\/$>$id)
+\item 
+\hyperlink{caschat_8php_a2018ad56dfaea89ba7f32f4f912be98f}{if}(!is\_\-null(\$seed)) \hyperlink{questiontestdelete_8php_a28d8c96a7ddca2daae7a03f1567d1c3a}{\$backurl} = new moodle\_\-url('/question/type/stack/questiontestrun.php', \$urlparams)
+\item 
+\hyperlink{questiontestdelete_8php_a0ebc1f55faa70ed8b77a39b4d6f88d03}{\$urlparams} \mbox{[}'testcase'\mbox{]} = \$testcase
+\item 
+\hyperlink{questiontestdelete_8php_ada57e7bb7c152edad18fe2f166188691}{\$title}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{questiontestdelete_8php_a28d8c96a7ddca2daae7a03f1567d1c3a}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$backurl@{\$backurl}}
+\index{\$backurl@{\$backurl}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$backurl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (!is\_\-null(\$seed)) \$backurl = new moodle\_\-url('/question/type/stack/questiontestrun.php', \$urlparams)}}
+\label{questiontestdelete_8php_a28d8c96a7ddca2daae7a03f1567d1c3a}
+\hypertarget{questiontestdelete_8php_ae05dedb802ada0155efdece2044fed64}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$context@{\$context}}
+\index{\$context@{\$context}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$context}]{\setlength{\rightskip}{0pt plus 5cm}\$context = \$question-\/$>$get\_\-context()}}
+\label{questiontestdelete_8php_ae05dedb802ada0155efdece2044fed64}
+\hypertarget{questiontestdelete_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$courseid@{\$courseid}}
+\index{\$courseid@{\$courseid}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$courseid}]{\setlength{\rightskip}{0pt plus 5cm}\$courseid = required\_\-param('courseid', PARAM\_\-INT)}}
+\label{questiontestdelete_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}
+\hypertarget{questiontestdelete_8php_acf0d1ba8b3999333306bf1a4fd363e93}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$question@{\$question}}
+\index{\$question@{\$question}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$question}]{\setlength{\rightskip}{0pt plus 5cm}\$question = question\_\-bank::load\_\-question(\$questionid)}}
+\label{questiontestdelete_8php_acf0d1ba8b3999333306bf1a4fd363e93}
+\hypertarget{questiontestdelete_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$questiondata@{\$questiondata}}
+\index{\$questiondata@{\$questiondata}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$questiondata}]{\setlength{\rightskip}{0pt plus 5cm}\$questiondata = \$DB-\/$>$get\_\-record('question', array('id' =$>$ \$questionid), '$\ast$', MUST\_\-EXIST)}}
+\label{questiontestdelete_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}
+\hypertarget{questiontestdelete_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$questionid@{\$questionid}}
+\index{\$questionid@{\$questionid}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$questionid}]{\setlength{\rightskip}{0pt plus 5cm}\$questionid = required\_\-param('questionid', PARAM\_\-INT)}}
+\label{questiontestdelete_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}
+This script lets the user delete a question test for a question, after confirmation.
+
+2012 the Open University  \href{http://www.gnu.org/copyleft/gpl.html}{\tt http://www.gnu.org/copyleft/gpl.html} GNU GPL v3 or later \hypertarget{questiontestdelete_8php_a4aea6700edf05cf13c65dc0e758c9ad3}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$seed@{\$seed}}
+\index{\$seed@{\$seed}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$seed}]{\setlength{\rightskip}{0pt plus 5cm}\$seed = optional\_\-param('seed', null, PARAM\_\-INT)}}
+\label{questiontestdelete_8php_a4aea6700edf05cf13c65dc0e758c9ad3}
+\hypertarget{questiontestdelete_8php_ae640ef9490b2598569406e3654f480b6}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$testcase@{\$testcase}}
+\index{\$testcase@{\$testcase}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$testcase}]{\setlength{\rightskip}{0pt plus 5cm}\$testcase = required\_\-param('testcase', PARAM\_\-INT)}}
+\label{questiontestdelete_8php_ae640ef9490b2598569406e3654f480b6}
+\hypertarget{questiontestdelete_8php_ada57e7bb7c152edad18fe2f166188691}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$title@{\$title}}
+\index{\$title@{\$title}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$title}]{\setlength{\rightskip}{0pt plus 5cm}\$title}}
+\label{questiontestdelete_8php_ada57e7bb7c152edad18fe2f166188691}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ get_string('deletetestcase', 'qtype_stack',
+        array('no' => $testcase, 'question' => format_string($question->name)))
+\end{DoxyCode}
+\hypertarget{questiontestdelete_8php_a0ebc1f55faa70ed8b77a39b4d6f88d03}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$urlparams@{\$urlparams}}
+\index{\$urlparams@{\$urlparams}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$urlparams}]{\setlength{\rightskip}{0pt plus 5cm}\$urlparams\mbox{[}'testcase'\mbox{]} = \$testcase}}
+\label{questiontestdelete_8php_a0ebc1f55faa70ed8b77a39b4d6f88d03}
+\hypertarget{questiontestdelete_8php_a1aa950c4029aca228dd33a4b27109e00}{
+\index{questiontestdelete.php@{questiontestdelete.php}!\$urlparams@{\$urlparams}}
+\index{\$urlparams@{\$urlparams}!questiontestdelete.php@{questiontestdelete.php}}
+\subsubsection[{\$urlparams}]{\setlength{\rightskip}{0pt plus 5cm}\$urlparams = array('courseid' =$>$ \$courseid, 'questionid' =$>$ \$question-\/$>$id)}}
+\label{questiontestdelete_8php_a1aa950c4029aca228dd33a4b27109e00}

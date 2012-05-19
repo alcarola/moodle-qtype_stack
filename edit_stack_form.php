@@ -33,6 +33,12 @@ require_once($CFG->dirroot . '/question/type/stack/stack/answertest/controller.c
 require_once($CFG->dirroot . '/question/type/stack/stack/cas/keyval.class.php');
 require_once($CFG->dirroot . '/question/type/stack/stack/cas/castext.class.php');
 
+// MiK
+require_once('FirePHPCore/FirePHP.class.php');
+ob_start();
+// MiK
+
+
 /**
  * Stack question editing form definition.
  *
@@ -234,6 +240,10 @@ class qtype_stack_edit_form extends question_edit_form {
         $updatesavebuttons[] = $mform->createElement('submit', 'saveandcontinue', get_string('saveandcontinue', 'qtype_stack'));
         $mform->registerNoSubmitButton('verify');
         $mform->addGroup($updatesavebuttons, 'updsavebuttons', '', array(' '), false);
+
+$firephp = FirePHP::getInstance(true);
+$firephp->log($mform, '$mform');
+$firephp->log($this, '$this');
 
 // MiK
 

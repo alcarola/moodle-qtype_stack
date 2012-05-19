@@ -1,0 +1,124 @@
+\hypertarget{questiontestedit_8php}{
+\section{questiontestedit.php File Reference}
+\label{questiontestedit_8php}\index{questiontestedit.php@{questiontestedit.php}}
+}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{questiontestedit_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}{\$questionid} = required\_\-param('questionid', PARAM\_\-INT)
+\item 
+\hyperlink{questiontestedit_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}{\$courseid} = required\_\-param('courseid', PARAM\_\-INT)
+\item 
+\hyperlink{questiontestedit_8php_a4aea6700edf05cf13c65dc0e758c9ad3}{\$seed} = optional\_\-param('seed', null, PARAM\_\-INT)
+\item 
+\hyperlink{questiontestedit_8php_ae640ef9490b2598569406e3654f480b6}{\$testcase} = optional\_\-param('testcase', null, PARAM\_\-INT)
+\item 
+\hyperlink{questiontestedit_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}{\$questiondata} = \$DB-\/$>$get\_\-record('question', array('id' =$>$ \$questionid), '$\ast$', MUST\_\-EXIST)
+\item 
+\hyperlink{questiontestedit_8php_acf0d1ba8b3999333306bf1a4fd363e93}{\$question} = question\_\-bank::load\_\-question(\$questionid)
+\item 
+\hyperlink{questiontestedit_8php_ae05dedb802ada0155efdece2044fed64}{\$context} = \$question-\/$>$get\_\-context()
+\item 
+\hyperlink{questiontestedit_8php_a1aa950c4029aca228dd33a4b27109e00}{\$urlparams} = array('courseid' =$>$ \$courseid, 'questionid' =$>$ \$question-\/$>$id)
+\item 
+\hyperlink{caschat_8php_a2018ad56dfaea89ba7f32f4f912be98f}{if}(!is\_\-null(\$seed)) \hyperlink{questiontestedit_8php_a28d8c96a7ddca2daae7a03f1567d1c3a}{\$backurl} = new moodle\_\-url('/question/type/stack/questiontestrun.php', \$urlparams)
+\item 
+\hyperlink{caschat_8php_a2018ad56dfaea89ba7f32f4f912be98f}{if}(\$testcase) \hyperlink{caschat_8php_a2018ad56dfaea89ba7f32f4f912be98f}{if}(\$mform-\/$>$is\_\-cancelled()) else \hyperlink{caschat_8php_a2018ad56dfaea89ba7f32f4f912be98f}{if}(\$data=\$mform-\/$>$get\_\-data()) \hyperlink{questiontestedit_8php_a428cf78a4e358b21d9f845e0ce3d592c}{\$quba} = question\_\-engine::make\_\-questions\_\-usage\_\-by\_\-activity('\hyperlink{classqtype__stack}{qtype\_\-stack}', \$context)
+\item 
+\hyperlink{questiontestedit_8php_a3e6bbab99eb17efe8681b9072bf74a2d}{\$slot} = \$quba-\/$>$add\_\-question(\$question, \$question-\/$>$defaultmark)
+\item 
+\hyperlink{questiontestedit_8php_a011800c63ece4cbbfa77136a20607023}{\$options} = new question\_\-display\_\-options()
+\item 
+\$options \hyperlink{questiontestedit_8php_a78c524eb69c50edb232234e0bc6b4de9}{readonly} = true
+\item 
+\$options \hyperlink{questiontestedit_8php_adcb2a3f70c8c91986e6561111d0d9b0f}{flags} = question\_\-display\_\-options::HIDDEN
+\item 
+\$options \hyperlink{questiontestedit_8php_a27730100abd83366c35b68c4b9a7b5ec}{suppressruntestslink} = true
+\item 
+\hyperlink{questiontestedit_8php_a0d074fb374d449e3e0c5e1013668a095}{foreach} (\$question-\/$>$get\_\-all\_\-question\_\-vars() as \$key=$>$ \$value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{questiontestedit_8php_a28d8c96a7ddca2daae7a03f1567d1c3a}{
+\index{questiontestedit.php@{questiontestedit.php}!\$backurl@{\$backurl}}
+\index{\$backurl@{\$backurl}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$backurl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (!is\_\-null(\$seed)) \$backurl = new moodle\_\-url('/question/type/stack/questiontestrun.php', \$urlparams)}}
+\label{questiontestedit_8php_a28d8c96a7ddca2daae7a03f1567d1c3a}
+\hypertarget{questiontestedit_8php_ae05dedb802ada0155efdece2044fed64}{
+\index{questiontestedit.php@{questiontestedit.php}!\$context@{\$context}}
+\index{\$context@{\$context}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$context}]{\setlength{\rightskip}{0pt plus 5cm}\$context = \$question-\/$>$get\_\-context()}}
+\label{questiontestedit_8php_ae05dedb802ada0155efdece2044fed64}
+\hypertarget{questiontestedit_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}{
+\index{questiontestedit.php@{questiontestedit.php}!\$courseid@{\$courseid}}
+\index{\$courseid@{\$courseid}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$courseid}]{\setlength{\rightskip}{0pt plus 5cm}\$courseid = required\_\-param('courseid', PARAM\_\-INT)}}
+\label{questiontestedit_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}
+\hypertarget{questiontestedit_8php_a011800c63ece4cbbfa77136a20607023}{
+\index{questiontestedit.php@{questiontestedit.php}!\$options@{\$options}}
+\index{\$options@{\$options}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$options}]{\setlength{\rightskip}{0pt plus 5cm}\$options = new question\_\-display\_\-options()}}
+\label{questiontestedit_8php_a011800c63ece4cbbfa77136a20607023}
+\hypertarget{questiontestedit_8php_a428cf78a4e358b21d9f845e0ce3d592c}{
+\index{questiontestedit.php@{questiontestedit.php}!\$quba@{\$quba}}
+\index{\$quba@{\$quba}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$quba}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (\$testcase) {\bf if} (\$mform-\/$>$is\_\-cancelled()) else {\bf if} (\$data=\$mform-\/$>$get\_\-data()) \$quba = question\_\-engine::make\_\-questions\_\-usage\_\-by\_\-activity('{\bf qtype\_\-stack}', \$context)}}
+\label{questiontestedit_8php_a428cf78a4e358b21d9f845e0ce3d592c}
+\hypertarget{questiontestedit_8php_acf0d1ba8b3999333306bf1a4fd363e93}{
+\index{questiontestedit.php@{questiontestedit.php}!\$question@{\$question}}
+\index{\$question@{\$question}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$question}]{\setlength{\rightskip}{0pt plus 5cm}\$question = question\_\-bank::load\_\-question(\$questionid)}}
+\label{questiontestedit_8php_acf0d1ba8b3999333306bf1a4fd363e93}
+\hypertarget{questiontestedit_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}{
+\index{questiontestedit.php@{questiontestedit.php}!\$questiondata@{\$questiondata}}
+\index{\$questiondata@{\$questiondata}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$questiondata}]{\setlength{\rightskip}{0pt plus 5cm}\$questiondata = \$DB-\/$>$get\_\-record('question', array('id' =$>$ \$questionid), '$\ast$', MUST\_\-EXIST)}}
+\label{questiontestedit_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}
+\hypertarget{questiontestedit_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}{
+\index{questiontestedit.php@{questiontestedit.php}!\$questionid@{\$questionid}}
+\index{\$questionid@{\$questionid}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$questionid}]{\setlength{\rightskip}{0pt plus 5cm}\$questionid = required\_\-param('questionid', PARAM\_\-INT)}}
+\label{questiontestedit_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}
+This script lets the user create or edit question tests for a question.
+
+2012 the Open University  \href{http://www.gnu.org/copyleft/gpl.html}{\tt http://www.gnu.org/copyleft/gpl.html} GNU GPL v3 or later \hypertarget{questiontestedit_8php_a4aea6700edf05cf13c65dc0e758c9ad3}{
+\index{questiontestedit.php@{questiontestedit.php}!\$seed@{\$seed}}
+\index{\$seed@{\$seed}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$seed}]{\setlength{\rightskip}{0pt plus 5cm}\$seed = optional\_\-param('seed', null, PARAM\_\-INT)}}
+\label{questiontestedit_8php_a4aea6700edf05cf13c65dc0e758c9ad3}
+\hypertarget{questiontestedit_8php_a3e6bbab99eb17efe8681b9072bf74a2d}{
+\index{questiontestedit.php@{questiontestedit.php}!\$slot@{\$slot}}
+\index{\$slot@{\$slot}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$slot}]{\setlength{\rightskip}{0pt plus 5cm}\$slot = \$quba-\/$>$add\_\-question(\$question, \$question-\/$>$defaultmark)}}
+\label{questiontestedit_8php_a3e6bbab99eb17efe8681b9072bf74a2d}
+\hypertarget{questiontestedit_8php_ae640ef9490b2598569406e3654f480b6}{
+\index{questiontestedit.php@{questiontestedit.php}!\$testcase@{\$testcase}}
+\index{\$testcase@{\$testcase}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$testcase}]{\setlength{\rightskip}{0pt plus 5cm}\$testcase = optional\_\-param('testcase', null, PARAM\_\-INT)}}
+\label{questiontestedit_8php_ae640ef9490b2598569406e3654f480b6}
+\hypertarget{questiontestedit_8php_a1aa950c4029aca228dd33a4b27109e00}{
+\index{questiontestedit.php@{questiontestedit.php}!\$urlparams@{\$urlparams}}
+\index{\$urlparams@{\$urlparams}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{\$urlparams}]{\setlength{\rightskip}{0pt plus 5cm}\$urlparams = array('courseid' =$>$ \$courseid, 'questionid' =$>$ \$question-\/$>$id)}}
+\label{questiontestedit_8php_a1aa950c4029aca228dd33a4b27109e00}
+\hypertarget{questiontestedit_8php_adcb2a3f70c8c91986e6561111d0d9b0f}{
+\index{questiontestedit.php@{questiontestedit.php}!flags@{flags}}
+\index{flags@{flags}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}\$options {\bf flags} = question\_\-display\_\-options::HIDDEN}}
+\label{questiontestedit_8php_adcb2a3f70c8c91986e6561111d0d9b0f}
+\hypertarget{questiontestedit_8php_a0d074fb374d449e3e0c5e1013668a095}{
+\index{questiontestedit.php@{questiontestedit.php}!foreach@{foreach}}
+\index{foreach@{foreach}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{foreach}]{\setlength{\rightskip}{0pt plus 5cm}{\bf foreach}(\$question-\/$>$get\_\-all\_\-question\_\-vars() as \$key=$>$ \$value)}}
+\label{questiontestedit_8php_a0d074fb374d449e3e0c5e1013668a095}
+\hypertarget{questiontestedit_8php_a78c524eb69c50edb232234e0bc6b4de9}{
+\index{questiontestedit.php@{questiontestedit.php}!readonly@{readonly}}
+\index{readonly@{readonly}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{readonly}]{\setlength{\rightskip}{0pt plus 5cm}\$options {\bf readonly} = true}}
+\label{questiontestedit_8php_a78c524eb69c50edb232234e0bc6b4de9}
+\hypertarget{questiontestedit_8php_a27730100abd83366c35b68c4b9a7b5ec}{
+\index{questiontestedit.php@{questiontestedit.php}!suppressruntestslink@{suppressruntestslink}}
+\index{suppressruntestslink@{suppressruntestslink}!questiontestedit.php@{questiontestedit.php}}
+\subsubsection[{suppressruntestslink}]{\setlength{\rightskip}{0pt plus 5cm}\$options {\bf suppressruntestslink} = true}}
+\label{questiontestedit_8php_a27730100abd83366c35b68c4b9a7b5ec}

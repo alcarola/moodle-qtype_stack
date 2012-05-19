@@ -1,0 +1,90 @@
+\hypertarget{classqtype__stack__renderer}{
+\section{qtype\_\-stack\_\-renderer Class Reference}
+\label{classqtype__stack__renderer}\index{qtype\_\-stack\_\-renderer@{qtype\_\-stack\_\-renderer}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classqtype__stack__renderer_ac8c6fd80afd18d2cd45eecaef608eee1}{formulation\_\-and\_\-controls} (question\_\-attempt \$qa, question\_\-display\_\-options \$options)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classqtype__stack__renderer_a44386769fb98173ad4052eafd424fe07}{question\_\-tests\_\-link} (\hyperlink{classqtype__stack__question}{qtype\_\-stack\_\-question} \$question, question\_\-display\_\-options \$options)
+\item 
+\hyperlink{classqtype__stack__renderer_a4125328bed788238256940894f9053c3}{specific\_\-feedback} (question\_\-attempt \$qa)
+\item 
+\hyperlink{classqtype__stack__renderer_a45cc18a3803bc47ef05c95c21d2c08e9}{input\_\-validation} (\$name, \$feedback)
+\item 
+\hyperlink{classqtype__stack__renderer_a7dd45346f726c3dc68c98c8b3d58dc14}{prt\_\-feedback} (\$name, \$qa, \$question, \$result)
+\item 
+\hyperlink{classqtype__stack__renderer_ad70697193990cc2e7282c260d8c3f375}{standard\_\-prt\_\-feedback} (\$qa, \$question, \$result)
+\item 
+\hyperlink{classqtype__stack__renderer_a208556850d5c0d037268a9c35d7480ac}{is\_\-inside\_\-maths} (\$input, \$string)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generates the output for Stack questions.
+
+2012 The Open University  \href{http://www.gnu.org/copyleft/gpl.html}{\tt http://www.gnu.org/copyleft/gpl.html} GNU GPL v3 or later 
+
+\subsection{Member Function Documentation}
+\hypertarget{classqtype__stack__renderer_ac8c6fd80afd18d2cd45eecaef608eee1}{
+\index{qtype\_\-stack\_\-renderer@{qtype\_\-stack\_\-renderer}!formulation\_\-and\_\-controls@{formulation\_\-and\_\-controls}}
+\index{formulation\_\-and\_\-controls@{formulation\_\-and\_\-controls}!qtype_stack_renderer@{qtype\_\-stack\_\-renderer}}
+\subsubsection[{formulation\_\-and\_\-controls}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-renderer::formulation\_\-and\_\-controls (question\_\-attempt \$ {\em qa}, \/  question\_\-display\_\-options \$ {\em options})}}
+\label{classqtype__stack__renderer_ac8c6fd80afd18d2cd45eecaef608eee1}
+\hypertarget{classqtype__stack__renderer_a45cc18a3803bc47ef05c95c21d2c08e9}{
+\index{qtype\_\-stack\_\-renderer@{qtype\_\-stack\_\-renderer}!input\_\-validation@{input\_\-validation}}
+\index{input\_\-validation@{input\_\-validation}!qtype_stack_renderer@{qtype\_\-stack\_\-renderer}}
+\subsubsection[{input\_\-validation}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-renderer::input\_\-validation (\$ {\em name}, \/  \$ {\em feedback})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__renderer_a45cc18a3803bc47ef05c95c21d2c08e9}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$feedback the raw feedback message from the intput element. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Nicely formatted feedback, for display. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__renderer_a208556850d5c0d037268a9c35d7480ac}{
+\index{qtype\_\-stack\_\-renderer@{qtype\_\-stack\_\-renderer}!is\_\-inside\_\-maths@{is\_\-inside\_\-maths}}
+\index{is\_\-inside\_\-maths@{is\_\-inside\_\-maths}!qtype_stack_renderer@{qtype\_\-stack\_\-renderer}}
+\subsubsection[{is\_\-inside\_\-maths}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-renderer::is\_\-inside\_\-maths (\$ {\em input}, \/  \$ {\em string})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__renderer_a208556850d5c0d037268a9c35d7480ac}
+Tests whether the input element exists inside a math region. \hypertarget{classqtype__stack__renderer_a7dd45346f726c3dc68c98c8b3d58dc14}{
+\index{qtype\_\-stack\_\-renderer@{qtype\_\-stack\_\-renderer}!prt\_\-feedback@{prt\_\-feedback}}
+\index{prt\_\-feedback@{prt\_\-feedback}!qtype_stack_renderer@{qtype\_\-stack\_\-renderer}}
+\subsubsection[{prt\_\-feedback}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-renderer::prt\_\-feedback (\$ {\em name}, \/  \$ {\em qa}, \/  \$ {\em question}, \/  \$ {\em result})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__renderer_a7dd45346f726c3dc68c98c8b3d58dc14}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$feedback the raw feedback message from the PRT. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Nicely formatted feedback, for display. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__renderer_a44386769fb98173ad4052eafd424fe07}{
+\index{qtype\_\-stack\_\-renderer@{qtype\_\-stack\_\-renderer}!question\_\-tests\_\-link@{question\_\-tests\_\-link}}
+\index{question\_\-tests\_\-link@{question\_\-tests\_\-link}!qtype_stack_renderer@{qtype\_\-stack\_\-renderer}}
+\subsubsection[{question\_\-tests\_\-link}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-renderer::question\_\-tests\_\-link ({\bf qtype\_\-stack\_\-question} \$ {\em question}, \/  question\_\-display\_\-options \$ {\em options})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__renderer_a44386769fb98173ad4052eafd424fe07}
+Displays a link to run the question tests, if applicable. 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classqtype__stack__question}{qtype\_\-stack\_\-question}}]\$question \item[{\em question\_\-display\_\-options}]\$options \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string HTML fragment. 
+\end{DoxyReturn}
+\hypertarget{classqtype__stack__renderer_a4125328bed788238256940894f9053c3}{
+\index{qtype\_\-stack\_\-renderer@{qtype\_\-stack\_\-renderer}!specific\_\-feedback@{specific\_\-feedback}}
+\index{specific\_\-feedback@{specific\_\-feedback}!qtype_stack_renderer@{qtype\_\-stack\_\-renderer}}
+\subsubsection[{specific\_\-feedback}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-renderer::specific\_\-feedback (question\_\-attempt \$ {\em qa})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__renderer_a4125328bed788238256940894f9053c3}
+\hypertarget{classqtype__stack__renderer_ad70697193990cc2e7282c260d8c3f375}{
+\index{qtype\_\-stack\_\-renderer@{qtype\_\-stack\_\-renderer}!standard\_\-prt\_\-feedback@{standard\_\-prt\_\-feedback}}
+\index{standard\_\-prt\_\-feedback@{standard\_\-prt\_\-feedback}!qtype_stack_renderer@{qtype\_\-stack\_\-renderer}}
+\subsubsection[{standard\_\-prt\_\-feedback}]{\setlength{\rightskip}{0pt plus 5cm}qtype\_\-stack\_\-renderer::standard\_\-prt\_\-feedback (\$ {\em qa}, \/  \$ {\em question}, \/  \$ {\em result})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classqtype__stack__renderer_ad70697193990cc2e7282c260d8c3f375}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{renderer_8php}{renderer.php}\end{DoxyCompactItemize}

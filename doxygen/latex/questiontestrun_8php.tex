@@ -1,0 +1,179 @@
+\hypertarget{questiontestrun_8php}{
+\section{questiontestrun.php File Reference}
+\label{questiontestrun_8php}\index{questiontestrun.php@{questiontestrun.php}}
+}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{questiontestrun_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}{\$questionid} = required\_\-param('questionid', PARAM\_\-INT)
+\item 
+\hyperlink{questiontestrun_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}{\$courseid} = required\_\-param('courseid', PARAM\_\-INT)
+\item 
+\hyperlink{questiontestrun_8php_a4aea6700edf05cf13c65dc0e758c9ad3}{\$seed} = optional\_\-param('seed', null, PARAM\_\-INT)
+\item 
+\hyperlink{questiontestrun_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}{\$questiondata} = \$DB-\/$>$get\_\-record('question', array('id' =$>$ \$questionid), '$\ast$', MUST\_\-EXIST)
+\item 
+\hyperlink{questiontestrun_8php_acf0d1ba8b3999333306bf1a4fd363e93}{\$question} = question\_\-bank::load\_\-question(\$questionid)
+\item 
+\hyperlink{questiontestrun_8php_ae05dedb802ada0155efdece2044fed64}{\$context} = \$question-\/$>$get\_\-context()
+\item 
+\hyperlink{questiontestrun_8php_a69bfd8cbfcb5df8b71b7aa810fd0f55f}{\$canedit} = question\_\-has\_\-capability\_\-on(\$questiondata, 'edit')
+\item 
+\hyperlink{questiontestrun_8php_a1aa950c4029aca228dd33a4b27109e00}{\$urlparams} = array('questionid' =$>$ \$question-\/$>$id)
+\item 
+\hyperlink{questiontestrun_8php_ada57e7bb7c152edad18fe2f166188691}{\$title} = get\_\-string('testingquestion', '\hyperlink{classqtype__stack}{qtype\_\-stack}', format\_\-string(\$question-\/$>$name))
+\item 
+\hyperlink{questiontestrun_8php_aaed3376a71ab765cf831ccd5d4540d8e}{\$quba} = question\_\-engine::make\_\-questions\_\-usage\_\-by\_\-activity('\hyperlink{classqtype__stack}{qtype\_\-stack}', \$context)
+\item 
+\hyperlink{caschat_8php_a2018ad56dfaea89ba7f32f4f912be98f}{if}(!is\_\-null(\$seed)) \hyperlink{questiontestrun_8php_a9104834405465b12845577f042dae3f0}{\$slot} = \$quba-\/$>$add\_\-question(\$question, \$question-\/$>$defaultmark)
+\item 
+\hyperlink{questiontestrun_8php_a011800c63ece4cbbfa77136a20607023}{\$options} = new question\_\-display\_\-options()
+\item 
+\$options \hyperlink{questiontestrun_8php_a78c524eb69c50edb232234e0bc6b4de9}{readonly} = true
+\item 
+\$options \hyperlink{questiontestrun_8php_adcb2a3f70c8c91986e6561111d0d9b0f}{flags} = question\_\-display\_\-options::HIDDEN
+\item 
+\$options \hyperlink{questiontestrun_8php_a27730100abd83366c35b68c4b9a7b5ec}{suppressruntestslink} = true
+\item 
+\hyperlink{questiontestrun_8php_a964bf7377831044ea8f3228e1323ddf2}{\$testscases} = question\_\-bank::get\_\-qtype('stack')-\/$>$load\_\-question\_\-tests(\$question-\/$>$id)
+\item 
+\hyperlink{questiontestrun_8php_a3e5313c6f829a7878736c734704294fd}{\$testresults} = array()
+\item 
+\hyperlink{questiontestrun_8php_ab5a10be91c162cb48ac439a779b80046}{\$allpassed} = true
+\item 
+\hyperlink{questiontestrun_8php_afd34bd4e31a3575bb885c2bd1822421e}{foreach} (\$testscases as \$key=$>$ \$testcase)
+\item 
+\hyperlink{questiontestrun_8php_a097507b0d1ee2970b0b9c450e453280d}{\$variantmatched} = false
+\item 
+\hyperlink{questiontestrun_8php_a186e58741cf4a169829b703a5abd2ab4}{\$displayqvs} = ''
+\item 
+\hyperlink{questiontestrun_8php_a6eb71c1db10cf807d2a126758ad4a3db}{\$qa} = new question\_\-attempt(\$question, 0)
+\item 
+\hyperlink{questiontestrun_8php_a4bd0883974ba272756b00624f6ebcf5d}{\$addlabel} = stack\_\-string('addanothertestcase', '\hyperlink{classqtype__stack}{qtype\_\-stack}')
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{questiontestrun_8php_a4bd0883974ba272756b00624f6ebcf5d}{
+\index{questiontestrun.php@{questiontestrun.php}!\$addlabel@{\$addlabel}}
+\index{\$addlabel@{\$addlabel}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$addlabel}]{\setlength{\rightskip}{0pt plus 5cm}\$addlabel = stack\_\-string('addanothertestcase', '{\bf qtype\_\-stack}')}}
+\label{questiontestrun_8php_a4bd0883974ba272756b00624f6ebcf5d}
+\hypertarget{questiontestrun_8php_ab5a10be91c162cb48ac439a779b80046}{
+\index{questiontestrun.php@{questiontestrun.php}!\$allpassed@{\$allpassed}}
+\index{\$allpassed@{\$allpassed}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$allpassed}]{\setlength{\rightskip}{0pt plus 5cm}\$allpassed = true}}
+\label{questiontestrun_8php_ab5a10be91c162cb48ac439a779b80046}
+\hypertarget{questiontestrun_8php_a69bfd8cbfcb5df8b71b7aa810fd0f55f}{
+\index{questiontestrun.php@{questiontestrun.php}!\$canedit@{\$canedit}}
+\index{\$canedit@{\$canedit}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$canedit}]{\setlength{\rightskip}{0pt plus 5cm}\$canedit = question\_\-has\_\-capability\_\-on(\$questiondata, 'edit')}}
+\label{questiontestrun_8php_a69bfd8cbfcb5df8b71b7aa810fd0f55f}
+\hypertarget{questiontestrun_8php_ae05dedb802ada0155efdece2044fed64}{
+\index{questiontestrun.php@{questiontestrun.php}!\$context@{\$context}}
+\index{\$context@{\$context}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$context}]{\setlength{\rightskip}{0pt plus 5cm}\$context = \$question-\/$>$get\_\-context()}}
+\label{questiontestrun_8php_ae05dedb802ada0155efdece2044fed64}
+\hypertarget{questiontestrun_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}{
+\index{questiontestrun.php@{questiontestrun.php}!\$courseid@{\$courseid}}
+\index{\$courseid@{\$courseid}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$courseid}]{\setlength{\rightskip}{0pt plus 5cm}\$courseid = required\_\-param('courseid', PARAM\_\-INT)}}
+\label{questiontestrun_8php_a2a1b481ca3e5ae5c2d7a66d271302f23}
+\hypertarget{questiontestrun_8php_a186e58741cf4a169829b703a5abd2ab4}{
+\index{questiontestrun.php@{questiontestrun.php}!\$displayqvs@{\$displayqvs}}
+\index{\$displayqvs@{\$displayqvs}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$displayqvs}]{\setlength{\rightskip}{0pt plus 5cm}\$displayqvs = ''}}
+\label{questiontestrun_8php_a186e58741cf4a169829b703a5abd2ab4}
+\hypertarget{questiontestrun_8php_a011800c63ece4cbbfa77136a20607023}{
+\index{questiontestrun.php@{questiontestrun.php}!\$options@{\$options}}
+\index{\$options@{\$options}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$options}]{\setlength{\rightskip}{0pt plus 5cm}\$options = new question\_\-display\_\-options()}}
+\label{questiontestrun_8php_a011800c63ece4cbbfa77136a20607023}
+\hypertarget{questiontestrun_8php_a6eb71c1db10cf807d2a126758ad4a3db}{
+\index{questiontestrun.php@{questiontestrun.php}!\$qa@{\$qa}}
+\index{\$qa@{\$qa}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$qa}]{\setlength{\rightskip}{0pt plus 5cm}\$qa = new question\_\-attempt(\$question, 0)}}
+\label{questiontestrun_8php_a6eb71c1db10cf807d2a126758ad4a3db}
+\hypertarget{questiontestrun_8php_aaed3376a71ab765cf831ccd5d4540d8e}{
+\index{questiontestrun.php@{questiontestrun.php}!\$quba@{\$quba}}
+\index{\$quba@{\$quba}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$quba}]{\setlength{\rightskip}{0pt plus 5cm}\$quba = question\_\-engine::make\_\-questions\_\-usage\_\-by\_\-activity('{\bf qtype\_\-stack}', \$context)}}
+\label{questiontestrun_8php_aaed3376a71ab765cf831ccd5d4540d8e}
+\hypertarget{questiontestrun_8php_acf0d1ba8b3999333306bf1a4fd363e93}{
+\index{questiontestrun.php@{questiontestrun.php}!\$question@{\$question}}
+\index{\$question@{\$question}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$question}]{\setlength{\rightskip}{0pt plus 5cm}\$question = question\_\-bank::load\_\-question(\$questionid)}}
+\label{questiontestrun_8php_acf0d1ba8b3999333306bf1a4fd363e93}
+\hypertarget{questiontestrun_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}{
+\index{questiontestrun.php@{questiontestrun.php}!\$questiondata@{\$questiondata}}
+\index{\$questiondata@{\$questiondata}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$questiondata}]{\setlength{\rightskip}{0pt plus 5cm}\$questiondata = \$DB-\/$>$get\_\-record('question', array('id' =$>$ \$questionid), '$\ast$', MUST\_\-EXIST)}}
+\label{questiontestrun_8php_ab3dbd2b3f38fc871b3aba59ed0657c55}
+\hypertarget{questiontestrun_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}{
+\index{questiontestrun.php@{questiontestrun.php}!\$questionid@{\$questionid}}
+\index{\$questionid@{\$questionid}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$questionid}]{\setlength{\rightskip}{0pt plus 5cm}\$questionid = required\_\-param('questionid', PARAM\_\-INT)}}
+\label{questiontestrun_8php_a0b8a9e6194c5b1ca51e0f19a198c19d8}
+This script lets the user test a question using any question tests defined in the database. It also displays some of the internal workins of questions.
+
+Users with moodle/question:view capability can use this script to view the results of the tests.
+
+Users with moodle/question:edit can edit the test cases and deployed version, as well as just run them.
+
+The script takes one parameter id which is a questionid as a parameter. In can optionally also take a random seed.
+
+2012 the Open University  \href{http://www.gnu.org/copyleft/gpl.html}{\tt http://www.gnu.org/copyleft/gpl.html} GNU GPL v3 or later \hypertarget{questiontestrun_8php_a4aea6700edf05cf13c65dc0e758c9ad3}{
+\index{questiontestrun.php@{questiontestrun.php}!\$seed@{\$seed}}
+\index{\$seed@{\$seed}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$seed}]{\setlength{\rightskip}{0pt plus 5cm}\$seed = optional\_\-param('seed', null, PARAM\_\-INT)}}
+\label{questiontestrun_8php_a4aea6700edf05cf13c65dc0e758c9ad3}
+\hypertarget{questiontestrun_8php_a9104834405465b12845577f042dae3f0}{
+\index{questiontestrun.php@{questiontestrun.php}!\$slot@{\$slot}}
+\index{\$slot@{\$slot}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$slot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} (!is\_\-null(\$seed)) \$slot = \$quba-\/$>$add\_\-question(\$question, \$question-\/$>$defaultmark)}}
+\label{questiontestrun_8php_a9104834405465b12845577f042dae3f0}
+\hypertarget{questiontestrun_8php_a3e5313c6f829a7878736c734704294fd}{
+\index{questiontestrun.php@{questiontestrun.php}!\$testresults@{\$testresults}}
+\index{\$testresults@{\$testresults}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$testresults}]{\setlength{\rightskip}{0pt plus 5cm}\$testresults = array()}}
+\label{questiontestrun_8php_a3e5313c6f829a7878736c734704294fd}
+\hypertarget{questiontestrun_8php_a964bf7377831044ea8f3228e1323ddf2}{
+\index{questiontestrun.php@{questiontestrun.php}!\$testscases@{\$testscases}}
+\index{\$testscases@{\$testscases}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$testscases}]{\setlength{\rightskip}{0pt plus 5cm}\$testscases = question\_\-bank::get\_\-qtype('stack')-\/$>$load\_\-question\_\-tests(\$question-\/$>$id)}}
+\label{questiontestrun_8php_a964bf7377831044ea8f3228e1323ddf2}
+\hypertarget{questiontestrun_8php_ada57e7bb7c152edad18fe2f166188691}{
+\index{questiontestrun.php@{questiontestrun.php}!\$title@{\$title}}
+\index{\$title@{\$title}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$title}]{\setlength{\rightskip}{0pt plus 5cm}\$title = get\_\-string('testingquestion', '{\bf qtype\_\-stack}', format\_\-string(\$question-\/$>$name))}}
+\label{questiontestrun_8php_ada57e7bb7c152edad18fe2f166188691}
+\hypertarget{questiontestrun_8php_a1aa950c4029aca228dd33a4b27109e00}{
+\index{questiontestrun.php@{questiontestrun.php}!\$urlparams@{\$urlparams}}
+\index{\$urlparams@{\$urlparams}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$urlparams}]{\setlength{\rightskip}{0pt plus 5cm}\$urlparams = array('questionid' =$>$ \$question-\/$>$id)}}
+\label{questiontestrun_8php_a1aa950c4029aca228dd33a4b27109e00}
+\hypertarget{questiontestrun_8php_a097507b0d1ee2970b0b9c450e453280d}{
+\index{questiontestrun.php@{questiontestrun.php}!\$variantmatched@{\$variantmatched}}
+\index{\$variantmatched@{\$variantmatched}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{\$variantmatched}]{\setlength{\rightskip}{0pt plus 5cm}\$variantmatched = false}}
+\label{questiontestrun_8php_a097507b0d1ee2970b0b9c450e453280d}
+\hypertarget{questiontestrun_8php_adcb2a3f70c8c91986e6561111d0d9b0f}{
+\index{questiontestrun.php@{questiontestrun.php}!flags@{flags}}
+\index{flags@{flags}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}\$options {\bf flags} = question\_\-display\_\-options::HIDDEN}}
+\label{questiontestrun_8php_adcb2a3f70c8c91986e6561111d0d9b0f}
+\hypertarget{questiontestrun_8php_afd34bd4e31a3575bb885c2bd1822421e}{
+\index{questiontestrun.php@{questiontestrun.php}!foreach@{foreach}}
+\index{foreach@{foreach}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{foreach}]{\setlength{\rightskip}{0pt plus 5cm}{\bf foreach}(\$question-\/$>$get\_\-all\_\-question\_\-vars() as \$key=$>$ \$value)}}
+\label{questiontestrun_8php_afd34bd4e31a3575bb885c2bd1822421e}
+\hypertarget{questiontestrun_8php_a78c524eb69c50edb232234e0bc6b4de9}{
+\index{questiontestrun.php@{questiontestrun.php}!readonly@{readonly}}
+\index{readonly@{readonly}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{readonly}]{\setlength{\rightskip}{0pt plus 5cm}\$options {\bf readonly} = true}}
+\label{questiontestrun_8php_a78c524eb69c50edb232234e0bc6b4de9}
+\hypertarget{questiontestrun_8php_a27730100abd83366c35b68c4b9a7b5ec}{
+\index{questiontestrun.php@{questiontestrun.php}!suppressruntestslink@{suppressruntestslink}}
+\index{suppressruntestslink@{suppressruntestslink}!questiontestrun.php@{questiontestrun.php}}
+\subsubsection[{suppressruntestslink}]{\setlength{\rightskip}{0pt plus 5cm}\$options {\bf suppressruntestslink} = true}}
+\label{questiontestrun_8php_a27730100abd83366c35b68c4b9a7b5ec}
