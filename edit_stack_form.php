@@ -227,8 +227,15 @@ class qtype_stack_edit_form extends question_edit_form {
                 get_string('questionnote', 'qtype_stack'), array('rows' => 2, 'cols' => 80));
         $mform->addHelpButton('questionnote', 'questionnote', 'qtype_stack');
 
-        $mform->addElement('submit', 'verify', get_string('verifyquestionandupdate', 'qtype_stack'));
+// MiK
+
+	$updatesavebuttons = array();
+        $updatesavebuttons[] = $mform->createElement('submit', 'verify', get_string('verifyquestionandupdate', 'qtype_stack'));
+        $updatesavebuttons[] = $mform->createElement('submit', 'saveandcontinue', get_string('saveandcontinue', 'qtype_stack'));
         $mform->registerNoSubmitButton('verify');
+        $mform->addGroup($updatesavebuttons, 'updsavebuttons', '', array(' '), false);
+
+// MiK
 
         // Inputs
         foreach ($inputnames as $inputname => $notused) {
@@ -294,7 +301,7 @@ class qtype_stack_edit_form extends question_edit_form {
                     'i' => 'i', 'j' => 'j', 'symi' => 'symi', 'symj' => 'symj'));
         $mform->addHelpButton('complexno', 'complexno', 'qtype_stack');
 
-        // Question tests.
+       // Question tests.
 
         // To stop Moodle compaining.
         $mform->addElement('hidden', 'penalty', 0);
