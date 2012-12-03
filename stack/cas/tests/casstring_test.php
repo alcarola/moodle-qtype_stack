@@ -50,6 +50,9 @@ class stack_cas_casstring_test extends basic_testcase {
             array('%gamma', true, true),
             array('%phi', true, true),
             array('%o1', false, false),
+            // Literal unicode character, instead of name.
+            array('π', false, false),
+            // Non-matching brackets.
             array('(x+1', false, false),
             array('(y^2+1))', false, false),
             array('[sin(x)+1)', false, false),
@@ -60,11 +63,21 @@ class stack_cas_casstring_test extends basic_testcase {
             array('system(rm *)', false, false), // This should never occur.
             array('$', false, false),
             array('@', false, false),
+            // Inequalities
+            array('x>=1', true, true),
+            array('x=>1', false, false),
         );
 
         foreach ($cases as $case) {
             $this->get_valid($case[0], $case[1], $case[2]);
         }
+    }
+
+    public function test_validation_error() {
+        $casstring = new stack_cas_casstring('π');
+        $casstring->validate('s');
+        $this->assertEquals(stack_string('stackCas_forbiddenChar', array('char' => 'π')),
+                $casstring->get_errors());
     }
 
     public function test_get_valid_inequalities() {

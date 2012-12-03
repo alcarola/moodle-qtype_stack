@@ -403,6 +403,7 @@ $string['stackCas_forbiddenWord']           = 'The expression {$a->forbid} is fo
 $string['stackCas_bracketsdontmatch']       = 'The brackets are incorrectly nested in the expression: {$a->cmd}.';
 $string['stackCas_spuriousop']              = 'Unknown operator: {$a->cmd}.';
 $string['stackCas_chained_inequalities']    = 'You appear to have "chained inequalities" e.g. \(a &lt b &lt c\).  You need to connect individual inequalities with logical operations such as \(and\) or \(or\).';
+$string['stackCas_backward_inequalities']   = 'Non-strict inequalities e.g. \( \leq \) or \( \geq \) must be entered as <= or >=.  You have {$a->cmd} in your expression, which is backwards.';
 
 // Used in cassession.class.php.
 $string['stackCas_CASError']                = 'The CAS returned the following error(s):';
@@ -541,9 +542,9 @@ $string['ATNumSigFigs_Inaccurate']  = 'The accuracy of your answer is not correc
 $string['ATNumSigFigs_WrongDigits'] = 'Your answer contains the wrong number of significant digits. ';
 
 $string['ATSysEquiv_SA_not_list']               = 'Your answer should be a list, but it is not!';
-$string['ATSysEquiv_SB_not_list']               = 'The Teacher\'s answer is not a list.  Please contact your teacher.';
+$string['ATSysEquiv_SB_not_list']               = 'The teacher\'s answer is not a list.  Please contact your teacher.';
 $string['ATSysEquiv_SA_not_eq_list']            = 'Your answer should be a list of equations, but it is not!';
-$string['ATSysEquiv_SB_not_eq_list']            = 'Teacher answer is not a list of equations';
+$string['ATSysEquiv_SB_not_eq_list']            = 'The teacher\'s answer is not a list of equations, but should be.';
 $string['ATSysEquiv_SA_not_poly_eq_list']       = 'One or more of your equations is not a polynomial!';
 $string['ATSysEquiv_SB_not_poly_eq_list']       = 'The Teacher\'s answer should be a list of polynomial equations, but is not.  Please contact your teacher.';
 $string['ATSysEquiv_SA_missing_variables']      = 'Your answer is missing one or more variables!';
