@@ -6,7 +6,7 @@ STACK is a direct development of the CABLE project which ran at the University o
 
 ## Version 3.0
 
-_Not yet released_.  Target, September 2012.
+Released September 2012.
 
 Major re-engineering of the code by the Open University, The  University of Birmingham and the University of Helsinki.  Reporting and documentation added by Ben Holmes.
 
@@ -15,18 +15,17 @@ The most important change is the decision to re-work STACK as a question type fo
 Key features
 
 * __Major difference:__ Integration into the quiz of Moodle 2.3 as a question type.
-* Support for Maxima up to 5.27.0.
+* Support for Maxima up to 5.28.0.
 * Documentation moved from the wiki to within the code base.
 * Move from CVS to GIT.
 
 ### Changes in features between STACK 2 and STACK 3.
 
-* Key-val pairs, i.e. Question variables and feedback variables, now use Maxima's assignment syntax, e.g. `n:5` not the oldstyle `n=5`.
+* Key-val pairs, i.e. Question variables and feedback variables, now use Maxima's assignment syntax, e.g. `n:5` not the oldstyle `n=5`.  The importer automtically converts old questions to this new style.
 * Interaction elements, now called inputs, are indicated in questions as `[[input:ans1]]` to match the existing style in Moodle.  Existing questions will be converted when imported.
 * A number of other terminology changes have brought STACK's use into line with Moodle's, e.g. Worked solution has changed to "general feedback".
 * Change in the internal name of one answer test `Equal_Com_ASS` changed to `EqualComASS`.
 * Feature "allowed words" dropped from inputs (i.e. interaction elements).
-* Input "Dropdown" list -> should be automatically imported to "list"
 * JSMath is no longer under development, and hence we are no longer providing an option for this in STACK.  However, in STACK 2 we modified JSMath to enable inputs within equations.  Display now assumes the use of a Moodle filter and we recommend (and test with) MathJax, which does not currently support this feature.  If it is important for you to use this feature you will need to copy and modify the load.js file from STACK 2 and use JSMath.
 * Worked solution on demand feature has been removed.  This was a hack in STACK 2, and the use of Moodle quiz has made this unnecessary.
 * Some options are no longer needed.  This functionality is now handelled by the "behaviours", so are uncecessary in STACK 3.
@@ -34,8 +33,15 @@ Key features
  * The "Mark modification".
 * We have lost some of the nice styling on the editing form, compared to Stack 2.
 * Answer tests no longer return a numerical mark, hence the "+AT" option for mark modification method has been dropped.
-* The STACK function `filter` has been removed.  It should be replaced by the internal Maxima function `sublist`.  Note, the order of the arguments is reversed!
-* The libraries `powers` and `format` have been removed.
+* The STACK maxima function `filter` has been removed.  It should be replaced by the internal Maxima function `sublist`.  Note, the order of the arguments is reversed!
+* The maxima libraries `powers` and `format` have been removed.
+* We now strongly discourage the use of dollar symbols for denoting LaTeX mathematics environments.  See the pages on [mathjax](MathJax.md#delimiters) for more information on this change.
+* The expessions supplied by the question author as question tests are no longer simplified at all.  See the entry on [question tests](../Authoring/Testing.md#Simplification).
+
+Things we intend to do.
+
+* Input "Dropdown" list -> should be automatically imported to "list". This whole input type needs refactoring.
+
 
 ## Version 2.2
 
