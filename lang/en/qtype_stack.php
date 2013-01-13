@@ -83,6 +83,10 @@ $string['feedbackvariables'] = 'Feedback variables';
 $string['feedbackvariables_help'] = 'The feedback variables enable you to manipulate any of the inputs, together with the question variables, prior to traversing the tree.  Variables defined here may be used anywhere else in this tree.';
 $string['feedbackvariables_link'] = '%%WWWROOT%%/question/type/stack/doc/doc.php/Authoring/KeyVals.md#Feedback_variables';
 $string['fieldshouldnotcontainplaceholder'] = '{$a->field} should not contain any [[{$a->type}:...]] placeholders.';
+$string['fixdollars'] = 'Fix dollars';
+$string['fixdollarslabel'] = 'Replace <code>$...$</code> with <code>\(...\)</code> and <code>$$...$$</code> with <code>\[...\]</code> on save.';
+$string['fixdollars_help'] = 'This option is useful if are copying and pasting (or typing) TeX with <code>$...$</code> and <code>$$...$$</code> delimiters. Those delimiters will be replaced by the recommended delimiters during the save process.';
+$string['forbiddendoubledollars'] = 'Please use the delimiters <code>\(...\)</code> for inline maths and <code>\[...\]</code> for display maths. <code>$...$</code> and <code>$$...$$</code> are not permitted. There is an option at the end of the form to fix this automatically.';
 $string['forbidfloat'] = 'Forbid float';
 $string['forbidfloat_help'] = 'If set to yes, then any answer of the student which has a floating point number will be rejected as invalid.';
 $string['forbidfloat_link'] = '%%WWWROOT%%/question/type/stack/doc/doc.php/Authoring/Inputs.md#Forbid_Floats';
@@ -288,7 +292,7 @@ $string['replacedollarstitle'] = 'Replace $s in question texts in {$a}';
 $string['false'] = 'False';
 $string['notanswered'] = 'Not answered';
 $string['true'] = 'True';
-$string['ddl_empty'] = 'No choices were provided for this drop-down. Please input a set of values link a,b,c,d';
+$string['ddl_empty'] = 'No choices were provided for this drop-down. Please input a set of values like a,b,c,d';
 
 // Strings used by the question test script.
 $string['addanothertestcase'] = 'Add another test case...';
@@ -491,8 +495,8 @@ $string['AT_NOTIMPLEMENTED']        = 'This answer test has not been implemented
 $string['TEST_FAILED']              = 'The answer test failed to execute correctly: please alert your teacher. {$a->errors}';
 $string['AT_MissingOptions']        = 'Missing option when executing the test. ';
 $string['AT_InvalidOptions']        = 'Option field is invalid. {$a->errors}';
-$string['AT_EmptySA']               = 'Attempted to execute an answertest with an empty student answer, probably a CAS validation problem when authoring the question.';
-$string['AT_EmptyTA']               = 'Attempted to execute an answertest with an empty teacher answer, probably a CAS validation problem when authoring the question.';
+$string['AT_EmptySA']               = 'Attempted to execute an answer test with an empty student answer, probably a CAS validation problem when authoring the question.';
+$string['AT_EmptyTA']               = 'Attempted to execute an answer test with an empty teacher answer, probably a CAS validation problem when authoring the question.';
 
 
 $string['ATAlgEquiv_SA_not_expression'] = 'Your answer should be an expression, not an equation, inequality, list, set or matrix. ';
