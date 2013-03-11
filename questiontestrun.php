@@ -104,7 +104,11 @@ if (!is_null($deployfeedbackerr)) {
 }
 
 // Display the list of deployed variants, with UI to edit the list.
-echo $OUTPUT->heading(stack_string('deployedvariants'), 3);
+if ($question->deployedseeds) {
+    echo $OUTPUT->heading(stack_string('deployedvariantsn', count($question->deployedseeds)), 3);
+} else {
+    echo $OUTPUT->heading(stack_string('deployedvariants'), 3);
+}
 
 $variantmatched = false;
 $variantdeployed = false;
@@ -121,7 +125,7 @@ if (!$question->has_random_variants()) {
 
     $notestable = new html_table();
     $notestable->head = array(
-        stack_string('deployedvariants'),
+        stack_string('variant'),
         stack_string('questionnote'),
     );
     $prtstable->attributes['class'] = 'generaltable stacktestsuite';
@@ -164,7 +168,6 @@ if (!$question->has_random_variants()) {
         );
     }
 
-    echo html_writer::tag('p', stack_string('deployedvariantoptions'));
     echo html_writer::table($notestable);
 }
 
@@ -247,13 +250,11 @@ if ($question->options->get_option('simplify')) {
 } else {
     $simp = '';
 }
-echo html_writer::tag('form',
-    html_writer::empty_tag('input', array('type' => 'hidden', 'value' => $displayqvs, 'name' => 'vars')).
-    html_writer::empty_tag('input', array('type' => 'hidden', 'value' => $simp, 'name' => 'simp')).
-    html_writer::empty_tag('input', array('type' => 'hidden', 'value' => $question->generalfeedback, 'name' => 'cas')).
-    html_writer::tag('p', html_writer::empty_tag('input',
-        array('type' => 'submit', 'value' => stack_string('chat')))),
-        array('action' => $CFG->wwwroot.'/question/type/stack/caschat.php', 'method' => 'post'));
+$chatparams = $urlparams;
+$chatparams['vars'] = $displayqvs;
+$chatparams['simp'] = $simp;
+$chatparams['cas'] = $question->generalfeedback;
+echo $OUTPUT->single_button(new moodle_url('/question/type/stack/caschat.php', $chatparams), stack_string('chat'));
 
 // Display the controls to add another question test.
 echo $OUTPUT->heading(stack_string('questiontests'), 2);

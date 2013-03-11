@@ -132,6 +132,16 @@ This is a comma separated list of text strings which are forbidden in a student'
 If one of these strings is present then the student's attempt will be considered invalid,
 and no penalties will be given.
 
+Note that the string `*` is literally taken as `*` and is not a wild card.  Teachers may ask a student to calculate `2*3` and hence need to forbid multiplication.
+
+There are groups of common keywords which you can forbid simply as
+
+* `[[BASIC-ALGEBRA]]` common algebraic operations such as `simplify`, `factor`, `expand`, `solve` etc.
+* `[[BASIC-CALCULUS]]` common calculus operations such as `int`, `diff`, `taylor` etc.
+* `[[BASIC-MATRIX]]` common matrix operations such as `transpose`, `invert`, `charpoly` etc.
+
+These lists are in the casstring class. If you have suggestions for more lists, or additional operations which should be added to the existing lists please contact the developers.
+
 ### Forbid Floats ### {#Forbid_Floats}
 
 If set to `yes`, then any answer of the student which has a floating point number
@@ -155,7 +165,7 @@ and not an expression such as \(mx+c\).  Remember, you can't compare an expressi
 
 Another useful way of avoiding this problem is to put a LaTeX string such as \(y=\) just before the input.  E.g.
 
-    \(y=\)#ans1#.
+    \(y=\)[[input:ans1]].
 
 ### Student must verify ### {#Student_must_verify}
 
