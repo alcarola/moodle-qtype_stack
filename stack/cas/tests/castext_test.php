@@ -239,7 +239,7 @@ class stack_cas_text_test extends qtype_stack_testcase {
         $cs2 = new stack_cas_session($s2, null, 0);
 
         // Note, since we have spaces in the string we currently need to validate this as the teacher....
-        $at1 = new stack_cas_text('This is some text @plot(p, [x,-2,3], alt="Hello World!")@', $cs2, 0, 't');
+        $at1 = new stack_cas_text('This is some text @plot(p, [x,-2,3], [alt,"Hello World!"])@', $cs2, 0, 't');
         $this->assertTrue($at1->get_valid());
         $at1->get_display_castext();
 
@@ -260,13 +260,28 @@ class stack_cas_text_test extends qtype_stack_testcase {
         $cs2 = new stack_cas_session($s2, null, 0);
 
         // Alt tags must be a string.
-        $at1 = new stack_cas_text('This is some text @plot(p,[x,-2,3],alt=x)@', $cs2, 0, 't');
+        $at1 = new stack_cas_text('This is some text @plot(p,[x,-2,3],[alt,x])@', $cs2, 0, 't');
         $this->assertTrue($at1->get_valid());
         $at1->get_display_castext();
 
         $session = $at1->get_session();
         $this->assertEquals(array('p', 'caschat0'), $session->get_all_keys());
         $this->assertTrue(is_int(strpos($at1->get_errors(), "Plot error: the alt tag definition must be a string, but is not.")));
+    }
+
+    public function test_plot_option_error() {
+
+        $cs2 = new stack_cas_session(array(), null, 0);
+
+        // Alt tags must be a string.
+        $at1 = new stack_cas_text('This is some text @plot(x^2,[x,-2,3],[notoption,""])@', $cs2, 0, 't');
+        $this->assertTrue($at1->get_valid());
+        $at1->get_display_castext();
+
+        $session = $at1->get_session();
+        $this->assertEquals(array('caschat0'), $session->get_all_keys());
+        $this->assertTrue(is_int(strpos($at1->get_errors(),
+                "Plot error: STACK does not currently support the following plot2d options:")));
     }
 
     public function test_currency_1() {

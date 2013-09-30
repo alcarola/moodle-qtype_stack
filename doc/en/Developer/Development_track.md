@@ -11,7 +11,7 @@ How to report bugs and make suggestions is described on the [community](../About
 
 Basic reports now work.
 
-* Add titles and explanations to the page, and document with examples.
+* *done* Add titles and explanations to the page, and document with examples.
 * Really ensure "attempts" list those with meaningful histories.  I.e. if possible filter out navigation to and from the page etc.
 * Add better maxima support functions for off-line analysis.
  * A fully maxima-based representation of the PRT?
@@ -24,6 +24,13 @@ Basic reports now work.
  * Make sure the syntax is updated to [hint:...] in line with the new format.
  * Provide a list of hints, and an interface through the docs.
 
+## Expanding CAS features
+
+* *done* Refactor the Maxima plot command to include "discrete" and "parametric plots"
+* *done* Refactor the Maxima plot command to include options, e.g., xlabel, ylabel, legend, color, style, point_type.
+* *done* Enable a function as an answer type, e.g. improve validation.
+* *done* Refactor answer test unit testing to distinguish "test fail" from "zero".
+
 ## Assorted minor improvements
 
 * Improve the way questions are deployed.
@@ -31,6 +38,7 @@ Basic reports now work.
  2. Remove many versions at once.
 * When validating the editing form, also evaluate the Maxima code in the PRTs, using the teacher's model answers.
 * You cannot use one PRT node to guard the evaluation of another, for example Node 1 check x = 0, and only if that is false, Node 2 do 1 / x. We need to change how PRTs do CAS evaluation.
-* Review the list of forbidden keywords.
+* *done* Review the list of forbidden keywords.
+* *done* Add input parameter `allowwords` to enable the teacher to specify some permitted words of more than 2 symbols length.
 
 ## Other changes since STACK 3.1
