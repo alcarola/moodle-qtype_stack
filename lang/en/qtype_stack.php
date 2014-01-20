@@ -195,10 +195,10 @@ $string['questionsimplify_link'] = '%%WWWROOT%%/question/type/stack/doc/doc.php/
 $string['questiontext'] = 'Question text';
 $string['questiontext_help'] = 'The question text is CASText.  This is the "question" which the student actually sees.  You must put input elements, and the validation strings, in this field, and only in this field.  For example, using `[[input:ans1]] [[validation:ans1]]`.';
 $string['questiontext_link'] = '%%WWWROOT%%/question/type/stack/doc/doc.php/Authoring/CASText.md#question_text';
-$string['questiontextmustcontain'] = 'The question text must contain the token \'{$a}\'.';
-$string['questiontextmustcontain'] = 'The question text must contain the token \'{$a}\'.';
 $string['questiontextnonempty'] = 'The question text must be non-empty.';
+$string['questiontextmustcontain'] = 'The question text must contain the token \'{$a}\'.';
 $string['questiontextonlycontain'] = 'The question text should only contain the token \'{$a}\' once.';
+$string['questiontextplaceholderswhitespace'] = 'Placeholders may not contain whitespace.  This one appears to do so: \'{$a}\'.';
 $string['questiontextfeedbackonlycontain'] = 'The question text combined with the specific feedback should only contain the token \'{$a}\' once.';
 $string['questionvalue'] = 'Question value';
 $string['questionvaluepostive'] = 'Question value must be positive';
@@ -297,13 +297,11 @@ $string['settingmathsdisplay_desc'] = 'The method used to display maths. If you 
 $string['settingsmathsdisplayheading'] = 'Maths display options';
 $string['settingsmaximasettings'] = 'Connecting to Maxima';
 $string['settingplatformtype'] = 'Platform type';
-$string['settingplatformtype_desc'] = 'STACK needs to know what sort of operating system it is running on. The Server and MaximaPool options give better performance at the cost of having to set up an additional server. The options "Linux (optimised) and MaximaPool (optimised)" are explained on the Optimising Maxima page in the documentation.';
+$string['settingplatformtype_desc'] = 'STACK needs to know what sort of operating system it is running on. The Server option give better performance at the cost of having to set up an additional server. The option "Linux (optimised)" is explained on the Optimising Maxima page in the documentation.';
 $string['settingplatformtypeunix'] = 'Linux';
 $string['settingplatformtypeunixoptimised'] = 'Linux (optimised)';
 $string['settingplatformtypewin']  = 'Windows';
 $string['settingplatformtypeserver'] = 'Server';
-$string['settingplatformtypemaximapool'] = 'MaximaPool';
-$string['settingplatformtypemaximapooloptimised'] = 'MaximaPool (optimised)';
 $string['settingplatformmaximacommand'] = 'Maxima command';
 $string['settingplatformmaximacommand_desc'] = 'STACK needs to know the shell command to start Maxima.  If this is blank, STACK will make an educated guess.';
 $string['settingplatformplotcommand'] = 'Plot command';
@@ -424,11 +422,15 @@ $string['healthchecksampleplots'] = 'Two example plots below.  @plot([x^4/(1+x^4
 $string['healthchecksstackmaximaversion'] = 'Maxima version';
 $string['healthchecksstackmaximaversionfixoptimised'] = 'Please <a href="{$a->url}">rebuild your optimised Maxima executable</a>.';
 $string['healthchecksstackmaximaversionfixserver'] = 'Please rebuild the Maxima code on your MaximaPool server.';
-$string['healthchecksstackmaximaversionfixunknown'] = 'It is not really clear how that happened. You will need to debug this problem yourself.';
+$string['healthchecksstackmaximaversionfixunknown'] = 'It is not really clear how that happened. You will need to debug this problem yourself.  Start by clearing the CAS cache.';
 $string['healthchecksstackmaximanotupdated'] = 'It seems that STACK has not been properly update. Please visit the <a href="{$a}">System administration -> Notifications page</a>.';
 $string['healthchecksstackmaximatooold'] = 'So old the version is unknown!';
 $string['healthchecksstackmaximaversionmismatch'] = 'The version of the STACK-Maxima libraries being used ({$a->usedversion}) does not match what is expected ({$a->expectedversion}) by this version of the STACK question type. {$a->fix}';
 $string['healthchecksstackmaximaversionok'] = 'Correct and expected STACK-Maxima library version being used ({$a->usedversion}).';
+$string['healthuncached'] = 'Uncached CAS call';
+$string['healthuncachedintro'] = 'This section always sends a genuine call to the CAS, regardless of the currect cache settings.  This is needed to ensure the connection to the CAS is really currently working.';
+$string['healthuncachedstack_CAS_ok'] = 'CAS returned data as expected.  You have a live connection to the CAS.';
+$string['healthuncachedstack_CAS_not'] = 'CAS returned some data as expected, but there were errors.';
 $string['stackInstall_replace_dollars_desc'] = 'The <a href="{$a->link}">fix maths delimiters script</a> can be used to replace old-style delimiters like <code>$...$</code> and <code>$$...$$</code> in your questions with the new recommended <code>\(...\)</code> and <code>\[...\]</code>.';
 $string['stackInstall_testsuite_title'] = 'A test suite for STACK Answer tests';
 $string['stackInstall_testsuite_title_desc'] = 'The <a href="{$a->link}">answer-tests script</a> verifies that the answer tests are performing correctly. They are also useful to learn by example how each answer-test can be used.';
@@ -449,6 +451,7 @@ $string['testsuitecolrawmark'] = 'Raw mark';
 $string['testsuitecolexpectedscore'] = 'Expected mark';
 $string['testsuitepass'] = 'Pass';
 $string['testsuiteknownfail'] = 'Expected failure';
+$string['testsuiteknownfailmaths'] = 'Expected failure (maths)';
 $string['testsuitefail'] = 'Fail';
 $string['testsuitenotests']       = 'Number of tests: {$a->no}. ';
 $string['testsuiteteststook']     = 'Tests took {$a->time} seconds. ';
@@ -569,10 +572,10 @@ $string['ATLowestTerms_entries']        = 'The following terms in your answer ar
 
 
 $string['ATList_wronglen']          = 'Your list should have {$a->m0} elements, but it actually has {$a->m1}. ';
-$string['ATList_wrongentries']      = 'The entries in red below are those that are incorrect. {$a->m0} ';
+$string['ATList_wrongentries']      = 'The entries underlined in red below are those that are incorrect. {$a->m0} ';
 
 $string['ATMatrix_wrongsz']         = 'Your matrix should be {$a->m0} by {$a->m1}, but it is actually {$a->m2} by {$a->m3}. ';
-$string['ATMatrix_wrongentries']    = 'The entries in red below are those that are incorrect. {$a->m0} ';
+$string['ATMatrix_wrongentries']    = 'The entries underlined in red below are those that are incorrect. {$a->m0} ';
 
 $string['ATSet_wrongsz']            = 'Your set should have {$a->m0} different elements, but it is actually has {$a->m1}. ';
 $string['ATSet_wrongentries']       = 'The following entries are incorrect, although they may appear in a simplified form from that which you actually entered. {$a->m0} ';
@@ -610,13 +613,15 @@ $string['ATCompSquare_not_AlgEquiv']    = 'Your answer appears to be in the corr
 $string['ATCompSquare_false_no_summands']  = 'The completed square is of the form \( a(\cdots\cdots)^2 + b\) where \(a\) and \(b\) do not depend on your variable.  More than one of your summands appears to depend on the variable in your answer.';
 $string['ATCompSquare_SA_not_depend_var']  = 'Your answer should depend on the variable {$a->m0} but it does not!';
 
-$string['ATInt_error_list']         = 'The answer test failed.  Please contact your systems administrator';
-$string['ATInt_const_int']          = 'You need to add a constant of integration. This should be an arbitrary constant, not a number.';
-$string['ATInt_const']              = 'You need to add a constant of integration, otherwise this appears to be correct.  Well done.';
-$string['ATInt_EqFormalDiff']       = 'The formal derivative of your answer does equal the expression that you were asked to integrate.  However, your answer differs from the correct answer in a significant way, that is to say not just, e.g., a constant of integration.  Please ask your teacher about this.';
-$string['ATInt_weirdconst']         = 'The formal derivative of your answer does equal the expression that you were asked to integrate.  However, you have a strange constant of integration.  Please ask your teacher about this.';
-$string['ATInt_diff']               = 'It looks like you have differentiated instead!';
-$string['ATInt_generic']            = 'The derivative of your answer should be equal to the expression that you were asked to integrate, that was: {$a->m0}  In fact, the derivative of your answer, with respect to {$a->m1} is: {$a->m2} so you must have done something wrong!';
+$string['ATInt_error_list']          = 'The answer test failed.  Please contact your systems administrator';
+$string['ATInt_const_int']           = 'You need to add a constant of integration. This should be an arbitrary constant, not a number.';
+$string['ATInt_const']               = 'You need to add a constant of integration, otherwise this appears to be correct.  Well done.';
+$string['ATInt_EqFormalDiff']        = 'The formal derivative of your answer does equal the expression that you were asked to integrate.  However, your answer differs from the correct answer in a significant way, that is to say not just, e.g., a constant of integration.  Please ask your teacher about this.';
+$string['ATInt_logabs']              = 'The formal derivative of your answer does equal the expression that you were asked to integrate.  However, your answer differs from the correct answer in a significant way, that is to say not just, e.g., a constant of integration.  Your teacher may expect you to use the result \(\int\frac{1}{x} dx = \log(|x|)+c\), rather than \(\int\frac{1}{x} dx = \log(x)+c\).  Please ask your teacher about this.';
+$string['ATInt_weirdconst']          = 'The formal derivative of your answer does equal the expression that you were asked to integrate.  However, you have a strange constant of integration.  Please ask your teacher about this.';
+$string['ATInt_logabs_inconsistent'] = 'There appear to be strange inconsistencies between your use of \(\log(...)\) and \(\log(|...|)\).  Please ask your teacher about this.  ';
+$string['ATInt_diff']                = 'It looks like you have differentiated instead!';
+$string['ATInt_generic']             = 'The derivative of your answer should be equal to the expression that you were asked to integrate, that was: {$a->m0}  In fact, the derivative of your answer, with respect to {$a->m1} is: {$a->m2} so you must have done something wrong!';
 
 $string['ATDiff_error_list']        = 'The answer test failed.  Please contact your systems administrator';
 $string['ATDiff_int']               = 'It looks like you have integrated instead!';
@@ -639,7 +644,7 @@ $string['ATSysEquiv_SB_not_poly_eq_list']       = 'The Teacher\'s answer should 
 $string['ATSysEquiv_SA_missing_variables']      = 'Your answer is missing one or more variables!';
 $string['ATSysEquiv_SA_extra_variables']        = 'Your answer includes too many variables!';
 $string['ATSysEquiv_SA_system_underdetermined'] = 'The equations in your system appear to be correct, but you need others besides.';
-$string['ATSysEquiv_SA_system_overdetermined']  = 'The entries in red below are those that are incorrect. {$a->m0} ';
+$string['ATSysEquiv_SA_system_overdetermined']  = 'The entries underlined in red below are those that are incorrect. {$a->m0} ';
 
 $string['ATRegEx_missing_option']               = 'Missing regular expression in CAS Option field.';
 

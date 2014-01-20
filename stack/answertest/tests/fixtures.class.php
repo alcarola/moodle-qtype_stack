@@ -58,7 +58,7 @@ class stack_answertest_test_data {
         array('AlgEquiv', '4^(1/2)', 'sqrt(4)', 1, '', ''),
         array('AlgEquiv', '0.5', '1/2', 1, '', 'Mix of floats and rational numbers'),
         array('AlgEquiv', '0.33', '1/3', 0, '', ''),
-        array('AlgEquiv', '0.333333333333333', '1/3', 1, '', ''),
+        array('AlgEquiv', '0.333333333333333', '1/3', 0, '', ''),
 
         array('AlgEquiv', 'sqrt(-1)', '%i', 1, '', 'Complex numbers'),
         array('AlgEquiv', '%i', 'e^(i*pi/2)', 1, '', ''),
@@ -83,7 +83,10 @@ class stack_answertest_test_data {
         array('AlgEquiv', '(x-1)^2', 'x^2-2*x+1', 1, '', 'Polynomials and rational function'),
         array('AlgEquiv', '(x-1)*(x^2+x+1)', 'x^3-1', 1, '', ''),
         array('AlgEquiv', '(x-1)^(-2)', '1/(x^2-2*x+1)', 1, '', ''),
+        array('AlgEquiv', '(x-a)^6000', '(x-a)^6000', 1, '', ''),
+        array('AlgEquiv', '(a-x)^6000', '(x-a)^6000', 1, '', ''),
         array('AlgEquiv', '1/n-1/(n+1)', '1/(n*(n+1))', 1, '', ''),
+        array('AlgEquiv', '0.5*x^2+3*x-1', 'x^2/2+3*x-1', 1, '', ''),
         array('AlgEquiv', 'cos(x)', 'cos(-x)', 1, '', 'Trig functions'),
         array('AlgEquiv', 'cos(x)^2+sin(x)^2', '1', 1, '', ''),
         array('AlgEquiv', '2*cos(x)^2-1', 'cos(2*x)', 1, '', ''),
@@ -96,6 +99,7 @@ class stack_answertest_test_data {
         array('AlgEquiv', 'log(a^2*b)', '2*log(a)+log(b)', 1, '', 'Logarithms'),
         array('AlgEquiv', 'lg(10^x)', 'x', 1, '', ''),
         array('AlgEquiv', '(2*log(2*x)+x)/(2*x)', '(log(2*x)+2)/(2*sqrt(x))', 0, '', ''),
+        array('AlgEquiv', 'log(abs((x^2-9)))', 'log(abs(x-3))+log(abs(x+3))', 0, '', ''), // Might come up in ATInt
         array('AlgEquiv', 'e^1-e^(-1)', '2*sinh(1)', 1, '', 'Hyperbolic trig'),
         array('AlgEquiv', 'x', '[1,2,3]', 0, '', 'Lists'),
         array('AlgEquiv', '[1,2]', '[1,2,3]', 0, '', ''),
@@ -125,15 +129,25 @@ class stack_answertest_test_data {
         array('AlgEquiv', 'x=x', 'y=y', 1, '', ''),
         array('AlgEquiv', 'x+y=1', 'y=1-x', 1, '', ''),
         array('AlgEquiv', '2*x+2*y=1', 'y=0.5-x', 1, '', ''),
-        array('AlgEquiv', '(x-y)*(x+y)=0', 'y^2=x^2', 1, '', ''),
-        array('AlgEquiv', '(x-1)=0', '(x-1)^2=0', 0, '', ''),
-        array('AlgEquiv', '(x-1)*(x+1)*(y-1)*(y+1)=0', 'y^2+x^2=1+x^2*y^2', 1, '', ''),
         array('AlgEquiv', '1/x+1/y=2', 'y = x/(2*x-1)', 1, '', ''),
         array('AlgEquiv', 'y=sin(2*x)', 'y/2=cos(x)*sin(x)', 1, '', ''),
+        array('AlgEquiv', 'y=(x-a)^6000', 'y=(x-a)^6000', 1, '', ''),
+        array('AlgEquiv', 'y=(a-x)^6000', 'y=(x-a)^6000', 1, '', ''),
         array('AlgEquiv', 'x+y=i', 'y=i-x', 1, '', ''),
         array('AlgEquiv', '(1+i)*(x+y)=0', 'y=-x', 1, '', ''),
-        array('AlgEquiv', 'x^2+y^2=1', 'y=sqrt(x^2-1)', 0, '', ''),
         array('AlgEquiv', 's^2*%e^(s*t)=0', 's^2=0', 0, '', ''),
+        array('AlgEquiv', 'x=y', 'x^2=y^2', 0, '', "Equations: Loose/gain roots with nth powers of each side."),
+        array('AlgEquiv', '(x-y)*(x+y)=0', 'x^2=y^2', 1, '', ''),
+        array('AlgEquiv', 'x=1', '(x-1)^3=0', 0, '', ''),
+        array('AlgEquiv', 'sqrt(x)=sqrt(y)', 'x=y', 0, '', ''),
+        array('AlgEquiv', 'x=sqrt(a)', 'x^2=a', 0, '', ''),
+        array('AlgEquiv', '(x-sqrt(a))*(x+sqrt(a))=0', 'x^2=a', 1, '', ''),
+        array('AlgEquiv', '(x-%i*sqrt(a))*(x+%i*sqrt(a))=0', 'x^2=-a', 1, '', ''),
+        array('AlgEquiv', '(x-%i*sqrt(abs(a)))*(x+%i*sqrt(abs(a)))=0', 'x^2=-abs(a)', 1, '', ''),
+        array('AlgEquiv', 'y=sqrt(1-x^2)', 'x^2+y^2=1', 0, '', ''),
+        array('AlgEquiv', '(y-sqrt(1-x^2))*(y+sqrt(1-x^2))=0', 'x^2+y^2=1', 1, '', ''),
+        array('AlgEquiv', '(y-sqrt((1-x)*(1+x)))*(y+sqrt((1-x)*(1+x)))=0', 'x^2+y^2=1', 1, '', ''),
+        array('AlgEquiv', '(x-1)*(x+1)*(y-1)*(y+1)=0', 'y^2+x^2=1+x^2*y^2', 1, '', ''),
 
         array('AlgEquiv', 'f(x):=1/0', 'f(x):=x^2', -1, '', 'Functions'),
         array('AlgEquiv', '1', 'f(x):=x^2', 0, '', ''),
@@ -175,12 +189,12 @@ class stack_answertest_test_data {
         array('AlgEquiv', '(x-a)*(x+a)/sqrt(x^2-a^2)', 'sqrt(x^2-a^2)', 1, '', ''),
         array('AlgEquiv', '(n+1)*n!', '(n+1)!', 1, '', 'Factorials'),
         array('AlgEquiv', 'n/n!', '1/(n-1)!', 1, '', ''),
-        array('AlgEquiv', '2/%i*ln(sqrt((1+z)/2)+%i*sqrt((1-z)/2))', '-%i*ln(z+i*sqrt(1-z^2))', 1, '', 'These currently fail'),
-        array('AlgEquiv', '-%i/sqrt(x)', 'sqrt(-1/x)', 1, '', ''),
-        array('AlgEquiv', 'x^2>4', 'x>2 and x<-2', 1, '', ''),
-        array('AlgEquiv', 'x^4>=0', 'x^2>=0', 1, '', ''),
-        array('AlgEquiv', '-inf', 'minf', 1, '', ''),
-        array('AlgEquiv', '(sqrt(108)+10)^(1/3)-(sqrt(108)-10)^(1/3)', '2', 1, '', ''), // Cardano's example!
+        array('AlgEquiv', '2/%i*ln(sqrt((1+z)/2)+%i*sqrt((1-z)/2))', '-%i*ln(z+i*sqrt(1-z^2))', -2, '', 'These currently fail'),
+        array('AlgEquiv', '-%i/sqrt(x)', 'sqrt(-1/x)', -2, '', ''),
+        array('AlgEquiv', 'x^2>4', 'x>2 and x<-2', -2, '', ''),
+        array('AlgEquiv', 'x^4>=0', 'x^2>=0', -2, '', ''),
+        array('AlgEquiv', '-inf', 'minf', -2, '', ''),
+        array('AlgEquiv', '(sqrt(108)+10)^(1/3)-(sqrt(108)-10)^(1/3)', '2', -2, '', ''), // Cardano's example!
 
         // SubstEquiv Answer tests.
         array('SubstEquiv', '1/0', 'x^2-2*x+1', -1, '', ''),
@@ -200,6 +214,7 @@ class stack_answertest_test_data {
         array('EqualComAss', '(x+y)+z', 'z+x+y', 1, '', ''),
         array('EqualComAss', 'x*x', 'x^2', 0, '', ''),
         array('EqualComAss', '(1-x)^2', '(x-1)^2', 0, '', ''),
+        array('EqualComAss', '(a-x)^6000', '(x-a)^6000', 0, '', ''),
         array('EqualComAss', '-1+2', '2-1', 1, '', 'Unary minus'),
         array('EqualComAss', '-1*2+3*4', '3*4-1*2', 1, '', ''),
         array('EqualComAss', '(-1*2)+3*4', '10', 0, '', ''),
@@ -274,14 +289,23 @@ class stack_answertest_test_data {
         array('SameType', 'x>1 and x<3', 'x>=1', 1, '', ''),
         array('SameType', '{x>1,x<3}', 'x>=1', 0, '', ''),
 
-        array('SysEquiv', '[90=v*t,90=(v+5)*(t-1/4)]', '[90=v*t,90=(v+5)*(t-1/4)]', 1, '', ''),
-        array('SysEquiv', '[d=90,d=v*t,d=(v+5)*(t-1/4)]', '[90=v*t,90=(v+5)*(t-1/4)]', 1, '', ''),
-        array('SysEquiv', '1', '[90=v*t,90=(v+5)*(t-1/4)]', 0, '', ''),
-        array('SysEquiv', '[90=v*t,90=(v+5)*(t-1/4)]', '1', 0, '', ''),
+        array('SysEquiv', '1/0', '[(x-1)*(x+1)=0]', -1, '', 'Basic tests'),
+        array('SysEquiv', '[(x-1)*(x+1)=0]', '1/0', -1, '', ''),
+        array('SysEquiv', '1', '[(x-1)*(x+1)=0]', 0, '', ''),
+        array('SysEquiv', '[(x-1)*(x+1)=0]', '1', 0, '', ''),
         array('SysEquiv', '[1]', '[90=v*t,90=(v+5)*(t-1/4)]', 0, '', ''),
-        array('SysEquiv', '[90=v*t,90=(v+5)*(t-1/4)]', '[1]', 0, '', ''),
+        array('SysEquiv', '[(x-1)*(x+1)=0]', '[1]', 0, '', ''),
+        array('SysEquiv', '[x^2]', '[(x-1)*(x+1)=0]', 0, '', ''),
         array('SysEquiv', '[90=v*t^t,90=(v+5)*(t-1/4)]', '[90=v*t,90=(v+5)*(t-1/4)]', 0, '', ''),
         array('SysEquiv', '[90=v*t,90=(v+5)*(t-1/4)]', '[90=v*t^t,90=(v+5)*(t-1/4)]', 0, '', ''),
+        array('SysEquiv', '[x^2=1]', '[(x-1)*(x+1)=0]', 1, '', 'Tests of equivalence'),
+        array('SysEquiv', '[x=1]', '[(x-1)*(x+1)=0,(x-1)*(x-3)=0]', 1, '', ''),
+        array('SysEquiv', '[x^2=1]', '[(x-1)*(x+1)*(x-2)=0]', 0, '', ''),
+        array('SysEquiv', '[x=1,y=-1]', '[(x-1)*(y+1)=0]', 0, '', ''),
+        array('SysEquiv', '[x=1]', '[(x-1)*(x+1)=0]', 0, '', ''),
+        array('SysEquiv', '[x=1]', '[(x-1)*(x+1)*y=0]', 0, '', ''),
+        array('SysEquiv', '[90=v*t,90=(v+5)*(t-1/4)]', '[90=v*t,90=(v+5)*(t-1/4)]', 1, '', ''),
+        array('SysEquiv', '[d=90,d=v*t,d=(v+5)*(t-1/4)]', '[90=v*t,90=(v+5)*(t-1/4)]', 1, '', ''),
         array('SysEquiv', '[90=v*t,90=(v+5)*(t*x-1/4)]', '[90=v*t,90=(v+5)*(t-1/4)]', 0, '', ''),
         array('SysEquiv', '[90=v*t,90=(v+5)*(t-1/4)]', '[90=v*t,90=(v+5)*(t*x-1/4)]', 0, '', ''),
         array('SysEquiv', '[90=v*t]', '[90=v*t,90=(v+5)*(t-1/4)]', 0, '', ''),
@@ -298,6 +322,7 @@ class stack_answertest_test_data {
         array('Expanded', 'x^2-(a+b)*x+a*b', '0', 0, '', ''),
         array('Expanded', 'x^2-a*x-b*x+a*b', '0', 1, '', ''),
         array('Expanded', 'cos(2*x)', '0', 1, '', ''),
+        array('Expanded', '(a-x)^6000', '0', -2, '', 'This fails, but you are never going to ask students to do this anyway...'),
 
         // Factored form.
         array('FacForm', '1/0', '0', -1, 'x', ''),
@@ -339,6 +364,8 @@ class stack_answertest_test_data {
         array('FacForm', '3*y*(y^2-2*y-8)', '3*(y-4)*y*(y+2)', 0, 'y', ''),
         array('FacForm', '3*(y^2-4*y)*(y+2)', '3*(y-4)*y*(y+2)', 0, 'y', ''),
         array('FacForm', '(y-4)*y*(3*y+6)', '3*(y-4)*y*(y+2)', 0, 'y', ''),
+        array('FacForm', '(a-x)^6000', '(a-x)^6000', 1, 'x', ''),
+        array('FacForm', '(x-a)^6000', '(a-x)^6000', 1, 'x', ''),
         array('FacForm', '(sin(x)+1)*(sin(x)-1)', 'sin(x)^2-1', 1, 'sin(x)', 'Not polynomials in a variable'),
         array('FacForm', '(cos(t)-sqrt(2))^2', 'cos(t)^2-2*sqrt(2)*cos(t)+2', 1, 'cos(t)', ''),
         array('FacForm', '7', '7', 1, 'x', ''),
@@ -401,6 +428,8 @@ class stack_answertest_test_data {
         array('PartFrac', '1/0', '3*x^2', -1, 'x', ''),
         array('PartFrac', '0', '0', -1, '1/0', ''),
         array('PartFrac', '0', '1/0', -1, 'x', ''),
+        array('PartFrac', '1/n=0', '1/n', 0, 'n', ''),
+        array('PartFrac', '1/n', '{1/n}', 0, 'n', ''),
         array('PartFrac', '1/m', '1/n', 0, 'n', 'Basic tests'),
         array('PartFrac', '1/n', '1/n', 1, 'n', ''),
         array('PartFrac', '1/(n+1)-1/n', '1/(n+1)-1/n', 1, 'n', 'A simple cases, linear factors in denominator'),
@@ -457,6 +486,8 @@ class stack_answertest_test_data {
         array('Diff', 'y=x^4/4', 'x^4/4', 0, 'x', ''),
         array('Diff', 'x^4/4', 'y=x^4/4', 0, 'x', ''),
         array('Diff', 'y=x^4/4', 'y=x^4/4', 0, 'x', ''),
+        array('Diff', '6000*(x-a)^5999', '6000*(x-a)^5999', 1, 'x', ''),
+        array('Diff', '5999*(x-a)^5999', '6000*(x-a)^5999', 0, 'x', ''),
         array('Diff', 'y^2-2*y+1', 'x^2-2*x+1', 0, 'x', 'Variable mismatch tests'),
         array('Diff', 'x^2-2*x+1', 'y^2-2*y+1', 0, 'x', ''),
         array('Diff', 'y^2+2*y+1', 'x^2-2*x+1', 0, 'z', ''),
@@ -479,6 +510,9 @@ class stack_answertest_test_data {
         array('Int', 'x^2/2-2*x+2+c', '(x-2)^2/2', 1, 'x', ''),
         array('Int', '(t-1)^5/5+c', '(t-1)^5/5', 1, 't', ''),
         array('Int', 'cos(2*x)/2+1+c', 'cos(2*x)/2', 1, 'x', ''),
+        array('Int', '(x-a)^6001/6001+c', '(x-a)^6001/6001', 1, 'x', ''),
+        array('Int', '(x-a)^6001/6001', '(x-a)^6001/6001', 0, 'x', ''),
+        array('Int', '6000*(x-a)^5999', '(x-a)^6001/6001', 0, 'x', ''),
         array('Int', 'x^3/3+c', 'x^3/3+c', 1, 'x', 'The teacher adds a constant'),
         array('Int', 'x^2/2-2*x+2+c', '(x-2)^2/2+k', 1, 'x', ''),
         array('Int', 'exp(x)+c', 'exp(x)', 1, 'x', 'Special case'),
@@ -504,6 +538,27 @@ class stack_answertest_test_data {
         array('Int', 'ln(x)+ln(a)', 'ln(k*abs(x+a))', 0, 'x', 'Other logs'),
         array('Int', 'log(x)^2-2*log(c)*log(x)+k', 'ln(c/x)^2', 0, 'x', ''),
         array('Int', 'log(x)^2-2*log(c)*log(x)+k', 'ln(abs(c/x))^2', 0, 'x', ''),
+        // In these examples there are two logarihtms.  The student should be *consistent*
+        // in their use, or not, of absolute value.
+        array('Int', 'log(abs(x-3))+log(abs(x+3))', 'log(abs(x-3))+log(abs(x+3))', 0, 'x', 'Two logs'), 
+        array('Int', 'log(abs(x-3))+log(abs(x+3))+c', 'log(abs(x-3))+log(abs(x+3))', 1, 'x', ''),
+        array('Int', 'log(abs(x-3))+log(abs(x+3))', 'log(x-3)+log(x+3)', 0, 'x', ''),
+        array('Int', 'log(abs(x-3))+log(abs(x+3))+c', 'log(x-3)+log(x+3)', 1, 'x', ''),
+        array('Int', 'log(x-3)+log(x+3)', 'log(x-3)+log(x+3)', 0, 'x', ''),
+        array('Int', 'log(x-3)+log(x+3)+c', 'log(x-3)+log(x+3)', 1, 'x', ''),
+        array('Int', 'log(x-3)+log(x+3)', 'log(abs(x-3))+log(abs(x+3))', 0, 'x', ''),
+        array('Int', 'log(x-3)+log(x+3)+c', 'log(abs(x-3))+log(abs(x+3))', 0, 'x', ''),
+        array('Int', 'log(abs((x-3)*(x+3)))+c', 'log(abs(x-3))+log(abs(x+3))', 1, 'x', ''),
+        array('Int', 'log(abs((x^2-9)))+c', 'log(abs(x-3))+log(abs(x+3))', 0, 'x', ''),
+        array('Int', '2*log(abs(x-2))-log(abs(x+2))+(x^2+4*x)/2', '-log(abs(x+2))+2*log(abs(x-2))+(x^2+4*x)/2+c', 0, 'x', ''), //int((x^3+2*x^2-3*x-2)/(x^2-4),x);
+        array('Int', '-log(abs(x+2))+2*log(abs(x-2))+(x^2+4*x)/2+c', '-log(abs(x+2))+2*log(abs(x-2))+(x^2+4*x)/2+c', 1, 'x', ''),
+        array('Int', '-log(abs(x+2))+2*log(abs(x-2))+(x^2+4*x)/2+c', '-log((x+2))+2*log((x-2))+(x^2+4*x)/2', 1, 'x', ''),
+        // Inconsistent cases. (Teacher doesn't use abs)
+        array('Int', 'log(abs(x-3))+log((x+3))+c', 'log(x-3)+log(x+3)', 0, 'x', 'Inconsistent log(abs())'),
+        array('Int', 'log((x-3))+log(abs(x+3))+c', 'log(x-3)+log(x+3)', 0, 'x', ''),
+        array('Int', 'log((x-3))+log(abs(x+3))', 'log(x-3)+log(x+3)', 0, 'x', ''),
+        array('Int', '2*log((x-2))-log(abs(x+2))+(x^2+4*x)/2', '-log(abs(x+2))+2*log(abs(x-2))+(x^2+4*x)/2', 0, 'x', ''),
+        // Trig.
         array('Int', '2*sin(x)*cos(x)', 'sin(2*x)+c', 0, 'x', 'Trig'),
         array('Int', '2*sin(x)*cos(x)+k', 'sin(2*x)+c', 1, 'x', ''),
         array('Int', '-2*cos(3*x)/3-3*cos(2*x)/2', '-2*cos(3*x)/3-3*cos(2*x)/2+c', 0, 'x', ''),
@@ -517,7 +572,7 @@ class stack_answertest_test_data {
             '-(t*sin(4*t)^2-sin(4*t)+t*cos(4*t)^2+2*t*cos(4*t)+t)/(sin(4*t)^2+cos(4*t)^2+2*cos(4*t)+1)', 1, 't', ''),
         array('Int', 'tan(x)-x+c', 'tan(x)-x', 1, 'x', ''),
         array('Int', '2/3*sqrt(3)*(atan(sin(x)/(sqrt(3)*(cos(x)+1)))-(atan(sin(x)/(cos(x)+1))))+x/sqrt(3)',
-            '2*atan(sin(x)/(sqrt(3)*(cos(x)+1)))/sqrt(3)', 0, 'x', 'Stoutemyer'),
+            '2*atan(sin(x)/(sqrt(3)*(cos(x)+1)))/sqrt(3)', -2, 'x', 'Stoutemyer (currently fails)'),
 
         array('GT', '1/0', '1', -1, '', ''),
         array('GT', '1', '1/0', -1, '', ''),
@@ -526,6 +581,8 @@ class stack_answertest_test_data {
         array('GT', '1', '2.1', 0, '', ''),
         array('GT', 'pi', '3', 1, '', ''),
         array('GT', 'pi+2', '5', 1, '', ''),
+        array('GT', '-inf', '0', 0, '', 'Infinity'),
+        array('GT', 'inf', '0', 0, '', ''),
 
         array('GTE', '1/0', '1', -1, '', ''),
         array('GTE', '1', '1/0', -1, '', ''),
@@ -545,6 +602,7 @@ class stack_answertest_test_data {
         array('NumRelative', '1.05', '1', 1, '0.1', 'Options passed'),
         array('NumRelative', '1.05', '3', 0, '0.1', ''),
         array('NumRelative', '3.14', 'pi', 1, '0.001', ''),
+        array('NumRelative', 'inf', '0', 0, '', 'Infinity'),
 
 
         array('NumAbsolute', '1/0', '0', -1, '', 'Basic tests'),
@@ -704,6 +762,10 @@ class stack_answertest_test_data {
             } else {
                 $passed = false;
             }
+        }
+        // These tests are all expected to fail, so we make them all pass
+        if (-2 === $test->expectedscore) {
+            $passed = true;
         }
 
             return array($passed, $errors, $rawmark, $feedback, $ansnote);

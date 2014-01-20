@@ -59,15 +59,14 @@ $settings->add(new admin_setting_configselect('qtype_stack/platform',
                 'unix'             => get_string('settingplatformtypeunix',                'qtype_stack'),
                 'unix-optimised'   => get_string('settingplatformtypeunixoptimised',       'qtype_stack'),
                 'win'              => get_string('settingplatformtypewin',                 'qtype_stack'),
-                'tomcat'           => get_string('settingplatformtypemaximapool',          'qtype_stack'),
-                'tomcat-optimised' => get_string('settingplatformtypemaximapooloptimised', 'qtype_stack'),
                 'server'           => get_string('settingplatformtypeserver',              'qtype_stack'))));
 
 $settings->add(new admin_setting_configselect('qtype_stack/maximaversion',
         get_string('settingcasmaximaversion', 'qtype_stack'),
-        get_string('settingcasmaximaversion_desc', 'qtype_stack'), '5.30.0',
+        get_string('settingcasmaximaversion_desc', 'qtype_stack'), '5.31.1',
                 array('5.23.2' => '5.23.2', '5.25.1' => '5.25.1', '5.26.0' => '5.26.0',
-                      '5.27.0' => '5.27.0', '5.28.0' => '5.28.0', '5.30.0' => '5.30.0')));
+                      '5.27.0' => '5.27.0', '5.28.0' => '5.28.0', '5.30.0' => '5.30.0',
+                      '5.31.1' => '5.31.1', '5.31.2' => '5.31.2', '5.31.3' => '5.31.3')));
 
 $settings->add(new admin_setting_configtext('qtype_stack/castimeout',
         get_string('settingcastimeout', 'qtype_stack'),
@@ -232,5 +231,5 @@ $settings->add(new admin_setting_configselect('qtype_stack/complexno',
 $settings->add(new admin_setting_configselect('qtype_stack/inversetrig',
         get_string('inversetrig', 'qtype_stack'),
         get_string('inversetrig_help', 'qtype_stack'), 'cos-1', array(
-            'cos-1' => 'cosâ�»Â¹(x)', 'acos' => 'acos(x)', 'arccos' => 'arccos(x)'
+            'cos-1' => "cos\xe2\x81\xbb\xc2\xb9(x)", 'acos' => 'acos(x)', 'arccos' => 'arccos(x)'
         )));

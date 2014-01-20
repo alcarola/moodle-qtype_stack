@@ -67,8 +67,7 @@ abstract class stack_connection_helper {
                 break;
             case 'tomcat':
             case 'tomcat-optimised':
-                require_once(dirname(__FILE__) . '/connector.tomcat.class.php');
-                $connection = new stack_cas_connection_tomcat(self::$config, $debuglog);
+                throw new stack_exception('stack_connection_helper: "tomcat" and "tomcat-optimised" settings are obsolete.  Please choose "server" setting instead.');
                 break;
 
             default:
@@ -238,7 +237,6 @@ abstract class stack_connection_helper {
 
         switch (self::$config->platform) {
             case 'unix-optimised':
-            case 'tomcat-optimised':
                 $docsurl = new moodle_url('/question/type/stack/doc/doc.php/CAS/Optimising_Maxima.md');
                 $fix = stack_string('healthchecksstackmaximaversionfixoptimised', array('url' => $docsurl->out()));
                 break;
@@ -254,5 +252,66 @@ abstract class stack_connection_helper {
         return array('healthchecksstackmaximaversionmismatch',
                 array('fix' => $fix, 'usedversion' => $usedversion,
                     'expectedversion' => self::$config->stackmaximaversion));
+    }
+
+    /**
+     * Really exectue a CAS command, regardless of the cache settings.
+     */
+    public static function stackmaxima_genuine_connect() {
+        self::ensure_config_loaded();
+
+        // Put something non-trivial in the call.
+        $date = date("Y-m-d H:i:s");
+
+        $command = 'cab:block([],print("[TimeStamp= [ 0 ], Locals= [ 0=[ error= ["), ' .
+                'cte("CASresult",errcatch(diff(x^n,x))), print("1=[ error= ["), ' .
+                'cte("CASversion",errcatch(stackmaximaversion)), print("2=[ error= ["), ' .
+                'cte("CAStime",errcatch(CAStime:"'.$date.'")), print("] ]"), return(true));' .
+                "\n";
+
+        // Really make sure there is no cache.
+        $configcache = self::$config->casresultscache;
+        $casdebugging = self::$config->casdebugging;
+        self::$config->casresultscache = 'none';
+        self::$config->casdebugging = true;
+
+        $connection = self::make();
+        $results = $connection->compute($command);
+
+        self::$config->casresultscache = $configcache;
+        self::$config->casdebugging = $casdebugging;
+
+        $debug = $connection->get_debuginfo();
+
+        $success = true;
+        $message = '';
+        if (empty($results)) {
+            $message = stack_string('stackCas_allFailed');
+            $success = false;
+        } else {
+            foreach ($results as $result) {
+                if ('CASresult' === $result['key']) {
+                    if ($result['value'] != 'n*x^(n-1)') {
+                        $success = false;
+                    }
+                } else if ('CAStime' === $result['key']) {
+                    if ($result['value'] != '"'.$date.'"') {
+                        $success = false;
+                    }
+                } else if ('CASversion' === $result['key']) {
+                } else {
+                    $success = false;
+                }
+            }
+        }
+
+        if ($success) {
+            $message = stack_string('healthuncachedstack_CAS_ok');
+        } else {
+            $message .= stack_string('healthuncachedstack_CAS_not');
+        }
+        $message = '<span class="error">'.$message.'</span>';
+
+        return array($message, $debug);
     }
 }
