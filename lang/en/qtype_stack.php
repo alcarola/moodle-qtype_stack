@@ -73,6 +73,9 @@ $string['inputtest'] ='Input test';
 $string['inversetrig'] = 'Inverse trigonometric functions';
 $string['inversetrig_help'] = 'Controls how inverse trigonometric functions are displayed in CAS output.';
 $string['inversetrig_link'] = '%%WWWROOT%%/question/type/stack/doc/doc.php/Authoring/Options.md#inverse_trig';
+$string['matrixparens'] = 'Default shape of matrix parentheses';
+$string['matrixparens_help'] = 'Controls the default shape of matrix parentheses when displayed in CAS output.';
+$string['matrixparens_link'] = '%%WWWROOT%%/question/type/stack/doc/doc.php/CAS/Matrix.md#matrixparens';
 $string['falsebranch'] = 'False branch';
 $string['falsebranch_help'] = 'These fields control what happens when the answer test does not pass
 ### Mod and score
@@ -489,6 +492,10 @@ $string['stackCas_bracketsdontmatch']       = 'The brackets are incorrectly nest
 $string['stackCas_spuriousop']              = 'Unknown operator: {$a->cmd}.';
 $string['stackCas_chained_inequalities']    = 'You appear to have "chained inequalities" e.g. \(a &lt b &lt c\).  You need to connect individual inequalities with logical operations such as \(and\) or \(or\).';
 $string['stackCas_backward_inequalities']   = 'Non-strict inequalities e.g. \( \leq \) or \( \geq \) must be entered as <= or >=.  You have {$a->cmd} in your expression, which is backwards.';
+$string['stackCas_trigop']                  = 'You must apply {$a->trig} to an argument.  You seem to have {$a->forbid}, which looks like you have tried to use {$a->trig} as a variable name.';
+$string['stackCas_trigexp']                 = 'You cannot take a power of a trig function by writing {$a->forbid}. The square of the value of \(\sin(x)\) is typed in as \(\sin(x)^2\).  The inverse of \(\sin(x)\) is written <tt>asin(x)</tt> and not \(\sin^{-1}(x)\) .';
+$string['stackCas_trigparens']              = 'When you apply a trig function to its arguments you must use round parentheses not square brackets.  E.g {$a->forbid}.';
+$string['stackCas_triginv']                 = 'Inverse trig functions are written {$a->goodinv} not {$a->badinv}.';
 
 // Used in cassession.class.php.
 $string['stackCas_CASError']                = 'The CAS returned the following error(s):';
@@ -546,6 +553,7 @@ $string['stackOptions_AnsTest_values_RegExp']             =  "RegExp";
 
 $string['AT_NOTIMPLEMENTED']        = 'This answer test has not been implemented. ';
 $string['TEST_FAILED']              = 'The answer test failed to execute correctly: please alert your teacher. {$a->errors}';
+$string['TEST_FAILED_Q']            = 'The answer test failed to execute correctly: please alert your teacher. ';
 $string['AT_MissingOptions']        = 'Missing option when executing the test. ';
 $string['AT_InvalidOptions']        = 'Option field is invalid. {$a->errors}';
 $string['AT_EmptySA']               = 'Attempted to execute an answer test with an empty student answer, probably a CAS validation problem when authoring the question.';
@@ -569,7 +577,6 @@ $string['ATInequality_backwards']       = 'Your inequality appears to be backwar
 
 $string['ATLowestTerms_wrong']          = 'You need to cancel fractions within your answer. ';
 $string['ATLowestTerms_entries']        = 'The following terms in your answer are not in lowest terms.  {$a->m0} Please try again.  ';
-
 
 $string['ATList_wronglen']          = 'Your list should have {$a->m0} elements, but it actually has {$a->m1}. ';
 $string['ATList_wrongentries']      = 'The entries underlined in red below are those that are incorrect. {$a->m0} ';
@@ -625,6 +632,12 @@ $string['ATInt_generic']             = 'The derivative of your answer should be 
 
 $string['ATDiff_error_list']        = 'The answer test failed.  Please contact your systems administrator';
 $string['ATDiff_int']               = 'It looks like you have integrated instead!';
+
+$string['ATNumerical_SA_not_list']       = 'Your answer should be a list, but is not.  Note that the syntax to enter a list is to enclose the comma separated values with square brackets. ';
+$string['ATNumerical_SA_not_set']        = 'Your answer should be a set, but is not.  Note that the syntax to enter a set is to enclose the comma separated values with curly brackets. ';
+$string['ATNumerical_SA_not_number']     = 'Your answer should be a floating point number, but is not. ';
+$string['ATNumerical_FAILED']            = 'Your answer should be a floating point number, or a list or set of numbers.  It is not. ';
+$string['ATNumerical_STACKERROR_tol']    = 'The numerical tolerance for ATNumerical should be a floating point number, but is not.  This is an internal error with the test.  Please ask your teacher about this. ';
 
 $string['ATNumSigFigs_error_list']  = 'The answer test failed.  Please contact your systems administrator';
 $string['ATNumSigFigs_NotDecimal']  = 'Your answer should be a decimal number, but is not! ';

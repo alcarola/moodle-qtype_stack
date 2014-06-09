@@ -14,6 +14,7 @@ The following features are in approximate priority order.  How to report bugs an
 * Geogebra input.
 * Reasoning by equivalence input type.
 * Inputs which enable student to input steps in the working. In particular, variable numbers of input boxes.
+* Add a "scratch working" area in which students can record their thinking etc. alongside the final answer.
 
 ### Improve the editing form ###
 
@@ -23,7 +24,7 @@ The following features are in approximate priority order.  How to report bugs an
 
 ### Other ideas ###
 
-* Implement "CommaError" checking for CAS strings.
+* Implement "CommaError" checking for CAS strings.  Make comma an option for the decimal separator.
 * Enable individual questions to load Maxima libraries.
 * It would be very useful to have finer control over the validation feedback. For example, if we have a polynomial with answer boxes for the coefficients, then we should be able to echo back "Your last answer was..." with the whole polynomial, not just the numbers.
 * Better options for automatically generated plots.  (Aalto use of tikzpicture?)  (Draw package?)
