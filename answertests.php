@@ -102,9 +102,17 @@ $allpassed = true;
 $notests = 0;
 $start = microtime(true);
 
+$oldtest = '';
 foreach ($tests as $test) {
 
     $notests++;
+
+    if ($oldtest != $test->name) {
+        if ('' != $oldtest) {
+            $table->add_separator();
+        }
+        $oldtest = $test->name;
+    }
 
     if ($test->notes) {
         reset($columns);
@@ -151,10 +159,10 @@ foreach ($tests as $test) {
 $table->finish_output();
 
 // Overall summary.
-if ($notests>0) {
+if ($notests > 0) {
     $took = (microtime(true) - $start);
     $rtook = round($took, 5);
-    $pertest = round($took/$notests, 5);
+    $pertest = round($took / $notests, 5);
     echo '<p>'.stack_string('testsuitenotests', array('no' => $notests));
     echo '<br/>'.stack_string('testsuiteteststook', array('time' => $rtook));
     echo '<br/>'.stack_string('testsuiteteststookeach', array('time' => $pertest));

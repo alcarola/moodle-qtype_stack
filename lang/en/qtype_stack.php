@@ -69,7 +69,7 @@ $string['defaultprtincorrectfeedback'] = 'Incorrect answer.';
 $string['defaultprtpartiallycorrectfeedback'] = 'Your answer is partially correct.';
 $string['branchfeedback'] = 'Node branch feedback';
 $string['branchfeedback_help'] = 'This is CASText which may depend on any of the question variables, input elements or the feedback variables. This is evaluated and displayed to the student if they pass down this branch.';
-$string['inputtest'] ='Input test';
+$string['inputtest'] = 'Input test';
 $string['inversetrig'] = 'Inverse trigonometric functions';
 $string['inversetrig_help'] = 'Controls how inverse trigonometric functions are displayed in CAS output.';
 $string['inversetrig_link'] = '%%WWWROOT%%/question/type/stack/doc/doc.php/Authoring/Options.md#inverse_trig';
@@ -275,6 +275,15 @@ $string['pleaseananswerallparts'] = 'Please answer all parts of the question.';
 $string['pleasecheckyourinputs'] = 'Please verify that what you entered was interpreted as expected.';
 $string['singlechargotmorethanone'] = 'You can only enter a single character here.';
 
+$string['false'] = 'False';
+$string['notanswered'] = 'Not answered';
+$string['true'] = 'True';
+$string['ddl_empty'] = 'No choices were provided for this drop-down. Please input a set of values like a,b,c,d';
+
+$string['teacheranswershow']      = 'A correct answer is \( {$a->display} \), which can be typed in as follows: {$a->value}';
+$string['teacheranswershow_disp'] = 'A correct answer is \( {$a->display} \).';
+
+
 // Admin settings.
 $string['settingajaxvalidation'] = 'Instant validation';
 $string['settingajaxvalidation_desc'] = 'With this setting turned on, the students current input will be validated whenever they pause in their typing. This gives a better user experience, but is likely to increase the server load.';
@@ -330,12 +339,6 @@ $string['bulktesttitle'] = 'Running all the question tests in {$a}';
 $string['overallresult'] = 'Overall result';
 $string['seedx'] = 'Seed {$a}';
 $string['testpassesandfails'] = '{$a->passes} passes and {$a->fails} failures.';
-
-// Strings used by interaction elements.
-$string['false'] = 'False';
-$string['notanswered'] = 'Not answered';
-$string['true'] = 'True';
-$string['ddl_empty'] = 'No choices were provided for this drop-down. Please input a set of values like a,b,c,d';
 
 // Strings used by the question test script.
 $string['addanothertestcase'] = 'Add another test case...';
@@ -403,6 +406,7 @@ $string['healthcheck'] = 'STACK healthcheck';
 $string['healthcheck_desc'] = 'The <a href="{$a->link}">healthcheck script</a> helps you verify that all aspects of STACK are working properly.';
 $string['healthcheckcache_db'] = 'CAS results are being cached in the database.';
 $string['healthcheckcache_none'] = 'CAS results are not being cached.';
+$string['healthcheckcache_otherdb'] = 'CAS results are being cached in another database.';
 $string['healthcheckcachestatus'] = 'The cache currently contains {$a} entries.';
 $string['healthcheckconfig'] = 'Maxima configuration file';
 $string['healthcheckconfigintro1'] = 'Found, and using, Maxima in the following directory:';
@@ -492,6 +496,7 @@ $string['stackCas_bracketsdontmatch']       = 'The brackets are incorrectly nest
 $string['stackCas_spuriousop']              = 'Unknown operator: {$a->cmd}.';
 $string['stackCas_chained_inequalities']    = 'You appear to have "chained inequalities" e.g. \(a &lt b &lt c\).  You need to connect individual inequalities with logical operations such as \(and\) or \(or\).';
 $string['stackCas_backward_inequalities']   = 'Non-strict inequalities e.g. \( \leq \) or \( \geq \) must be entered as <= or >=.  You have {$a->cmd} in your expression, which is backwards.';
+$string['stackCas_unencpsulated_comma']     = 'A comma in your expression appears in a strange way.  Commas are used to separate items in lists, sets etc.  You need to use a decimal point, not a comma, in floating point numbers.';
 $string['stackCas_trigop']                  = 'You must apply {$a->trig} to an argument.  You seem to have {$a->forbid}, which looks like you have tried to use {$a->trig} as a variable name.';
 $string['stackCas_trigexp']                 = 'You cannot take a power of a trig function by writing {$a->forbid}. The square of the value of \(\sin(x)\) is typed in as \(\sin(x)^2\).  The inverse of \(\sin(x)\) is written <tt>asin(x)</tt> and not \(\sin^{-1}(x)\) .';
 $string['stackCas_trigparens']              = 'When you apply a trig function to its arguments you must use round parentheses not square brackets.  E.g {$a->forbid}.';
@@ -527,29 +532,29 @@ $string['qm_error'] = 'Your answer contains question mark characters, ?, which a
 // $string['CommaError']     = 'Your answer contains commas which are not part of a list, set or matrix.  <ul><li>If you meant to type in a list, please use <tt>{$a[0]}</tt>,</li><li>If you meant to type in a set, please use <tt>{$a[1]}</tt>.</li></ul>';
 
 // Answer tests.
-$string['stackOptions_AnsTest_values_AlgEquiv']           =  "AlgEquiv";
-$string['stackOptions_AnsTest_values_EqualComAss']        =  "EqualComAss";
-$string['stackOptions_AnsTest_values_CasEqual']           =  "CasEqual";
-$string['stackOptions_AnsTest_values_SameType']           =  "SameType";
-$string['stackOptions_AnsTest_values_SubstEquiv']         =  "SubstEquiv";
-$string['stackOptions_AnsTest_values_SysEquiv']           =  "SysEquiv";
-$string['stackOptions_AnsTest_values_Expanded']           =  "Expanded";
-$string['stackOptions_AnsTest_values_FacForm']            =  "FacForm";
-$string['stackOptions_AnsTest_values_SingleFrac']         =  "SingleFrac";
-$string['stackOptions_AnsTest_values_PartFrac']           =  "PartFrac";
-$string['stackOptions_AnsTest_values_CompSquare']         =  "CompletedSquare";
-$string['stackOptions_AnsTest_values_NumRelative']        =  "NumRelative";
-$string['stackOptions_AnsTest_values_NumAbsolute']        =  "NumAbsolute";
-$string['stackOptions_AnsTest_values_NumSigFigs']         =  "NumSigFigs";
-$string['stackOptions_AnsTest_values_NumDecPlaces']       =  "NumDecPlaces";
-$string['stackOptions_AnsTest_values_GT']                 =  "Num-GT";
-$string['stackOptions_AnsTest_values_GTE']                =  "Num-GTE";
-$string['stackOptions_AnsTest_values_LowestTerms']        =  "LowestTerms";
-$string['stackOptions_AnsTest_values_Diff']               =  "Diff";
-$string['stackOptions_AnsTest_values_Int']                =  "Int";
-$string['stackOptions_AnsTest_values_String']             =  "String";
-$string['stackOptions_AnsTest_values_StringSloppy']       =  "StringSloppy";
-$string['stackOptions_AnsTest_values_RegExp']             =  "RegExp";
+$string['stackOptions_AnsTest_values_AlgEquiv']           = "AlgEquiv";
+$string['stackOptions_AnsTest_values_EqualComAss']        = "EqualComAss";
+$string['stackOptions_AnsTest_values_CasEqual']           = "CasEqual";
+$string['stackOptions_AnsTest_values_SameType']           = "SameType";
+$string['stackOptions_AnsTest_values_SubstEquiv']         = "SubstEquiv";
+$string['stackOptions_AnsTest_values_SysEquiv']           = "SysEquiv";
+$string['stackOptions_AnsTest_values_Expanded']           = "Expanded";
+$string['stackOptions_AnsTest_values_FacForm']            = "FacForm";
+$string['stackOptions_AnsTest_values_SingleFrac']         = "SingleFrac";
+$string['stackOptions_AnsTest_values_PartFrac']           = "PartFrac";
+$string['stackOptions_AnsTest_values_CompSquare']         = "CompletedSquare";
+$string['stackOptions_AnsTest_values_NumRelative']        = "NumRelative";
+$string['stackOptions_AnsTest_values_NumAbsolute']        = "NumAbsolute";
+$string['stackOptions_AnsTest_values_NumSigFigs']         = "NumSigFigs";
+$string['stackOptions_AnsTest_values_NumDecPlaces']       = "NumDecPlaces";
+$string['stackOptions_AnsTest_values_GT']                 = "Num-GT";
+$string['stackOptions_AnsTest_values_GTE']                = "Num-GTE";
+$string['stackOptions_AnsTest_values_LowestTerms']        = "LowestTerms";
+$string['stackOptions_AnsTest_values_Diff']               = "Diff";
+$string['stackOptions_AnsTest_values_Int']                = "Int";
+$string['stackOptions_AnsTest_values_String']             = "String";
+$string['stackOptions_AnsTest_values_StringSloppy']       = "StringSloppy";
+$string['stackOptions_AnsTest_values_RegExp']             = "RegExp";
 
 $string['AT_NOTIMPLEMENTED']        = 'This answer test has not been implemented. ';
 $string['TEST_FAILED']              = 'The answer test failed to execute correctly: please alert your teacher. {$a->errors}';
@@ -578,41 +583,41 @@ $string['ATInequality_backwards']       = 'Your inequality appears to be backwar
 $string['ATLowestTerms_wrong']          = 'You need to cancel fractions within your answer. ';
 $string['ATLowestTerms_entries']        = 'The following terms in your answer are not in lowest terms.  {$a->m0} Please try again.  ';
 
-$string['ATList_wronglen']          = 'Your list should have {$a->m0} elements, but it actually has {$a->m1}. ';
-$string['ATList_wrongentries']      = 'The entries underlined in red below are those that are incorrect. {$a->m0} ';
+$string['ATList_wronglen']              = 'Your list should have {$a->m0} elements, but it actually has {$a->m1}. ';
+$string['ATList_wrongentries']          = 'The entries underlined in red below are those that are incorrect. {$a->m0} ';
 
-$string['ATMatrix_wrongsz']         = 'Your matrix should be {$a->m0} by {$a->m1}, but it is actually {$a->m2} by {$a->m3}. ';
-$string['ATMatrix_wrongentries']    = 'The entries underlined in red below are those that are incorrect. {$a->m0} ';
+$string['ATMatrix_wrongsz']             = 'Your matrix should be {$a->m0} by {$a->m1}, but it is actually {$a->m2} by {$a->m3}. ';
+$string['ATMatrix_wrongentries']        = 'The entries underlined in red below are those that are incorrect. {$a->m0} ';
 
-$string['ATSet_wrongsz']            = 'Your set should have {$a->m0} different elements, but it is actually has {$a->m1}. ';
-$string['ATSet_wrongentries']       = 'The following entries are incorrect, although they may appear in a simplified form from that which you actually entered. {$a->m0} ';
+$string['ATSet_wrongsz']                = 'Your set should have {$a->m0} different elements, but it is actually has {$a->m1}. ';
+$string['ATSet_wrongentries']           = 'The following entries are incorrect, although they may appear in a simplified form from that which you actually entered. {$a->m0} ';
 
-$string['irred_Q_factored']         = 'The term {$a->m0} should be unfactored, but is not. ';
-$string['irred_Q_commonint']        = 'You need to take out a common factor. ';  // Needs a space at the end.
-$string['irred_Q_optional_fac']     = 'You could do more work, since {$a->m0} can be further factored.  However, you don\'t need to. ';
+$string['irred_Q_factored']             = 'The term {$a->m0} should be unfactored, but is not. ';
+$string['irred_Q_commonint']            = 'You need to take out a common factor. ';  // Needs a space at the end.
+$string['irred_Q_optional_fac']         = 'You could do more work, since {$a->m0} can be further factored.  However, you don\'t need to. ';
 
-$string['FacForm_UnPick_morework']  = 'You could still do some more work on the term {$a->m0}. ';
-$string['FacForm_UnPick_intfac']    = 'You need to take out a common factor. ';
+$string['FacForm_UnPick_morework']      = 'You could still do some more work on the term {$a->m0}. ';
+$string['FacForm_UnPick_intfac']        = 'You need to take out a common factor. ';
 
-$string['ATFacForm_error_list']     = 'The answer test failed.  Please contact your systems administrator';
-$string['ATFacForm_error_degreeSA'] = 'The CAS could not establish the algebraic degree of your answer.';
-$string['ATFacForm_isfactored']     = 'Your answer is factored, well done. ';  // Needs a space at the end.
-$string['ATFacForm_notfactored']    = 'Your answer is not factored. '; // Needs a space at the end.
-$string['ATFacForm_notalgequiv']    = 'Note that your answer is not algebraically equivalent to the correct answer.  You must have done something wrong. '; // needs a space at the end.
+$string['ATFacForm_error_list']         = 'The answer test failed.  Please contact your systems administrator';
+$string['ATFacForm_error_degreeSA']     = 'The CAS could not establish the algebraic degree of your answer.';
+$string['ATFacForm_isfactored']         = 'Your answer is factored, well done. ';  // Needs a space at the end.
+$string['ATFacForm_notfactored']        = 'Your answer is not factored. '; // Needs a space at the end.
+$string['ATFacForm_notalgequiv']        = 'Note that your answer is not algebraically equivalent to the correct answer.  You must have done something wrong. '; // needs a space at the end.
 
 $string['ATPartFrac_error_list']        = 'The answer test failed.  Please contact your systems administrator';
 $string['ATPartFrac_true']              = '';
-$string['ATPartFrac_single_fraction']   ='Your answer seems to be a single fraction, it needs to be in a partial fraction form. ';
-$string['ATPartFrac_diff_variables']    ='The variables in your answer are different to those of the question, please check them. ';
-$string['ATPartFrac_denom_ret']         ='If your answer is written as a single fraction then the denominator would be {$a->m0}. In fact, it should be {$a->m1}. ';
-$string['ATPartFrac_ret_expression']    ='Your answer as a single fraction is {$a->m0} ';
+$string['ATPartFrac_single_fraction']   = 'Your answer seems to be a single fraction, it needs to be in a partial fraction form. ';
+$string['ATPartFrac_diff_variables']    = 'The variables in your answer are different to those of the question, please check them. ';
+$string['ATPartFrac_denom_ret']         = 'If your answer is written as a single fraction then the denominator would be {$a->m0}. In fact, it should be {$a->m1}. ';
+$string['ATPartFrac_ret_expression']    = 'Your answer as a single fraction is {$a->m0} ';
 
-$string['ATSingleFrac_error_list']     = 'The answer test failed.  Please contact your systems administrator';
-$string['ATSingleFrac_true']           = '';
-$string['ATSingleFrac_part']           = 'Your answer needs to be a single fraction of the form \( {a}\over{b} \). ';
-$string['ATSingleFrac_var']            = 'The variables in your answer are different to the those of the question, please check them. ';
-$string['ATSingleFrac_ret_exp']        = 'Your answer is not algebraically equivalent to the correct answer. You must have done something wrong. ';
-$string['ATSingleFrac_div']            = 'Your answer contains fractions within fractions.  You need to clear these and write your answer as a single fraction.';
+$string['ATSingleFrac_error_list']      = 'The answer test failed.  Please contact your systems administrator';
+$string['ATSingleFrac_true']            = '';
+$string['ATSingleFrac_part']            = 'Your answer needs to be a single fraction of the form \( {a}\over{b} \). ';
+$string['ATSingleFrac_var']             = 'The variables in your answer are different to the those of the question, please check them. ';
+$string['ATSingleFrac_ret_exp']         = 'Your answer is not algebraically equivalent to the correct answer. You must have done something wrong. ';
+$string['ATSingleFrac_div']             = 'Your answer contains fractions within fractions.  You need to clear these and write your answer as a single fraction.';
 
 $string['ATCompSquare_true']            = '';
 $string['ATCompSquare_false']           = '';
@@ -661,8 +666,8 @@ $string['ATSysEquiv_SA_system_overdetermined']  = 'The entries underlined in red
 
 $string['ATRegEx_missing_option']               = 'Missing regular expression in CAS Option field.';
 
-$string['studentValidation_yourLastAnswer']  = 'Your last answer was interpreted as follows: {$a}';
-$string['studentValidation_invalidAnswer']   = 'This answer is invalid. ';
+$string['studentValidation_yourLastAnswer']     = 'Your last answer was interpreted as follows: {$a}';
+$string['studentValidation_invalidAnswer']      = 'This answer is invalid. ';
 $string['stackQuestion_noQuestionParts']        = 'This item has no question parts for you to answer.';
 
 // Documentation strings.

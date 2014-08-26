@@ -59,7 +59,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_get_display() {
 
-        $cs=array('a:x^2', 'b:1/(1+x^2)', 'c:e^(i*pi)');
+        $cs = array('a:x^2', 'b:1/(1+x^2)', 'c:e^(i*pi)');
         foreach ($cs as $s) {
             $s1[] = new stack_cas_casstring($s);
         }
@@ -76,7 +76,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_multiplication_option_dot() {
 
-        $cs=array('a:x*y', 'b:1/(1+x^2)', 'c:e^(i*pi)');
+        $cs = array('a:x*y', 'b:1/(1+x^2)', 'c:e^(i*pi)');
         foreach ($cs as $s) {
             $s1[] = new stack_cas_casstring($s);
         }
@@ -91,7 +91,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_multiplication_option_none() {
 
-        $cs=array('a:x*y', 'b:1/(1+x^2)', 'c:e^(i*pi)');
+        $cs = array('a:x*y', 'b:1/(1+x^2)', 'c:e^(i*pi)');
         foreach ($cs as $s) {
             $s1[] = new stack_cas_casstring($s);
         }
@@ -106,7 +106,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_multiplication_option_cross() {
 
-        $cs=array('a:x*y', 'b:1/(1+x^2)', 'c:e^(i*pi)');
+        $cs = array('a:x*y', 'b:1/(1+x^2)', 'c:e^(i*pi)');
         foreach ($cs as $s) {
             $s1[] = new stack_cas_casstring($s);
         }
@@ -121,7 +121,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_acos_option_cosmone() {
 
-        $cs=array('a:acos(x)', 'b:asin(x)', 'c:asinh(x)');
+        $cs = array('a:acos(x)', 'b:asin(x)', 'c:asinh(x)');
         foreach ($cs as $s) {
             $s1[] = new stack_cas_casstring($s);
         }
@@ -137,7 +137,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_acos_option_acos() {
 
-        $cs=array('a:acos(x)', 'b:asin(x)', 'c:asinh(x)');
+        $cs = array('a:acos(x)', 'b:asin(x)', 'c:asinh(x)');
         foreach ($cs as $s) {
             $s1[] = new stack_cas_casstring($s);
         }
@@ -153,7 +153,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_acos_option_arccos() {
 
-        $cs=array('a:acos(x)', 'b:asin(x)', 'c:asinh(x)');
+        $cs = array('a:acos(x)', 'b:asin(x)', 'c:asinh(x)');
         foreach ($cs as $s) {
             $s1[] = new stack_cas_casstring($s);
         }
@@ -169,7 +169,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_keyval_representation_1() {
 
-        $cs=array('a:x^2', 'b:1/(1+x^2)', 'c:e^(i*pi)');
+        $cs = array('a:x^2', 'b:1/(1+x^2)', 'c:e^(i*pi)');
         foreach ($cs as $s) {
             $s1[] = new stack_cas_casstring($s);
         }
@@ -184,7 +184,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_keyval_representation_2() {
 
-        $cs=array('a:(-1)^2');
+        $cs = array('a:(-1)^2');
         foreach ($cs as $s) {
             $s1[] = new stack_cas_casstring($s);
         }
@@ -217,7 +217,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_string1() {
 
-        $cs=array('s:"This is a string"');
+        $cs = array('s:"This is a string"');
         foreach ($cs as $s) {
             $cs = new stack_cas_casstring($s);
             $cs->validate('t');
@@ -230,7 +230,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_qmchar() {
 
-        $cs=array('s:5*?+6*?', 'A:matrix([?,1],[1,?])');
+        $cs = array('s:5*?+6*?', 'A:matrix([?,1],[1,?])');
         foreach ($cs as $s) {
             $cs = new stack_cas_casstring($s);
             $cs->validate('t');
@@ -265,7 +265,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_simplify_false() {
 
-        $cs=array('a:2+3', 'b:ev(a,simp)');
+        $cs = array('a:2+3', 'b:ev(a,simp)');
 
         foreach ($cs as $s) {
             $cs = new stack_cas_casstring($s);
@@ -335,7 +335,7 @@ class stack_cas_session_test extends qtype_stack_testcase {
 
     public function test_numerical_precision() {
 
-        $cs=array('a:1385715.257');
+        $cs = array('a:1385715.257');
         foreach ($cs as $s) {
             $cs = new stack_cas_casstring($s);
             $cs->validate('t');
@@ -344,6 +344,37 @@ class stack_cas_session_test extends qtype_stack_testcase {
         $at1 = new stack_cas_session($s1, null, 0);
         $at1->instantiate();
         $this->assertEquals('1385715.257', $at1->get_value_key('a'));
+    }
+
+    public function test_matrix_eigenvalues() {
+
+        $cs = array('A:matrix([7,1,3],[5,-3,4],[5,3,-4])', 'E:first(eigenvalues(A))', 'dt:determinant(A)');
+        foreach ($cs as $s) {
+            $s1[] = new stack_cas_casstring($s);
+        }
+
+        $options = new stack_options();
+        $options->set_option('matrixparens', '(');
+
+        $at1 = new stack_cas_session($s1, $options, 0);
+        $this->assertEquals('[1-sqrt(66),sqrt(66)+1,-2]', $at1->get_value_key('E'));
+        $this->assertEquals('130', $at1->get_value_key('dt'));
+        $this->assertEquals('\left(\begin{array}{ccc} 7 & 1 & 3 \\\\ 5 & -3 & 4 \\\\ 5 & 3 & -4 \end{array}\right)',
+                $at1->get_display_key('A'));
+
+    }
+
+    public function test_ordergreat() {
+
+        $cs = array('ordergreat(i,j,k)', 'p:matrix([-7],[2],[-3])', 'q:matrix([i],[j],[k])', 'v:dotproduct(p,q)');
+        foreach ($cs as $s) {
+            $cs = new stack_cas_casstring($s);
+            $cs->validate('t');
+            $s1[] = $cs;
+        }
+        $at1 = new stack_cas_session($s1, null, 0);
+        $at1->instantiate();
+        $this->assertEquals('-7*i+2*j-3*k', $at1->get_value_key('v'));
     }
 }
 

@@ -153,13 +153,26 @@ class stack_textarea_input extends stack_input {
         $valid = true;
         switch($parameter) {
             case 'boxWidth':
-                $valid = is_int($value) && $value>0;
+                $valid = is_int($value) && $value > 0;
                 break;
 
             case 'boxHeight':
-                $valid = is_int($value) && $value>0;
+                $valid = is_int($value) && $value > 0;
                 break;
         }
         return $valid;
+    }
+
+    /**
+     * @return string the teacher's answer, displayed to the student in the general feedback.
+     */
+    public function get_teacher_answer_display($value, $display) {
+        $values = stack_utils::list_to_array($value, false);
+        $values = array_map(function ($ex) {
+                return '<code>'.$ex.'</code>';
+            }, $values);
+        $value = "<br/>".implode("<br/>", $values);
+
+        return stack_string('teacheranswershow', array('value' => $value, 'display' => $display));
     }
 }
